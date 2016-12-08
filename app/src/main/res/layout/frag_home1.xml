@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<ScrollView  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpBanner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:visibility="visible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <TextView android:id="@+id/tvCpService"
+                android:text="公司服务"
+                style="@style/frag_home_text_cpservice" />
+            <TextView
+                android:text="法律咨询"
+                style="@style/frag_home_text_cpservice" />
+            <TextView
+                android:text="空间场地"
+                style="@style/frag_home_text_cpservice" />
+
+        </LinearLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="精选服务"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:text="更多"
+                style="@style/frag_home_text_more" />
+        </RelativeLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+         <!--通过itemdecoration设置中间的横线-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="快报头条"
+                android:textSize="26sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="把握新政策"
+                android:layout_marginLeft="16dp"/>
+            <TextView
+                android:text="更多"
+                style="@style/frag_home_text_more" />
+
+        </LinearLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="特色服务"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:text="更多"
+                style="@style/frag_home_text_more" />
+        </RelativeLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="优选频道"
+            android:layout_marginTop="16dp"
+            android:textSize="26sp"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="老板攻略"
+                android:textSize="26sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="企业创业百科"
+                android:layout_marginLeft="16dp"/>
+
+        </LinearLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热门资讯"
+                android:textSize="26sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="了解行业动态，做博闻老板"
+                android:layout_marginLeft="16dp"/>
+            <TextView
+                android:text="更多"
+                style="@style/frag_home_text_more" />
+
+        </LinearLayout>
+        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>
+
+    <include layout="@layout/toolbar_home_frag" />
+</RelativeLayout>
+

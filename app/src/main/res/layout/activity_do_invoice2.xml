@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_divider_line">
+    <include layout="@layout/public_toolbar_layout"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/ic_launcher"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="11dp"
+                android:text="发票抬头"/>
+            <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"/>
+            <LinearLayout style="@style/activity_do_invoice2_ll_head">
+                <ImageView style="@style/activity_do_invoice2_iv_line" />
+                <TextView
+                    android:text="新增单位抬头"
+                    android:drawableLeft="@drawable/my_fapiao_add"
+                    android:drawablePadding="16dp"
+                    style="@style/activity_do_invoice2_tv_head" />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="11dp"
+                android:text="发票快递"/>
+            <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"/>
+            <LinearLayout style="@style/activity_do_invoice2_ll_head">
+                <ImageView style="@style/activity_do_invoice2_iv_line" />
+                <TextView
+                    android:text="新增收件人"
+                    android:drawableLeft="@drawable/my_fapiao_add"
+                    android:drawablePadding="16dp"
+                    style="@style/activity_do_invoice2_tv_head" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="取消"/>
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/blue_bt_charge_back_status"
+            android:textColor="@android:color/white"
+            android:text="下一步"/>
+    </LinearLayout>
+</LinearLayout>

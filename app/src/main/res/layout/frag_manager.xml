@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--  <include layout="@layout/frag_manager_head" />-->
+    <include layout="@layout/public_toolbar_layout"
+        android:background="@android:color/white"/>
+    <ScrollView  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout android:id="@+id/llTaskCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/gray_divider_line">
+
+            <!--  <include layout="@layout/frag_manager_head" />-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="您还没有开启管家服务"
+                android:textColor="@color/text_black_title"
+                android:gravity="center"
+                android:layout_marginTop="36dp"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="请做任务领取奖励吧"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"/>
+            <ImageView android:id="@+id/ivTaskCenter"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/ic_launcher"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:text="猜您需要"/>
+            <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp" android:paddingRight="15dp"
+        android:paddingTop="26dp" android:paddingBottom="19dp"
+        android:background="@android:color/white">
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/ic_launcher"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/text_black_title"
+                android:text="神州一桥"/>
+            <TextView android:layout_marginTop="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="商标注册等待申请受理中"
+                android:textColor="@color/green_text_trade_mark_status"
+                android:background="@drawable/tv_trade_mark_status_item_bg"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="申请人"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:text="注册号"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin">
+                <TextView
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="申请日期"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="类别"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_divider_line"/>
+</LinearLayout>

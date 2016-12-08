@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:background="@color/gray_divider_line"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="问题描述"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:background="@android:color/white"
+            android:padding="14dp" android:layout_marginTop="10dp"
+            android:hint="说出您的想法，让我们更好的服务您..."
+            android:gravity="start"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="11dp"
+            android:text="图片说明"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_bt_charge_back_status"
+        android:layout_gravity="bottom"
+        android:text="提交"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

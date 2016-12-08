@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+
+    <LinearLayout style="@style/activity_do_invoice3_ll_white_container"
+        android:paddingLeft="24dp" android:paddingTop="16dp"
+        android:paddingRight="20dp" android:paddingBottom="16dp"
+        android:background="@color/blue_bt_charge_back_status"
+        >
+
+        <TextView
+            android:text="内资公司注册"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="19dp"
+            style="@style/activity_service_detail_tv_title"
+            android:id="@+id/textView3" />
+
+        <LinearLayout style="@style/activity_do_invoice_ll_item">
+
+            <TextView
+                android:text="公司类型:"
+                style="@style/activity_service_detail_tv_title" />
+
+            <TextView
+                android:text="xxxx"
+                style="@style/activity_service_detail_tv_title" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/activity_do_invoice_ll_item">
+
+            <TextView
+                android:text="注册地址:"
+                style="@style/activity_service_detail_tv_title" />
+
+            <TextView
+                android:text="xxxx"
+                style="@style/activity_service_detail_tv_title" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/activity_do_invoice_ll_item">
+
+            <TextView
+                android:text="注册地:"
+                style="@style/activity_service_detail_tv_title" />
+
+            <TextView
+                android:text="xxxx"
+                style="@style/activity_service_detail_tv_title" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/activity_do_invoice_ll_item">
+
+            <TextView
+                android:text="服务商品:"
+                style="@style/activity_service_detail_tv_title" />
+
+            <TextView
+                android:text="xxxx"
+                style="@style/activity_service_detail_tv_title" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/activity_do_invoice_ll_item"
+            android:layout_marginTop="22dp">
+
+            <TextView
+                android:text="服务网点:"
+                style="@style/activity_service_detail_tv_title" />
+
+            <TextView
+                android:text="xxxx"
+                style="@style/activity_service_detail_tv_title" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/activity_do_invoice_ll_item"
+                    >
+
+                    <TextView
+                        android:text="服务状态:"
+                        style="@style/activity_service_detail_tv_title" />
+
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_service_detail_tv_title" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+
+                    <TextView
+                        android:text="签约时间:"
+                        style="@style/activity_service_detail_tv_title" />
+
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_service_detail_tv_title" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:text="呼叫顾问"
+                style="@style/activity_service_detail_tv_title"
+                android:paddingLeft="8dp" android:paddingRight="8dp"
+                android:paddingTop="8dp" android:paddingBottom="8dp"
+                android:background="@drawable/tv_service_detail_bg"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

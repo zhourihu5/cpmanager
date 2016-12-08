@@ -1,0 +1,228 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">#ffffff</item>
+
+        //沉浸状态栏
+      <!--  <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>-->
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        //ActionBarDrawerToggle设置颜色
+        <item name="colorControlNormal">@android:color/white</item>
+
+        <item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>
+    </style>
+
+
+    <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
+       <!-- <item name="llEmptyImage">@mipmap/empty</item>
+        <item name="llErrorImage">@mipmap/error</item>-->
+    </style>
+
+    <style name="TextAppearance.ExpandedTitle"
+        parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="frag_home_text_cpservice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="frag_home_text_more">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawableRight">@drawable/ic_launcher</item>
+    </style>
+
+    <style name="frag_my_vg_myorder">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="frag_my_vg_coupon">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="frag_my_vg_taskcenter">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginTop">@dimen/my_gray_divide</item>
+    </style>
+
+    <style name="frag_text_taskcenter">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:drawableLeft">@drawable/ic_launcher</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:textColor">@color/text_black_title</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <style name="modify_pwd_ll_old_pwd">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/et_invoice_add_head_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="tv_invoice_detail_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="tv_invoice_detail_value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ll_invoice_detail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/text_margin</item>
+    </style>
+
+    <style name="tv_invoice_detail_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/gray_divider_line</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">11dp</item>
+    </style>
+
+    <style name="ll_invoice_detail_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <style name="activity_do_invoice2_ll_head">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:drawablePadding">16dp</item>
+    </style>
+
+    <style name="activity_do_invoice2_tv_head">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="activity_do_invoice2_iv_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_divider_line</item>
+    </style>
+    <style name="activity_do_invoice3_ll_white_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="item_invoice_preset_ll_white_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
+
+    </style>
+
+    <style name="activity_do_invoice_ll_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/text_margin</item>
+    </style>
+
+    <style name="activity_do_invoice_tv_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="activity_do_invoice_tv_value">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="activity_do_invoice3_tv_label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="fag_add_invoice_head_et">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/et_invoice_add_head_bg</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="activity_service_detail_tv_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginRight">8dp</item>
+
+    </style>
+
+    <style name="Popupwindow">
+        <item name="android:windowEnterAnimation">@anim/window_out</item>
+        <item name="android:windowExitAnimation">@anim/window_back</item>
+    </style>
+</resources>

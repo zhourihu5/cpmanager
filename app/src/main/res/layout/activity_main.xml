@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+  >
+
+    <com.yiqiao.cpmanager.widget.UnScrollViewPager
+        android:id="@+id/vpContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </com.yiqiao.cpmanager.widget.UnScrollViewPager>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        design:menu="@menu/menu_navigation"
+        design:itemIconTint="@color/item_menu_color"
+        design:itemTextColor="@color/item_menu_color"
+        design:itemBackground="@android:color/white">
+        <!--design:itemIconTint="@color/item_menu_color"-->
+    </android.support.design.widget.BottomNavigationView>
+</LinearLayout>
+
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawablePadding="12dp"
+                    android:text="工商服务"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawablePadding="12dp"
+                    android:text="财税服务"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawablePadding="12dp"
+                    android:text="知识产权"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawablePadding="12dp"
+                    android:text="行政审批"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="81dp"
+                android:layout_height="0dp" android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/ic_launcher"
+                    android:drawablePadding="12dp"
+                    android:text="人事社保"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_divider_line"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>

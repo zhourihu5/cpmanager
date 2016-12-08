@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <include layout="@layout/search_cp_toolbar_layout"/>
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scrollbarStyle="insideOverlay"
+        app:layout_progress="@layout/view_progress"
+        app:layout_empty="@layout/search_cp_empty"
+        app:layout_error="@layout/view_error"
+        />
+
+
+</LinearLayout>
+
+
+
+
+

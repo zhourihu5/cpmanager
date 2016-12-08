@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yiqiao.cpmanager"
+    tools:overrideLibrary="ezy.boost.update">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <application
+        android:name="com.yiqiao.cpmanager.app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
+
+        //主类
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/SplashTheme"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyOrderActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyChargeBackActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyCouponActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyCreditActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyInvoiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MyLuckyMoneyActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.TaskCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.FeedBackActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ActivityDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ActivityNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.AddInvoiceHeadActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.AddReceiverActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CopyrightsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CpDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CpNameCheckActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.DoInvoice1Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.DoInvoice2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.DoInvoice3Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.GoodsDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.InvoiceDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.InvoicePresetActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ModifyPwdActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.AboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CpServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.OrderDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.NoticeCenterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchCpActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchCpHistoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchSpuActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ConfirmOrderActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.UseCouponActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SystemNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.StartServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ServiceNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ServiceDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.QualificationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.PayResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CreditRuleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchTradeMarkHistoryActivity"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:value="YOUR_APP_KEY"
+            android:name="UMENG_APPKEY"/>
+        <meta-data
+            android:value="${UMENG_CHANNEL_VALUE} ID"
+            android:name="UMENG_CHANNEL"/>
+    </application>
+
+</manifest>

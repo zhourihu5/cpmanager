@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="15dp" android:paddingRight="15dp">
+        <EditText
+            android:hint="联系人"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText
+            android:hint="联系电话"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText
+            android:hint="快递地址"
+            style="@style/fag_add_invoice_head_et" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/blue_bt_pay_order_bg"
+        android:textColor="@android:color/white"
+        android:text="添 加"/>
+
+</LinearLayout>

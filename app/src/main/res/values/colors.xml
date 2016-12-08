@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#EEEEEE</color>
+    <color name="colorCard">#FFFFFF</color>
+    <color name="colorText">#2C2C2C</color>
+
+    <color name="fab_bg">#FF4081</color>
+    <color name="bottom_shadow">#6e000000</color>
+    <color name="drawer_item_bg_p">#e8e8e8</color>
+    <color name="drawer_item_bg_n">#fffff9</color>
+    <color name="drawer_header_text">#2c2c2c</color>
+    <color name="toast_bg">#dddfe0</color>
+    <color name="black_bg">#d0000000</color>
+    <color name="bottom_text">#a9a9a9</color>
+    <color name="news_unread">#000000</color>
+    <color name="news_read">#898989</color>
+    <color name="comment_text">#5b5d5c</color>
+    <color name="comment_reply">#9ba4a3</color>
+    <color name="comment_btn">#bfbfbf</color>
+
+    <color name="comment_at">#5d8698</color>
+    <color name="red_my">#fd2442</color>
+    <color name="gray_divider_line">#f5f5f5</color>
+    <color name="blue_bt_charge_back_status">#488ef0</color>
+    <color name="blue_my_hot_line">#6ba6f5</color>
+    <color name="blue_bt_repay_bg">#488ef0</color>
+    <color name="orange_order_detail">#ff7c00</color>
+    <color name="pink_order_detail">#fff8d5</color>
+    <color name="text_my_order">#828a92</color>
+    <color name="text_black_title">#3d464d</color>
+    <color name="green_item_service_detail_bg">#00ff00</color>
+    <color name="green_text_trade_mark_status">#36be86</color>
+    <color name="text_general">#828a92</color>
+    <color name="text_hint">#b4bbbf</color>
+
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_divider_line">
+    <include layout="@layout/public_toolbar_layout"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_launcher"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="34dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你有"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red_my"
+            android:text="2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="条订单付款流水可以申请发票"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_marginTop="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/tvPreSet"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="开票金额：340元"/>
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/blue_bt_charge_back_status"
+            android:textColor="@android:color/white"
+            android:text="下一步"/>
+    </LinearLayout>
+</LinearLayout>

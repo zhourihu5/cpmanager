@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+   <include layout="@layout/public_toolbar_layout"/>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_divider_line"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/blue_bt_repay_bg"
+                android:visibility="visible">
+                <ImageView android:id="@+id/ivHead"
+                    android:layout_width="@dimen/iv_my_head"
+                    android:layout_height="@dimen/iv_my_head"
+                    android:src="@drawable/ic_launcher"/>
+                <TextView android:id="@+id/tvUname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:textColor="@android:color/white"
+                    android:text="账号"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_marginTop="@dimen/my_gray_divide"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:visibility="visible">
+                <LinearLayout style="@style/frag_my_vg_myorder"
+                    android:id="@+id/llMyOrder">
+                    <ImageView android:id="@+id/ivMyOrder"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:src="@drawable/my_order"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_my_order"
+                        android:text="我的订单"/>
+                </LinearLayout>
+                <LinearLayout style="@style/frag_my_vg_myorder"
+                    android:id="@+id/llMyChargeBack">
+
+                    <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:src="@drawable/my_tuikuan"
+                        android:id="@+id/imageView2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="我的退款"
+                         />
+                </LinearLayout>
+                <LinearLayout style="@style/frag_my_vg_myorder"
+                    android:id="@+id/llMyInvoice">
+                    <ImageView android:id="@+id/ivInvoice"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:src="@drawable/my_fapiao"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="我的发票"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/my_gray_divide"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <LinearLayout style="@style/frag_my_vg_coupon"
+                    android:id="@+id/llRedLucky">
+                    <TextView android:id="@+id/tvMylucky"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5000元"
+                        android:textColor="@color/text_black_title"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="红包"
+                        />
+                </LinearLayout>
+
+                <LinearLayout style="@style/frag_my_vg_coupon"
+                    android:id="@+id/llCoupon">
+                    <TextView android:id="@+id/tvCoupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5张"
+                        android:textColor="@color/text_black_title"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="优惠券"
+                        />
+                </LinearLayout>
+                <LinearLayout style="@style/frag_my_vg_coupon"
+                    android:id="@+id/llCredit">
+                    <TextView android:id="@+id/tvCredit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5000"
+                        android:textColor="@color/text_black_title"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="积分"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout style="@style/frag_my_vg_taskcenter"
+                android:id="@+id/llTaskCenter">
+                <TextView
+                    android:text="任务中心"
+                    style="@style/frag_text_taskcenter"
+                    android:drawableLeft="@drawable/my_task"/>
+
+                <include layout="@layout/frag_my_iv_taskcenter" />
+            </LinearLayout>
+            <LinearLayout style="@style/frag_my_vg_taskcenter"
+                android:id="@+id/llHotline">
+                <TextView
+                    android:text="客服热线"
+                    style="@style/frag_text_taskcenter"
+                    android:drawableLeft="@drawable/my_kefu"/>
+
+                <TextView  android:id="@+id/tvHotline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue_my_hot_line"
+                    android:text="400-686-5658"/>
+            </LinearLayout>
+            <LinearLayout style="@style/frag_my_vg_taskcenter"
+                android:id="@+id/llFeedback">
+                <TextView
+                    android:text="意见反馈"
+                    style="@style/frag_text_taskcenter"
+                    android:drawableLeft="@drawable/my_view"/>
+
+                <include layout="@layout/frag_my_iv_taskcenter" />
+            </LinearLayout>
+            <LinearLayout style="@style/frag_my_vg_taskcenter"
+                android:id="@+id/llRate"
+                android:layout_marginTop="1dp">
+                <TextView
+                    android:text="去评价顺利办APP"
+                    style="@style/frag_text_taskcenter"
+                    android:drawableLeft="@drawable/my_pinglun" />
+
+                <include layout="@layout/frag_my_iv_taskcenter" />
+            </LinearLayout>
+            <LinearLayout style="@style/frag_my_vg_taskcenter"
+                android:id="@+id/llAboutUs"
+                android:layout_marginTop="1dp">
+                <TextView
+                    android:text="关于我们"
+                    style="@style/frag_text_taskcenter"
+                    android:drawableLeft="@drawable/my_us" />
+
+                <include layout="@layout/frag_my_iv_taskcenter" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="神州顺利办，全程提供企业服务。"
+                android:gravity="center"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="26dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+
+

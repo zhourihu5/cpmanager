@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/frag_goods_detail_content"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical">
+        <LinearLayout android:id="@+id/llPriceLeft"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:background="@android:color/white"
+            android:paddingLeft="23dp" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_my"
+                android:textSize="18sp"
+                android:text="22200"/>
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="元"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tvPay"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/red_my"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="立即购买"/>
+    </LinearLayout>
+</LinearLayout>

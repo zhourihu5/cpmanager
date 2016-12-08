@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/blue_bt_charge_back_status"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_marginBottom="32dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="已提供"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+                android:textSize="24sp"
+                android:text="68203"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="次核名查询"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:drawablePadding="12dp"
+            android:paddingLeft="12dp" android:paddingRight="12dp"
+            android:drawableLeft="@drawable/search"
+            android:singleLine="true"
+            android:gravity="center_vertical|left"
+            android:background="@android:color/white"
+            android:hint="请输入您要核名的公司名称"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white"
+            android:text="核名结果会第一时间反馈到您的手机"/>
+
+        <TextView
+            android:layout_width="158dp"
+            android:layout_height="45dp"
+            android:layout_margin="39dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/et_invoice_add_head_bg"
+            android:text="立即核名"/>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal"
+        android:text="您已拥有注册完成的公司"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/blue_bt_charge_back_status"
+        android:textSize="16sp"
+        android:text="跳过任务"/>
+</LinearLayout>

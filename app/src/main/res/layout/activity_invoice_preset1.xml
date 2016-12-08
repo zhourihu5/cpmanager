@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        tl:tl_iconVisible="false"
+        tl:tl_indicator_color="#2C97DE"
+        tl:tl_textSelectColor="#2C97DE"
+        tl:tl_textUnselectColor="#66000000"
+        tl:tl_underline_color="#DDDDDD"
+        tl:tl_underline_height="1dp"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blue_bt_charge_back_status"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_launcher"
+            android:drawablePadding="16dp"
+            android:textColor="@android:color/white"
+            android:text="新增发票抬头"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_divider_line">
+    <include layout="@layout/public_toolbar_layout"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher"/>
+            <TextView
+                android:text="开票信息"
+                style="@style/activity_do_invoice3_tv_label"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="11dp" />
+            <LinearLayout style="@style/activity_do_invoice3_ll_white_container">
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="开票抬头:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="开票类型:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                style="@style/activity_do_invoice3_tv_label"
+                android:text="开票订单"/>
+            <LinearLayout style="@style/activity_do_invoice3_ll_white_container">
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="订单号:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="开票金额:"
+                        style="@style/activity_do_invoice_tv_title"
+                        android:visibility="invisible"/>
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="开票金额:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                style="@style/activity_do_invoice3_tv_label"
+                android:text="收件人信息"/>
+            <LinearLayout style="@style/activity_do_invoice3_ll_white_container">
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="联系人:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="联系电话:"
+                        style="@style/activity_do_invoice_tv_title"
+                        />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+                <LinearLayout style="@style/activity_do_invoice_ll_item">
+                    <TextView
+                        android:text="详细地址:"
+                        style="@style/activity_do_invoice_tv_title" />
+                    <TextView
+                        android:text="xxxx"
+                        style="@style/activity_do_invoice_tv_value" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="取消"/>
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/blue_bt_charge_back_status"
+            android:textColor="@android:color/white"
+            android:text="提交"/>
+    </LinearLayout>
+</LinearLayout>

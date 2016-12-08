@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/public_toolbar_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="33dp"
+            android:textColor="@color/green_text_trade_mark_status"
+            android:textSize="24sp"
+            android:text="支付成功"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:gravity="center"
+            android:text="服务已生成\n快去企业管家启动服务吧"/>
+        <Button
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/blue_bt_pay_order_bg"
+            android:textColor="@android:color/white"
+            android:text="企业管家"/>
+    </LinearLayout>
+</LinearLayout>

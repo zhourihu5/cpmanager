@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingLeft="16dp" android:paddingRight="16dp">
+    <EditText android:id="@+id/etCpName"
+        android:hint="单位名称"
+        style="@style/fag_add_invoice_head_et"
+        android:layout_marginTop="25dp"/>
+    <LinearLayout android:id="@+id/llSpcecial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText android:id="@+id/etCode"
+            android:hint="纳税人识别码"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText android:id="@+id/etAddress"
+            android:hint="注册地址"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText android:id="@+id/etPhone"
+            android:hint="注册电话"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText android:id="@+id/etBank"
+            android:hint="开户银行"
+            style="@style/fag_add_invoice_head_et" />
+        <EditText android:id="@+id/etCard"
+            android:hint="银行账户"
+            style="@style/fag_add_invoice_head_et" />
+
+    </LinearLayout>
+    <Button android:id="@+id/btAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@color/blue_bt_charge_back_status"
+        android:textColor="@android:color/white"
+        android:text="添加"/>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="14dp"
+        >
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/text_black_title"
+                android:text="xxxxxxxxxxxxxx"
+                android:id="@+id/textView4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/text_margin"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:gravity="center"
+                android:text="xxxxxxxxxxxxxx"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/blue_bt_charge_back_status"
+            android:text="做\n任\n务"
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_launcher"
+        />
+</RelativeLayout>
