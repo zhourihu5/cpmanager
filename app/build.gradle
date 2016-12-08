@@ -91,6 +91,7 @@ dependencies {
     compile 'com.allenliu.badgeview:library:1.0.6'
     compile 'com.oushangfeng:PinnedSectionItemDecoration:1.2.4'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.6.1'
+    compile 'com.jude:rollviewpager:1.4.5'
 
     //canary
     debugCompile 'com.github.moduth:blockcanary-android:1.2.1'

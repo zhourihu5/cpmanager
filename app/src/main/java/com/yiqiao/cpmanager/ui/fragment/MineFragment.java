@@ -127,7 +127,7 @@ public class MineFragment extends BaseFragment {
         layoutParams.width = SizeUtils.dp2px(mActivity, 21 );
         layoutParams.height = SizeUtils.dp2px(mActivity, 21 );
         tvRight.setLayoutParams(layoutParams);
-
+        BarUtils.setTransparentForImageView(mActivity,toolbar);
 
         BadgeFactory.create(mActivity)
                 .setTextColor(Color.WHITE)
@@ -161,7 +161,6 @@ public class MineFragment extends BaseFragment {
                 .setMargin(0, 7, 7, 0)//必须指定宽高
                 .bind(ivInvoice);
 
-        BarUtils.setTransparentForImageView(mActivity,toolbar);
     }
 
     private void registerEvent() {

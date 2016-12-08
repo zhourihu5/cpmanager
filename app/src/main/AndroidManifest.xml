@@ -116,6 +116,12 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchTradeMarkHistoryActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.ToplineActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.HotInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.HomeSearchActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:value="YOUR_APP_KEY"

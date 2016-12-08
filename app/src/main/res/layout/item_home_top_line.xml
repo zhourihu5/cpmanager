@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="20dp"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="xxxxx"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="9dp"
+            android:paddingRight="9dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/blue_home_topline_tag_bg"
+            android:text="政策"
+            android:textColor="@android:color/white"/>
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/ic_launcher"
+            android:textColor="@color/text_hint"
+            android:text="732"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_hint"
+            android:text="xxxxx"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_divider_line"/>
+</LinearLayout>

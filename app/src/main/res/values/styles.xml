@@ -225,4 +225,11 @@
         <item name="android:windowEnterAnimation">@anim/window_out</item>
         <item name="android:windowExitAnimation">@anim/window_back</item>
     </style>
+
+    <style name="text_home_topline_head">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_title_size</item>
+        <item name="android:textColor">@color/text_black_title</item>
+    </style>
 </resources>

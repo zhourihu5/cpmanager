@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/public_toolbar_layout"/>
+    <include layout="@layout/toolbar_layout_public"/>
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

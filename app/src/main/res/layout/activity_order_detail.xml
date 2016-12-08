@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/gray_divider_line">
-    <include layout="@layout/public_toolbar_layout"/>
+    <include layout="@layout/toolbar_layout_public"/>
 
     <LinearLayout
         android:orientation="vertical"

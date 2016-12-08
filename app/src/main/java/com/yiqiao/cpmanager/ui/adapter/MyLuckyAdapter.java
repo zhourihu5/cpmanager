@@ -33,7 +33,7 @@ public class MyLuckyAdapter extends RecyclerArrayAdapter<OrderVo> {
 
         public RecommendViewHolder(ViewGroup parent) {
             super(parent, R.layout.item_my_lucky);
-            ButterKnife.bind(this, parent);
+            ButterKnife.bind(this, itemView);
         }
 
         @Override

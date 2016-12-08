@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include layout="@layout/search_cp_toolbar_layout"/>
+    <include layout="@layout/toolbar_layout_search_cp"/>
 
     <LinearLayout
         android:id="@+id/appbar"

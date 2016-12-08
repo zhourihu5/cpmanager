@@ -2,7 +2,11 @@ package com.yiqiao.cpmanager.ui.fragment;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +16,16 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.blankj.utilcode.utils.BarUtils;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.activity.CpDetailActivity;
 import com.yiqiao.cpmanager.ui.activity.NoticeCenterActivity;
-import com.yiqiao.cpmanager.ui.activity.SearchCpActivity;
 import com.yiqiao.cpmanager.ui.activity.SearchCpHistoryActivity;
-import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity;
 import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkHistoryActivity;
 import com.yiqiao.cpmanager.ui.activity.TaskCenterActivity;
 import com.yiqiao.cpmanager.ui.adapter.ManagerAdapter;
-import com.yiqiao.cpmanager.widget.FullyHeightRecycleview;
 
 import java.util.ArrayList;
 
@@ -37,6 +39,10 @@ import butterknife.OnClick;
 public class ManagerFragment extends BaseFragment {
 
 
+    @BindView(R.id.ivTaskCenter)
+    ImageView ivTaskCenter;
+    @BindView(R.id.llTaskCenter)
+    LinearLayout llTaskCenter;
     @BindView(R.id.ivBack)
     ImageView ivBack;
     @BindView(R.id.tvTitle)
@@ -45,12 +51,14 @@ public class ManagerFragment extends BaseFragment {
     TextView tvRight;
     @BindView(R.id.llToolbar)
     LinearLayout llToolbar;
-    @BindView(R.id.ivTaskCenter)
-    ImageView ivTaskCenter;
-    @BindView(R.id.llTaskCenter)
-    LinearLayout llTaskCenter;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.toolbar_layout)
+    CollapsingToolbarLayout toolbarLayout;
+    @BindView(R.id.app_bar)
+    AppBarLayout appBar;
     @BindView(R.id.recycleView)
-    FullyHeightRecycleview recycleView;
+    RecyclerView recycleView;
     private PopMenu popWin;
 
     ManagerAdapter adapter;
@@ -62,14 +70,18 @@ public class ManagerFragment extends BaseFragment {
 
     @Override
     protected void initEventAndData() {
+        BarUtils.setTransparentForImageView(mActivity, toolbar);
+
+        tvRight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.menu_expand, 0, 0, 0);
+
         popWin = new PopMenu();
 
-        recycleView.setLayoutManager(new GridLayoutManager(mActivity,2));
-        ArrayList<OrderVo>arrayList=new ArrayList<>();
-        for (int i=0;i<20;i++){
+        recycleView.setLayoutManager(new LinearLayoutManager(mActivity));
+        ArrayList<OrderVo> arrayList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
             arrayList.add(new OrderVo());
         }
-        adapter=new ManagerAdapter(mActivity,arrayList);
+        adapter = new ManagerAdapter(mActivity, arrayList);
         recycleView.setAdapter(adapter);
     }
 
@@ -180,6 +192,7 @@ public class ManagerFragment extends BaseFragment {
             backgroundAlpha(1f);
         }
     }
+
     /**
      * 设置添加屏幕的背景透明度
      *

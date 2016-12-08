@@ -35,7 +35,7 @@
                 app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin"
                 >
-                <include layout="@layout/public_toolbar_layout"
+                <include layout="@layout/toolbar_layout_public"
                     app:layout_collapseMode="pin"/>
             </android.support.v7.widget.Toolbar>
             <LinearLayout

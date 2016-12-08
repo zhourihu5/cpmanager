@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    >
 
 
-    <LinearLayout
+    <LinearLayout android:id="@+id/llHotInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -16,13 +16,14 @@
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
         android:paddingRight="18dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/text_home_topline_head"
             android:text="热门咨询"
-            android:textSize="26sp" />
+             />
 
         <TextView
             android:layout_width="0dp"
@@ -41,6 +42,8 @@
     </LinearLayout>
 
     <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+        android:id="@+id/rvHotinfo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"/>
 </LinearLayout>

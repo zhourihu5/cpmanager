@@ -34,7 +34,7 @@ public class ManagerAdapter extends RecyclerArrayAdapter<OrderVo> {
     class RecommendViewHolder extends BaseViewHolder<OrderVo> {
 
         public RecommendViewHolder(ViewGroup parent) {
-            super(parent, R.layout.item_manager_sku);
+            super(parent, R.layout.item_manager_service);
             ButterKnife.bind(this, parent);
         }
 

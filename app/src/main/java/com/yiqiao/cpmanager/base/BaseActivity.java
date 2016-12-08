@@ -37,7 +37,7 @@ public abstract class BaseActivity extends SupportActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
-//        setContentView(R.layout.public_toolbar_layout);
+//        setContentView(R.layout.toolbar_layout_public);
         mUnBinder = ButterKnife.bind(this);
         mContext = this;
         App.getInstance().addActivity(this);

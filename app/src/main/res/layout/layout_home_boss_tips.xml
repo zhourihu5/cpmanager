@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    >
 
 
     <LinearLayout
@@ -16,13 +16,13 @@
         android:paddingBottom="25dp"
         android:paddingLeft="25dp"
         android:paddingRight="18dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="老板攻略"
-            android:textSize="26sp" />
+            style="@style/text_home_topline_head" />
 
         <TextView
             android:layout_width="0dp"
@@ -34,6 +34,8 @@
     </LinearLayout>
 
     <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+        android:id="@+id/rvBossTips"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"/>
 </LinearLayout>
