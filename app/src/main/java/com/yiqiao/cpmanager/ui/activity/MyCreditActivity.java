@@ -11,14 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.utils.BarUtils;
-import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
-import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.ui.adapter.ContentPagerAdapter;
 import com.yiqiao.cpmanager.ui.fragment.MyCreditFragment;
-import com.yiqiao.cpmanager.ui.fragment.MyOrderFragment;
 
 import java.util.ArrayList;
 import java.util.List;

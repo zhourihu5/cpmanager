@@ -20,7 +20,6 @@ import com.yiqiao.cpmanager.ui.adapter.ContentPagerAdapter;
 import com.yiqiao.cpmanager.ui.fragment.GoodsDetailFragment;
 import com.yiqiao.cpmanager.ui.fragment.GoodsSafeguardFragment;
 import com.yiqiao.cpmanager.ui.fragment.GoodsStoreFragment;
-import com.yiqiao.cpmanager.ui.fragment.MyOrderFragment;
 
 import java.util.ArrayList;
 import java.util.List;

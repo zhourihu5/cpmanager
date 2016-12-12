@@ -8,7 +8,6 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;

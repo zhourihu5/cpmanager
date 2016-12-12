@@ -1,6 +1,5 @@
 package com.yiqiao.cpmanager.component;
 
-import android.app.Activity;
 import android.content.Context;
 import android.widget.ImageView;
 

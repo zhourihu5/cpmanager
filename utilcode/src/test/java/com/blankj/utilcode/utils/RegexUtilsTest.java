@@ -2,7 +2,17 @@ package com.blankj.utilcode.utils;
 
 import org.junit.Test;
 
-import static com.blankj.utilcode.utils.RegexUtils.*;
+import static com.blankj.utilcode.utils.RegexUtils.isChz;
+import static com.blankj.utilcode.utils.RegexUtils.isDate;
+import static com.blankj.utilcode.utils.RegexUtils.isEmail;
+import static com.blankj.utilcode.utils.RegexUtils.isIDCard18;
+import static com.blankj.utilcode.utils.RegexUtils.isIP;
+import static com.blankj.utilcode.utils.RegexUtils.isMatch;
+import static com.blankj.utilcode.utils.RegexUtils.isMobileExact;
+import static com.blankj.utilcode.utils.RegexUtils.isMobileSimple;
+import static com.blankj.utilcode.utils.RegexUtils.isTel;
+import static com.blankj.utilcode.utils.RegexUtils.isURL;
+import static com.blankj.utilcode.utils.RegexUtils.isUsername;
 import static com.google.common.truth.Truth.assertThat;
 
 /**

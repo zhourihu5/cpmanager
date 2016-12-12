@@ -1,10 +1,11 @@
 package com.yiqiao.cpmanager.transformer;
 
 
+import com.yiqiao.cpmanager.entity.HttpResult;
+
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
-import com.yiqiao.cpmanager.entity.HttpResult;
 
 /**
  * Created by York on 2016/7/23.

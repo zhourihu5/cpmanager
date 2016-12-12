@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.blankj.utilcode.utils.BarUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -58,9 +57,9 @@ public class MyOrderActivity extends BaseActivity {
 
     @Override
     protected void setStatusBar() {
-//        super.setStatusBar();
-        BarUtils.setTranslucentForCoordinatorLayout(this, 0);
-        BarUtils.setTransparentForImageView(this, toolbar);
+        super.setStatusBar();
+//        BarUtils.setTranslucentForCoordinatorLayout(this, 0);
+//        BarUtils.setTransparentForImageView(this, toolbar);
     }
 
     @Override

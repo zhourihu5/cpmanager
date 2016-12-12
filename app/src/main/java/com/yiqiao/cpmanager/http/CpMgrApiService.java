@@ -1,12 +1,13 @@
 package com.yiqiao.cpmanager.http;
 
+import com.yiqiao.cpmanager.entity.ContentBean;
+import com.yiqiao.cpmanager.entity.HttpResult;
+
 import java.util.List;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import rx.Observable;
-import com.yiqiao.cpmanager.entity.ContentBean;
-import com.yiqiao.cpmanager.entity.HttpResult;
 
 /**
  * Created by liukun on 16/3/9.

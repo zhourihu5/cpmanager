@@ -105,7 +105,7 @@ public class SearchCpHistoryActivity extends BaseActivity {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if(actionId== EditorInfo.IME_ACTION_SEARCH){
-                    toActivity(SearchTradeMarkActivity.class);
+                    toActivity(SearchCpActivity.class);
 //                    SearchTradeMarkVo searchTradeMarkVo=new SearchTradeMarkVo();
 //                    searchTradeMarkVo.set
 //                    RealmHelper.getInstance().save();

@@ -1,89 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+    android:layout_marginTop="9dp"
+    android:padding="15dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="14dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内资公司注册-朝阳区-有限公司-自有地址"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp" android:paddingRight="4dp"
+            android:layout_marginLeft="8dp"
+            android:text="进行中"
+            android:textColor="@android:color/white"
+            android:background="@drawable/blue_bt_pay_order_bg"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="清水河代记账工厂"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/icon_service_cp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未启动"
+            android:layout_marginLeft="8dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <View
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="2dp"
+                android:background="@color/blue_bt_repay_bg"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/service_complete"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="2dp"
+                android:background="@color/blue_bt_repay_bg"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/service_progressing"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="2dp"
+                android:background="@color/gray_divider_line"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/service_unstart"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="2dp"
+                android:background="@color/gray_divider_line"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="完成进度"/>
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+                android:text="正在办理"/>
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="下一进度"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="11dp">
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="提交材料"/>
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="营业执照"/>
+            <TextView
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="刻章"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
-        android:layout_marginTop="9dp"
-        android:padding="15dp">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_marginTop="7dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="14dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="内资公司注册-朝阳区-有限公司-自有地址"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="4dp" android:paddingRight="4dp"
-                android:text="进行中"
-                android:textColor="@android:color/white"
-                android:background="@drawable/blue_bt_pay_order_bg"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:drawableLeft="@drawable/icon_linkman"
+            android:gravity="center"
+            android:drawablePadding="8dp"
+            android:text="王经理"
+            />
+        <TextView
+            android:layout_width="0dp" android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="14dp"
-            android:gravity="center_vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="清水河代记账工厂"
-                android:drawableLeft="@drawable/ic_launcher"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="未启动"
-                android:layout_marginLeft="8dp"/>
-
-        </LinearLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:gravity="center_vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_launcher"
-                android:gravity="center"
-                android:text="王经理"
-                />
-            <TextView
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="15210087258"
-                android:textColor="@color/blue_bt_repay_bg"
-                />
-            <TextView
-                android:layout_width="81dp"
-                android:layout_height="31dp"
-                android:gravity="center"
-                android:background="@drawable/blue_stroke_start_service_bg"
-                android:textColor="@color/blue_bt_repay_bg"
-                android:text="启动服务"/>
-        </LinearLayout>
+            android:layout_marginLeft="10dp"
+            android:text="15210087258"
+            android:textColor="@color/blue_bt_repay_bg"
+            />
+        <TextView
+            android:layout_width="81dp"
+            android:layout_height="31dp"
+            android:gravity="center"
+            android:background="@drawable/blue_stroke_start_service_bg"
+            android:textColor="@color/blue_bt_repay_bg"
+            android:text="启动服务"/>
     </LinearLayout>
 </LinearLayout>
 

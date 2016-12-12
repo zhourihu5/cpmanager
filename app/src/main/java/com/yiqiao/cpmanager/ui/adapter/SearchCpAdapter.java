@@ -8,6 +8,8 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 
 
@@ -18,8 +20,8 @@ import butterknife.ButterKnife;
  */
 public class SearchCpAdapter extends RecyclerArrayAdapter<OrderVo> {
 
-    public SearchCpAdapter(Context context) {
-        super(context);
+    public SearchCpAdapter(Context context, ArrayList<OrderVo> orderVos) {
+        super(context,orderVos);
     }
 
     @Override

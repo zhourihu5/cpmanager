@@ -2,20 +2,15 @@ package com.yiqiao.cpmanager.base;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.jaeger.library.StatusBarUtil;
+import com.blankj.utilcode.utils.BarUtils;
 import com.umeng.analytics.MobclickAgent;
-import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -46,7 +41,9 @@ public abstract class BaseActivity extends SupportActivity {
     }
 
     protected void setStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+//        StatusBarUtil.setColor(this, ContextCompat.getColor(this,R.color.colorPrimary),0);
+        BarUtils.setColor(this, Color.WHITE,0);
+        BarUtils.StatusBarLightMode(this);
     }
 
     @Override

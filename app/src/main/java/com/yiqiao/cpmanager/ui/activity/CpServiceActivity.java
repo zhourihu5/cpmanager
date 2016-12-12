@@ -1,32 +1,26 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.SparseIntArray;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.oushangfeng.pinnedsectionitemdecoration.PinnedHeaderItemDecoration;
-import com.oushangfeng.pinnedsectionitemdecoration.callback.OnHeaderClickListener;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
-import com.yiqiao.cpmanager.entity.CpServiceVo;
-import com.yiqiao.cpmanager.ui.adapter.CpServiceAdapter;
+import com.yiqiao.cpmanager.ui.adapter.ContentPagerAdapter;
+import com.yiqiao.cpmanager.ui.fragment.CpServiceFragment;
+import com.yiqiao.cpmanager.widget.UnScrollViewPager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -43,9 +37,33 @@ public class CpServiceActivity extends BaseActivity {
     TextView tvRight;
     @BindView(R.id.llToolbar)
     LinearLayout llToolbar;
-    @BindView(R.id.recycleView)
-    RecyclerView recycleView;
-    private CpServiceAdapter mAdapter;
+
+    @BindView(R.id.tvBusinessService)
+    TextView tvBusinessService;
+    @BindView(R.id.llBusinessService)
+    LinearLayout llBusinessService;
+    @BindView(R.id.tvTaxService)
+    TextView tvTaxService;
+    @BindView(R.id.llTaxService)
+    LinearLayout llTaxService;
+    @BindView(R.id.tvIpService)
+    TextView tvIpService;
+    @BindView(R.id.llIpService)
+    LinearLayout llIpService;
+    @BindView(R.id.tvGovermentService)
+    TextView tvGovermentService;
+    @BindView(R.id.llGovermentService)
+    LinearLayout llGovermentService;
+    @BindView(R.id.tvSocialInsurance)
+    TextView tvSocialInsurance;
+    @BindView(R.id.llSocialInsurance)
+    LinearLayout llSocialInsurance;
+
+
+    ContentPagerAdapter contentPagerAdapter;
+    List<Fragment> fragmentList = new ArrayList<>();
+    @BindView(R.id.viewPager)
+    UnScrollViewPager viewPager;
 
     @Override
     protected int getLayout() {
@@ -56,50 +74,17 @@ public class CpServiceActivity extends BaseActivity {
     protected void setStatusBar() {
         super.setStatusBar();
         tvTitle.setText("公司服务");
+
     }
 
     @Override
     protected void initEventAndData() {
-        ArrayList<CpServiceVo>arrayList= new ArrayList<>();
-        for(int i=0;i<20;i++){
-            CpServiceVo cpServiceVo=new CpServiceVo();
-            cpServiceVo.setItemType(i%5==0?CpServiceAdapter.TYPE_HEADER:CpServiceAdapter.TYPE_DATA);
-            arrayList.add(cpServiceVo);
+        for (int i = 0; i < 5; i++) {
+            Fragment fragment = new CpServiceFragment();
+            fragmentList.add(fragment);
         }
-        mAdapter=new CpServiceAdapter(arrayList);
-        recycleView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
-        recycleView.setAdapter(mAdapter);
-        recycleView.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                switch (mAdapter.getItemViewType(i)) {
-                    case CpServiceAdapter.TYPE_DATA:
-                        toActivity(SearchSpuActivity.class);
-                        break;
-                    case CpServiceAdapter.TYPE_HEADER:
-
-                        break;
-                }
-            }
-        });
-
-//        OnHeaderClickListener headerClickListener = new OnHeaderClickListener() {
-//            @Override
-//            public void onHeaderClick(View view, int id, int position) {
-//            }
-//
-//            @Override
-//            public void onHeaderLongClick(View view, int id, int position) {
-//            }
-//
-//            @Override
-//            public void onHeaderDoubleClick(View view, int id, int position) {
-//            }
-//        };
-//        recycleView.addItemDecoration(new PinnedHeaderItemDecoration.Builder(CpServiceAdapter.TYPE_HEADER).setDividerId(R.drawable.divider).enableDivider(true)
-//                .setHeaderClickListener(headerClickListener).create());
-        mAdapter.onAttachedToRecyclerView(recycleView);
-        mAdapter.notifyDataSetChanged();
+        contentPagerAdapter=new ContentPagerAdapter(getSupportFragmentManager(),fragmentList);
+        viewPager.setAdapter(contentPagerAdapter);
     }
 
     @Override
@@ -107,5 +92,54 @@ public class CpServiceActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick({R.id.ivBack, R.id.llBusinessService, R.id.llTaxService, R.id.llIpService, R.id.llGovermentService, R.id.llSocialInsurance})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivBack:
+                onBackPressedSupport();
+                break;
+            case R.id.llBusinessService:
+                unSelectAllTab();
+                llBusinessService.setBackgroundColor(Color.WHITE);
+                tvBusinessService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.business_service_pressed, 0, 0);
+                break;
+            case R.id.llTaxService:
+                unSelectAllTab();
+                llTaxService.setBackgroundColor(Color.WHITE);
+                tvTaxService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.tax_service_pressed, 0, 0);
+                break;
+            case R.id.llIpService:
+                unSelectAllTab();
+                llIpService.setBackgroundColor(Color.WHITE);
+                tvIpService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.intellectual_property_pressed, 0, 0);
+                break;
+            case R.id.llGovermentService:
+                unSelectAllTab();
+                llGovermentService.setBackgroundColor(Color.WHITE);
+                tvGovermentService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.goverment_service_pressed, 0, 0);
+                break;
+            case R.id.llSocialInsurance:
+                unSelectAllTab();
+                llSocialInsurance.setBackgroundColor(Color.WHITE);
+                tvSocialInsurance.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.social_insurance_pressed, 0, 0);
+                break;
+        }
+    }
+
+    void unSelectAllTab() {
+        int color = ContextCompat.getColor(mContext, R.color.gray_divider_line);
+        llBusinessService.setBackgroundColor(color);
+        llGovermentService.setBackgroundColor(color);
+        llIpService.setBackgroundColor(color);
+        llSocialInsurance.setBackgroundColor(color);
+        llTaxService.setBackgroundColor(color);
+
+        tvBusinessService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.business_service, 0, 0);
+        tvGovermentService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.goverment_service, 0, 0);
+        tvIpService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.intellectual_property, 0, 0);
+        tvSocialInsurance.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.social_insurance, 0, 0);
+        tvTaxService.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.tax_service, 0, 0);
     }
 }

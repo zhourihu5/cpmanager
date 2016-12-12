@@ -2,12 +2,15 @@ package com.yiqiao.cpmanager.ui.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.blankj.utilcode.utils.BarUtils;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
@@ -71,17 +74,30 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
     }
     private void showExitDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("提示");
-        builder.setMessage("确定退出GeekNews吗");
-        builder.setNegativeButton("取消", null);
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                App.getInstance().exitApp();
-            }
-        });
-        builder.show();
+
+        new MaterialDialog.Builder(this)
+                .title("提示")
+                .content("确定退出应用吗")
+                .positiveText("确定")
+                .negativeText("取消")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        App.getInstance().exitApp();
+                    }
+                })
+//                .onNegative(new MaterialDialog.SingleButtonCallback() {
+//                    @Override
+//                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                    }
+//                })
+                .show();
+
+    }
+
+    @Override
+    public void onBackPressedSupport() {
+        showExitDialog();
     }
 
     @Override
@@ -89,13 +105,15 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         switch (item.getItemId()) {
             case R.id.menu_home:
                 vpContent.setCurrentItem(0);
+                BarUtils.StatusBarDarkMode(mContext);
                 break;
             case R.id.menu_manager:
                 vpContent.setCurrentItem(1);
+                BarUtils.StatusBarLightMode(mContext);
                 break;
             case R.id.menu_mine:
                 vpContent.setCurrentItem(2);
-
+                BarUtils.StatusBarDarkMode(mContext);
                 break;
             default:
                 return false;

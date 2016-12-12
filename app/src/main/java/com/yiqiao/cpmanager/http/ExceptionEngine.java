@@ -3,6 +3,9 @@ package com.yiqiao.cpmanager.http;
 import android.net.ParseException;
 
 import com.google.gson.JsonParseException;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.http.exception.ErrorType;
+import com.yiqiao.cpmanager.http.exception.ServerException;
 
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
@@ -11,9 +14,6 @@ import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 
 import retrofit2.adapter.rxjava.HttpException;
-import com.yiqiao.cpmanager.http.exception.ApiException;
-import com.yiqiao.cpmanager.http.exception.ErrorType;
-import com.yiqiao.cpmanager.http.exception.ServerException;
 
 
 public class ExceptionEngine {

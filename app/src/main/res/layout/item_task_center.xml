@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/white">
 
     <LinearLayout
@@ -10,7 +10,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="14dp"
-        >
+        android:background="@drawable/et_invoice_add_head_bg">
         <LinearLayout
             android:layout_width="0dp" android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -30,24 +30,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:layout_marginTop="@dimen/text_margin"
-                android:drawableLeft="@drawable/ic_launcher"
+                android:layout_marginTop="11dp"
                 android:gravity="center"
                 android:text="xxxxxxxxxxxxxx"/>
         </LinearLayout>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="39dp"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:background="@color/blue_bt_charge_back_status"
+            android:background="@drawable/blue_task_center_bg"
             android:text="做\n任\n务"
             android:textColor="@android:color/white"
-            android:padding="8dp"/>
+            />
 
     </LinearLayout>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
         android:layout_marginLeft="15dp"
         android:src="@drawable/ic_launcher"
         />

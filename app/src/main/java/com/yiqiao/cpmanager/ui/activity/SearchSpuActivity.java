@@ -5,14 +5,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.adapter.MyChargeBackAdapter;
 import com.yiqiao.cpmanager.ui.adapter.SearchSpuAdapter;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 

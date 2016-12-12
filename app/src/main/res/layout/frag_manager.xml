@@ -20,13 +20,14 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=" "
             >
-            <LinearLayout android:id="@+id/llTaskCenter"
+            <LinearLayout android:id="@+id/llTaskCenterRed"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:background="@color/gray_divider_line"
                 android:layout_marginTop="?attr/actionBarSize"
-                app:layout_collapseMode="parallax">
+                app:layout_collapseMode="parallax"
+                android:visibility="gone">
 
                 <!--  <include layout="@layout/frag_manager_head" />-->
                 <TextView
@@ -92,7 +93,7 @@
                     app:layout_collapseMode="pin"/>
             </android.support.v7.widget.Toolbar>
             </android.support.design.widget.CollapsingToolbarLayout>
-        <LinearLayout
+        <LinearLayout android:id="@+id/llTaskCenter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/red_my"
@@ -111,22 +112,23 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
+                android:drawableLeft="@drawable/icon_to_do"
                 android:text="去做任务"/>
-            <ImageView
+            <ImageView android:id="@+id/ivClose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="19dp"
                 android:textSize="20sp"
-                android:src="@drawable/ic_launcher"/>
+                android:src="@drawable/close_task"/>
         </LinearLayout>
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-           />
+           android:background="@color/gray_divider_line" />
 
 </android.support.design.widget.CoordinatorLayout>
 

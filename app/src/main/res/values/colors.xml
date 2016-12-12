@@ -35,6 +35,7 @@
     <color name="green_text_trade_mark_status">#36be86</color>
     <color name="text_general">#828a92</color>
     <color name="text_hint">#b4bbbf</color>
+    <color name="half_white">#33ffffff</color>
 
 
 </resources>

@@ -11,9 +11,14 @@ import com.yiqiao.cpmanager.ui.adapter.TaskCenterAdapter;
 
 public class CpDetailActivity extends BaseActivity{
 
-    TaskCenterAdapter taskCenterAdapter;
+    @Override
+    protected void setStatusBar() {
+        super.setStatusBar();
+    }
+
     @Override
     protected int getLayout() {
+//        return R.layout.activity_cp_detail1;
         return R.layout.activity_cp_detail;
     }
 

@@ -2,7 +2,6 @@ package com.yiqiao.cpmanager.http;
 
 import com.yiqiao.cpmanager.BuildConfig;
 import com.yiqiao.cpmanager.app.Constants;
-import com.yiqiao.cpmanager.http.CpMgrApiService;
 import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.io.File;

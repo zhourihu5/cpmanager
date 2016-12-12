@@ -10,7 +10,6 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.activity.GoodsDetailActivity;
-import com.yiqiao.cpmanager.ui.activity.OrderDetailActivity;
 
 import java.util.ArrayList;
 

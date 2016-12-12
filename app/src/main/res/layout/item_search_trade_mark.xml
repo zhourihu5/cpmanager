@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,10 +28,14 @@
             <TextView android:layout_marginTop="11dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
                 android:text="商标注册等待申请受理中"
+                android:textSize="10sp"
                 android:textColor="@color/green_text_trade_mark_status"
-                android:background="@drawable/tv_trade_mark_status_item_bg"/>
+                android:background="@drawable/green_tv_trade_mark_tag_bg"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -8,6 +8,8 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 
 
@@ -18,8 +20,8 @@ import butterknife.ButterKnife;
  */
 public class TaskCenterAdapter extends RecyclerArrayAdapter<OrderVo> {
 
-    public TaskCenterAdapter(Context context) {
-        super(context);
+    public TaskCenterAdapter(Context context, ArrayList<OrderVo> arrayList) {
+        super(context,arrayList);
     }
 
     @Override

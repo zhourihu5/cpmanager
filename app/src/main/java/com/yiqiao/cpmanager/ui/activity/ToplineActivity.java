@@ -13,7 +13,6 @@ import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.adapter.HomeToplineAdapter;
-import com.yiqiao.cpmanager.ui.adapter.MyChargeBackAdapter;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 
 import java.util.ArrayList;

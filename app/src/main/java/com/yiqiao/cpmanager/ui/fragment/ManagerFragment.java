@@ -59,6 +59,10 @@ public class ManagerFragment extends BaseFragment {
     AppBarLayout appBar;
     @BindView(R.id.recycleView)
     RecyclerView recycleView;
+    @BindView(R.id.llTaskCenterRed)
+    LinearLayout llTaskCenterRed;
+    @BindView(R.id.ivClose)
+    ImageView ivClose;
     private PopMenu popWin;
 
     ManagerAdapter adapter;
@@ -73,6 +77,7 @@ public class ManagerFragment extends BaseFragment {
         BarUtils.setTransparentForImageView(mActivity, toolbar);
 
         tvRight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.menu_expand, 0, 0, 0);
+        ivBack.setImageResource(R.drawable.customer_service);
 
         popWin = new PopMenu();
 
@@ -102,16 +107,19 @@ public class ManagerFragment extends BaseFragment {
         return rootView;
     }
 
-    @OnClick({R.id.ivBack, R.id.tvRight, R.id.ivTaskCenter, R.id.llTaskCenter})
+
+    @OnClick({R.id.llTaskCenterRed, R.id.ivBack, R.id.tvRight, R.id.ivClose, R.id.llTaskCenter})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivBack:
-                onBackPressedSupport();
                 break;
             case R.id.tvRight:
                 showPopMenu();
                 break;
-            case R.id.ivTaskCenter:
+            case R.id.ivClose:
+                llTaskCenterRed.setVisibility(View.GONE);
+                break;
+            case R.id.llTaskCenterRed:
 //                break;
             case R.id.llTaskCenter:
                 toActivity(TaskCenterActivity.class);
@@ -160,6 +168,7 @@ public class ManagerFragment extends BaseFragment {
 
         @OnClick({R.id.llMyCp, R.id.llSearchCp, R.id.llSearchTrademark, R.id.llNoticeCenter})
         public void onClick(View view) {
+            dismiss();
             switch (view.getId()) {
                 case R.id.llMyCp:
                     toActivity(CpDetailActivity.class);

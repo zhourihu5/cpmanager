@@ -55,11 +55,11 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         defaultHandler.uncaughtException(thread, ex);
 //        ToastUtil.shortShow("抱歉,程序发生异常即将退出");
 
+        App.getInstance().exitApp();
         //todo 重新启动
         Intent intent = new Intent(App.getInstance(), MainActivity.class);
         App.getInstance().startActivity(intent);
 
-        App.getInstance().exitApp();
     }
 
     /**

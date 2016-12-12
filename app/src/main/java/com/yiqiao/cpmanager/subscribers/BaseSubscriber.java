@@ -1,7 +1,8 @@
 package com.yiqiao.cpmanager.subscribers;
 
-import rx.Subscriber;
 import com.yiqiao.cpmanager.http.exception.ApiException;
+
+import rx.Subscriber;
 
 /**
  * @author YorkYu

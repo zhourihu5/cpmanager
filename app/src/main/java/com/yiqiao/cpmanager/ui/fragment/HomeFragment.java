@@ -25,6 +25,7 @@ import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.activity.CpServiceActivity;
+import com.yiqiao.cpmanager.ui.activity.GoodsDetailActivity;
 import com.yiqiao.cpmanager.ui.activity.HomeSearchActivity;
 import com.yiqiao.cpmanager.ui.activity.HotInfoActivity;
 import com.yiqiao.cpmanager.ui.activity.NoticeCenterActivity;
@@ -52,7 +53,7 @@ public class HomeFragment extends BaseFragment {
     @BindView(R.id.tvCity)
     TextView tvCity;
     @BindView(R.id.etSearch)
-    EditText etSearch;
+    TextView etSearch;
     @BindView(R.id.tvRight)
     TextView tvRight;
     @BindView(R.id.llToolbar)
@@ -196,6 +197,7 @@ public class HomeFragment extends BaseFragment {
                 ToastUtil.shortShow("服务筹备中，敬请期待！");
                 break;
             case R.id.ivSetMeal1:
+                toActivity(GoodsDetailActivity.class);
                 break;
             case R.id.ivSetMeal2:
                 break;

@@ -14,7 +14,8 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import static com.blankj.utilcode.utils.ConvertUtils.*;
+import static com.blankj.utilcode.utils.ConvertUtils.bytes2HexString;
+import static com.blankj.utilcode.utils.ConvertUtils.hexString2Bytes;
 
 /**
  * <pre>

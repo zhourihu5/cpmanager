@@ -5,23 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.PowerManager;
 import android.os.Build;
+import android.os.PowerManager;
 import android.provider.Settings;
-import android.text.format.Formatter;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.LineNumberReader;
-import java.net.InetAddress;
 import java.net.NetworkInterface;
-import java.net.SocketException;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
-
-import static android.R.attr.name;
 
 /**
  * <pre>

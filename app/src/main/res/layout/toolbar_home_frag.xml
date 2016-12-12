@@ -18,41 +18,25 @@
         android:paddingRight="15dp"
         android:drawablePadding="5dp"
         android:text="北京"
-        android:drawableRight="@drawable/back"/>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp" android:paddingBottom="5dp"
+        android:drawableRight="@drawable/triangle_white"/>
+    <TextView android:id="@+id/etSearch"
+        android:layout_width="0dp" android:layout_weight="1"
+        android:layout_height="29dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:background="@color/gray_divider_line"
-        android:visibility="visible">
-        <EditText android:id="@+id/etSearch"
-            android:layout_width="0dp" android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:drawableLeft="@drawable/search"
-            android:singleLine="true"
-            android:paddingLeft="8dp"
-            android:drawablePadding="8dp"
-            android:hint="请输入您所需要的服务"
-            android:textSize="10sp"/>
-       <!-- <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            android:layout_marginLeft="11dp"
-            android:layout_marginRight="11dp"
-            android:visibility="visible"/>-->
-    </LinearLayout>
+        android:drawableLeft="@drawable/search_white"
+        android:singleLine="true"
+        android:paddingLeft="8dp"
+        android:drawablePadding="8dp"
+        android:text="请输入您所需要的服务"
+        android:background="@drawable/white_half_transparent_bg"
+        android:textSize="10sp"/>
 
     <TextView android:id="@+id/tvRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginRight="15dp"
+        android:layout_marginLeft="16dp"
         android:visibility="visible"
         android:drawableLeft="@drawable/my_news"/>
 

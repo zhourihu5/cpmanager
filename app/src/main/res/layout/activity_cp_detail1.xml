@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@drawable/gradient_blue_search_cp_history_bg">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/blue_bt_repay_bg"
+            app:statusBarScrim="@color/blue_bt_repay_bg"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title=" "
+            >
+
+            <include layout="@layout/layout_cp_detail"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_height="44dp"
+                android:layout_gravity="top"
+                android:gravity="top"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                >
+                <include layout="@layout/toolbar_layout_public"
+                    app:layout_collapseMode="pin"/>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_launcher"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="工商信息"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:text="5"/>
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_divider_line"/>
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_launcher"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="财税信息"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:text="5"/>
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_divider_line"/>
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_launcher"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="商标信息"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:text="5"/>
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_divider_line"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_launcher"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="著作权信息"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:text="5"/>
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_divider_line"/>
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/ic_launcher"
+                            android:drawablePadding="14dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            android:text="资质认证"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="8dp"
+                            android:text="5"/>
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_divider_line"/>
+                    <com.yiqiao.cpmanager.widget.SquareRelativelayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="match_parent">
+                    </com.yiqiao.cpmanager.widget.SquareRelativelayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
