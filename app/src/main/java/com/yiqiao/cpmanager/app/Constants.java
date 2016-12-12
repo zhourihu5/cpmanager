@@ -51,13 +51,6 @@ public class Constants {
 
     //================= PREFERENCE ====================
 
-    public static final String SP_NIGHT_MODE = "night_mode";
+    public static final String LOGIN = "login";
 
-    public static final String SP_NO_IMAGE = "no_image";
-
-    public static final String SP_AUTO_CACHE = "auto_cache";
-
-    public static final String SP_CURRENT_ITEM = "current_item";
-
-    public static final String SP_LIKE_POINT = "like_point";
 }

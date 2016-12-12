@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="20dp"
+                android:textColor="@color/text_hint"
                 android:text="云数据库xxxxxxxxxx"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,6 +98,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="赠送服务"/>
             <ImageView
                 android:layout_width="match_parent"
@@ -118,6 +121,8 @@
             <TextView
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="选择服务地区"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -140,8 +145,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="服务类型"
-               />
+                android:id="@+id/textView8" />
 
             <com.zhy.view.flowlayout.TagFlowLayout
                 android:layout_width="match_parent"
@@ -169,6 +176,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:layout_marginTop="14dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="注册地址"
                 />
             <LinearLayout
@@ -196,6 +205,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:layout_marginTop="14dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="服务期限"
                 />
             <LinearLayout
@@ -246,6 +257,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="附加产品"/>
             <ImageView
                 android:layout_width="match_parent"
@@ -270,6 +283,8 @@
             <TextView
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="购买数量"/>
             <LinearLayout
                 android:layout_width="124dp"

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <include layout="@layout/toolbar_layout_public"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_divider_line"/>
+    <LinearLayout  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        android:orientation="vertical">
+        <EditText android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLength="20"
+            android:inputType="textPassword"
+            android:background="@null"
+            android:paddingBottom="12dp"
+            android:drawablePadding="32dp"
+            android:hint="请输入手机号"
+            android:drawableLeft="@drawable/icon_mobile"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_divider_line"/>
+        <EditText android:id="@+id/etPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLength="20"
+            android:inputType="textPassword"
+            android:background="@null"
+            android:layout_marginTop="31dp"
+            android:paddingBottom="12dp"
+            android:drawablePadding="32dp"
+            android:hint="请输入登录密码"
+            android:drawableLeft="@drawable/icon_pwd"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_divider_line"/>
+        <TextView android:id="@+id/tvFindPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:textColor="@color/text_hint"
+            android:text="忘记密码"
+            android:layout_gravity="right"/>
+        <Button android:id="@+id/btLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:background="@color/blue_bt_repay_bg"
+            android:textColor="@android:color/white"
+            android:text="登录"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom|center_horizontal"
+            android:paddingBottom="65dp">
+            <TextView android:id="@+id/tvRegist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue_bt_repay_bg"
+                android:textSize="18sp"
+                android:text="去注册"
+                />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:background="@color/blue_bt_repay_bg"/>
+            <TextView android:id="@+id/tvQuickLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue_bt_repay_bg"
+                android:textSize="18sp"
+                android:text="快捷登录"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

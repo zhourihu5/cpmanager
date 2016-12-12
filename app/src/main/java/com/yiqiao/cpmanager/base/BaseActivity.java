@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import com.blankj.utilcode.utils.BarUtils;
 import com.umeng.analytics.MobclickAgent;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.ui.activity.LoginActivity;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -100,5 +102,12 @@ public abstract class BaseActivity extends SupportActivity {
     protected void toActivity(Class clazz){
         Intent intent=new Intent(this,clazz);
         startActivity(intent);
+    }
+    protected boolean isLogin(){
+        boolean isLogin= SharedPreferenceUtil.getLoginState();
+        if(!isLogin){
+            toActivity(LoginActivity.class);
+        }
+        return isLogin;
     }
 }

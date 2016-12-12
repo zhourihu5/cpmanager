@@ -112,9 +112,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 BarUtils.StatusBarLightMode(mContext);
                 break;
             case R.id.menu_mine:
-                vpContent.setCurrentItem(2);
-                BarUtils.StatusBarDarkMode(mContext);
-                break;
+                if(isLogin()){
+                    vpContent.setCurrentItem(2);
+                    BarUtils.StatusBarDarkMode(mContext);
+                    return true;
+                }else {
+                    return false;
+                }
             default:
                 return false;
         }

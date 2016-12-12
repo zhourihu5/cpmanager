@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:orientation="vertical">
+    <EditText android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:singleLine="true"
+        android:maxLength="11"
+        android:background="@null"
+        android:drawablePadding="32dp"
+        android:hint="请输入手机号"
+        android:drawableLeft="@drawable/icon_mobile"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_divider_line"/>
+    <Button android:id="@+id/btNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:background="@color/blue_bt_repay_bg"
+        android:textColor="@android:color/white"
+        android:text="下一步"/>
+
+</LinearLayout>
