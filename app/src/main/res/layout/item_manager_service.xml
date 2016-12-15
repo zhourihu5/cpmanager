@@ -60,37 +60,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical">
-            <View
+            <ImageView
                 android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="2dp"
-                android:background="@color/blue_bt_repay_bg"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_blue"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/service_complete"/>
-            <View
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="2"
-                android:layout_height="2dp"
-                android:background="@color/blue_bt_repay_bg"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_blue"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/service_progressing"/>
-            <View
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="2"
-                android:layout_height="2dp"
-                android:background="@color/gray_divider_line"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_gray"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/service_unstart"/>
-            <View
+            <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="2dp"
-                android:background="@color/gray_divider_line"/>
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_gray"/>
 
         </LinearLayout>
         <LinearLayout

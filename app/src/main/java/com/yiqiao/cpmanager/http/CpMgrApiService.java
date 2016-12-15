@@ -13,7 +13,8 @@ import rx.Observable;
  * Created by liukun on 16/3/9.
  */
 public interface CpMgrApiService {
-    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
+//    public static final String BASE_URL = "http://xtapi.12366.com/";
+    public static final String BASE_URL = "http://xtapi.12366.com/testAPI.jsp";
 
     @GET("top250")
     Observable<HttpResult<List<ContentBean>>> getTopMovie(@Query("start") int start, @Query("count") int count);

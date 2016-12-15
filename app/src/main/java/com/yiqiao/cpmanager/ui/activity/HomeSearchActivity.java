@@ -70,6 +70,7 @@ public class HomeSearchActivity extends BaseActivity {
 //        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
+        BarUtils.StatusBarLightMode(this);
         ivBack.setImageResource(R.drawable.back);
     }
 

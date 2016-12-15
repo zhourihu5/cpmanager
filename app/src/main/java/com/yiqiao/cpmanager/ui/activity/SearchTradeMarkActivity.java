@@ -3,6 +3,7 @@ package com.yiqiao.cpmanager.ui.activity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -37,6 +39,8 @@ public class SearchTradeMarkActivity extends BaseActivity implements RecyclerArr
     LinearLayout appbar;
     @BindView(R.id.recyclerView)
     EasyRecyclerView recyclerView;
+    @BindView(R.id.ivDelete)
+    ImageView ivDelete;
     private int page;
 
     @Override
@@ -139,5 +143,18 @@ public class SearchTradeMarkActivity extends BaseActivity implements RecyclerArr
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick({R.id.ivBack, R.id.ivDelete})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivBack:
+                onBackPressedSupport();
+                break;
+            case R.id.ivDelete:
+                etSearch.setText("");
+
+                break;
+        }
     }
 }

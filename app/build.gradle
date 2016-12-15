@@ -1,7 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'realm-android'
+apply plugin: 'img-optimizer'
 
+
+optimizerOptions {
+    triggerSize 5
+    type "lossy"
+}
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.0'
@@ -20,7 +26,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     productFlavors {
         google {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "google"]

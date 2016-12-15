@@ -76,6 +76,7 @@ public class ManagerFragment extends BaseFragment {
     protected void initEventAndData() {
         BarUtils.setTransparentForImageView(mActivity, toolbar);
 
+        tvTitle.setText("企业管家");
         tvRight.setCompoundDrawablesWithIntrinsicBounds(R.drawable.menu_expand, 0, 0, 0);
         ivBack.setImageResource(R.drawable.customer_service);
 
@@ -112,6 +113,7 @@ public class ManagerFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ivBack:
+                //todo 小能客服
                 break;
             case R.id.tvRight:
                 showPopMenu();

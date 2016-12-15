@@ -9,13 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:background="@drawable/gradient_blue_search_cp_history_bg">
+        android:background="@drawable/search_cp_history_bg">
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@drawable/gradient_blue_search_cp_history_bg"
-            app:statusBarScrim="@drawable/gradient_blue_search_cp_history_bg"
+            app:contentScrim="@color/blue_bt_repay_bg"
+            app:statusBarScrim="@color/blue_bt_repay_bg"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=" "
             >

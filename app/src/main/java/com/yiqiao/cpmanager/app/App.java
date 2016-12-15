@@ -2,12 +2,20 @@ package com.yiqiao.cpmanager.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.app.Service;
 import android.content.Context;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.Poi;
+import com.baidu.location.service.LocationService;
+import com.baidu.mapapi.SDKInitializer;
 import com.github.moduth.blockcanary.BlockCanary;
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
@@ -18,6 +26,7 @@ import com.yiqiao.cpmanager.component.CrashHandler;
 import com.yiqiao.cpmanager.widget.AppBlockCanaryContext;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -41,7 +50,7 @@ public class App extends Application{
         AppCompatDelegate.setDefaultNightMode(// theme to be difined
                 AppCompatDelegate.MODE_NIGHT_NO);
     }
-
+    public LocationService locationService;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -79,6 +88,13 @@ public class App extends Application{
             public void onViewInitFinished(boolean b) {
             }
         });
+
+        /***
+         * 初始化定位sdk，建议在Application中创建
+         */
+        locationService = new LocationService(getApplicationContext());
+//        SDKInitializer.initialize(getApplicationContext());
+
     }
 
     public void addActivity(Activity act) {
@@ -121,4 +137,6 @@ public class App extends Application{
             SCREEN_WIDTH = t;
         }
     }
+
+
 }

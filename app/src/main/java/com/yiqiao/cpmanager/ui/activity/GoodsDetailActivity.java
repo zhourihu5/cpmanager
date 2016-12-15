@@ -64,6 +64,7 @@ public class GoodsDetailActivity extends BaseActivity {
 //        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
+        tvTitle.setText("商品详情");
     }
 
     @Override

@@ -6,10 +6,11 @@
     android:id="@+id/llToolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:minHeight="44dp"
     android:orientation="horizontal"
     android:gravity="center_vertical"
     >
+   <!-- android:layout_height="?attr/actionBarSize"
+    android:minHeight="44dp"-->
     <TextView android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

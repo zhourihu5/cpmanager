@@ -5,11 +5,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/llToolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:minHeight="44dp"
+    android:layout_height="44dp"
     android:orientation="horizontal"
     android:gravity="center_vertical"
     >
+    <!--android:layout_height="?attr/actionBarSize"
+    android:minHeight="44dp"-->
     <ImageView android:id="@+id/ivBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +23,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp" android:paddingBottom="5dp"
+        android:layout_marginTop="7dp" android:layout_marginBottom="7dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
        android:background="@drawable/gray_tag_bg"
@@ -36,8 +37,10 @@
             android:paddingLeft="8dp"
             android:drawablePadding="8dp"
             android:hint="请输入企业名、人名、品牌等关键字"
+            android:textColor="@color/text_black_title"
+            android:textColorHint="@color/text_hint"
             android:textSize="10sp"/>
-        <ImageView
+        <ImageView android:id="@+id/ivDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_delete"

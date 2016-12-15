@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="center|left"
             android:drawablePadding="4dp"
-            android:drawableLeft="@drawable/ic_launcher"
+            android:drawableLeft="@drawable/eye"
             android:textColor="@color/text_hint"
             android:text="732"/>
         <TextView

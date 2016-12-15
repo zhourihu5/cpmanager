@@ -21,7 +21,7 @@ import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
- * 关于我们
+ * 注册，快捷登录，忘记密码，修改密码等界面
  */
 
 public class RegistPhoneActivity extends BaseActivity {

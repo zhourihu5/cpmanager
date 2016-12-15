@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
-        android:background="@color/blue_bt_repay_bg"
+        android:background="@drawable/blue_bt_pay_order_bg"
         android:textColor="@android:color/white"
         android:text="快捷登录"/>
 

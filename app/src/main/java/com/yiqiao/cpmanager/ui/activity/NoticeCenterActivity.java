@@ -45,6 +45,7 @@ public class NoticeCenterActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
+        tvTitle.setText("消息中心");
 
     }
 
@@ -61,7 +62,7 @@ public class NoticeCenterActivity extends BaseActivity {
             case R.id.ivBack:
                 onBackPressedSupport();
                 break;
-            case R.id.llOnline://在线咨询  小能客服
+            case R.id.llOnline://todo 在线咨询  小能客服
 //                toActivity();
                 break;
             case R.id.llServiceNotice:

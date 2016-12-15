@@ -24,6 +24,7 @@ import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.ui.activity.CityActivity;
 import com.yiqiao.cpmanager.ui.activity.CpServiceActivity;
 import com.yiqiao.cpmanager.ui.activity.GoodsDetailActivity;
 import com.yiqiao.cpmanager.ui.activity.HomeSearchActivity;
@@ -179,7 +180,7 @@ public class HomeFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvCity:
-
+                toActivity(CityActivity.class);
                 break;
             case R.id.etSearch:
                 toActivity(HomeSearchActivity.class);

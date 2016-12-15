@@ -20,7 +20,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=" "
             >
-            <LinearLayout android:id="@+id/llTaskCenterRed"
+            <LinearLayout android:id="@+id/llTaskCenter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -93,7 +93,7 @@
                     app:layout_collapseMode="pin"/>
             </android.support.v7.widget.Toolbar>
             </android.support.design.widget.CollapsingToolbarLayout>
-        <LinearLayout android:id="@+id/llTaskCenter"
+        <LinearLayout android:id="@+id/llTaskCenterRed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/red_my"

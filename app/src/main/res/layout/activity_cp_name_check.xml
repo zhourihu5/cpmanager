@@ -1,84 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/toolbar_layout_public"/>
-    <LinearLayout
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:background="@color/blue_bt_charge_back_status"
-        android:gravity="center_horizontal">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@drawable/cp_name_check_bg"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/blue_bt_repay_bg"
+            app:statusBarScrim="@color/blue_bt_repay_bg"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title=" "
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_height="44dp"
+                android:layout_gravity="top"
+                android:gravity="top"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                >
+                <include layout="@layout/toolbar_layout_public"
+                    app:layout_collapseMode="pin"/>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="73dp"
-            android:layout_marginBottom="32dp">
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="73dp"
+                android:layout_marginBottom="32dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="已提供"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+                    android:textSize="24sp"
+                    android:text="68203"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="次核名查询"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:drawablePadding="12dp"
+                android:paddingLeft="12dp" android:paddingRight="12dp"
+                android:drawableLeft="@drawable/search"
+                android:singleLine="true"
+                android:gravity="center_vertical|left"
+                android:background="@android:color/white"
+                android:hint="请输入您要核名的公司名称"
+                android:textSize="14sp"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:textColor="@android:color/white"
-                android:text="已提供"/>
+                android:text="核名结果会第一时间反馈到您的手机"/>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="158dp"
+                android:layout_height="45dp"
+                android:layout_margin="39dp"
+                android:gravity="center"
                 android:textColor="@android:color/white"
-                android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
-                android:textSize="24sp"
-                android:text="68203"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="次核名查询"/>
+                android:background="@drawable/et_invoice_add_head_bg"
+                android:text="立即核名"/>
+
 
         </LinearLayout>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="41dp"
-            android:drawablePadding="12dp"
-            android:paddingLeft="12dp" android:paddingRight="12dp"
-            android:drawableLeft="@drawable/search"
-            android:singleLine="true"
-            android:gravity="center_vertical|left"
-            android:background="@android:color/white"
-            android:hint="请输入您要核名的公司名称"
-            android:textSize="14sp"
-            />
-
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@android:color/white">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:textColor="@android:color/white"
-            android:text="核名结果会第一时间反馈到您的手机"/>
-
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center_horizontal"
+            android:text="您已拥有注册完成的公司"/>
         <TextView
-            android:layout_width="158dp"
-            android:layout_height="45dp"
-            android:layout_margin="39dp"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:background="@drawable/et_invoice_add_head_bg"
-            android:text="立即核名"/>
-
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/blue_bt_charge_back_status"
+            android:textSize="16sp"
+            android:text="跳过任务"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="24dp"
-        android:layout_gravity="center_horizontal"
-        android:text="您已拥有注册完成的公司"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/blue_bt_charge_back_status"
-        android:textSize="16sp"
-        android:text="跳过任务"/>
-</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
