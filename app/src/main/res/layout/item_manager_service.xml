@@ -6,16 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@android:color/white"
+    android:background="@drawable/white_search_bg"
     android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
     android:layout_marginTop="9dp"
-    android:padding="15dp">
+    android:paddingRight="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:layout_marginBottom="14dp">
-        <TextView
+        <ImageView
+            android:layout_width="3dp"
+            android:layout_height="18dp"
+            android:background="@color/gray_line_indicator"/>
+        <TextView android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="内资公司注册-朝阳区-有限公司-自有地址"
@@ -35,6 +42,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="14dp"
         android:gravity="center_vertical">
@@ -55,6 +63,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,7 +104,8 @@
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
             <TextView
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -144,6 +154,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
+        android:layout_marginLeft="18dp"
         android:gravity="center_vertical">
         <TextView
             android:layout_width="wrap_content"

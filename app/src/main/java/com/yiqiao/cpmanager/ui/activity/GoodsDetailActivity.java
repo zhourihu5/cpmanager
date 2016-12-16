@@ -7,8 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.blankj.utilcode.utils.BarUtils;
 import com.flyco.tablayout.CommonTabLayout;
@@ -26,6 +25,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -34,27 +34,23 @@ import butterknife.ButterKnife;
 
 public class GoodsDetailActivity extends BaseActivity {
 
-    @BindView(R.id.tvTitle)
-    TextView tvTitle;
-    @BindView(R.id.tablayout)
-    CommonTabLayout tablayout;
-    @BindView(R.id.viewPager)
-    ViewPager viewPager;
 
     ContentPagerAdapter contentPagerAdapter;
     List<Fragment> fragmentList = new ArrayList<>();
     @BindView(R.id.ivBack)
     ImageView ivBack;
-    @BindView(R.id.tvRight)
-    TextView tvRight;
+    @BindView(R.id.tablayout)
+    CommonTabLayout tablayout;
     @BindView(R.id.llToolbar)
-    LinearLayout llToolbar;
+    RelativeLayout llToolbar;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
     @BindView(R.id.app_bar)
     AppBarLayout appBar;
+    @BindView(R.id.viewPager)
+    ViewPager viewPager;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
     private String[] mTitles = {"详情", "保障", "门店"};
@@ -64,12 +60,13 @@ public class GoodsDetailActivity extends BaseActivity {
 //        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
-        tvTitle.setText("商品详情");
+        BarUtils.StatusBarLightMode(this);
+//        tvTitle.setText("商品详情");
     }
 
     @Override
     protected int getLayout() {
-        return R.layout.activity_my_order;
+        return R.layout.activity_goods_detail;
     }
 
     @Override
@@ -79,9 +76,9 @@ public class GoodsDetailActivity extends BaseActivity {
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
         }
-        Fragment fragment= GoodsDetailFragment.getInstance();
-        Fragment fragment2= GoodsSafeguardFragment.getInstance();
-        Fragment fragment3= GoodsStoreFragment.getInstance();
+        Fragment fragment = GoodsDetailFragment.getInstance();
+        Fragment fragment2 = GoodsSafeguardFragment.getInstance();
+        Fragment fragment3 = GoodsStoreFragment.getInstance();
         fragmentList.add(fragment);
         fragmentList.add(fragment2);
         fragmentList.add(fragment3);
@@ -127,6 +124,11 @@ public class GoodsDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.ivBack)
+    public void onClick() {
+        onBackPressedSupport();
     }
 
     class TabEntity implements CustomTabEntity {

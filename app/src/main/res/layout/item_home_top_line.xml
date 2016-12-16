@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:paddingLeft="15dp"
+    android:paddingLeft="23dp"
     android:paddingRight="15dp"
     android:paddingTop="20dp"
     android:background="@android:color/white"
@@ -20,17 +20,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp">
+        android:layout_marginBottom="15dp"
+        android:gravity="center_vertical">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="16dp"
             android:paddingLeft="9dp"
             android:paddingRight="9dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
+            android:gravity="center"
             android:layout_marginRight="12dp"
             android:background="@drawable/blue_home_topline_tag_bg"
             android:text="政策"
+            android:textSize="10sp"
             android:textColor="@android:color/white"/>
         <TextView
             android:layout_width="0dp" android:layout_weight="1"

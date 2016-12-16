@@ -26,20 +26,21 @@ public class RetrofitHelper {
 
     private static OkHttpClient okHttpClient = null;
 
-    private void init() {
-        initOkHttp();
-    }
-
-    public RetrofitHelper() {
-        init();
-    }
+//    private void init() {
+//        initOkHttp();
+//    }
+//
+//    public RetrofitHelper() {
+//        init();
+//    }
 
     private static void initOkHttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
             // https://drakeet.me/retrofit-2-0-okhttp-3-0-config
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+//            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(loggingInterceptor);
         }
         // http://www.jianshu.com/p/93153b34310e
@@ -97,11 +98,17 @@ public class RetrofitHelper {
         okHttpClient = builder.build();
     }
 
+    public static OkHttpClient getOkHttpClient() {
+        if(okHttpClient==null){
+            initOkHttp();
+        }
+        return okHttpClient;
+    }
 
     public static CpMgrApiService getCpMgrApiService() {
         Retrofit gankRetrofit = new Retrofit.Builder()
                 .baseUrl(CpMgrApiService.BASE_URL)
-                .client(okHttpClient)
+                .client(getOkHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();

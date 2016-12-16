@@ -66,36 +66,51 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="9dp"
                         android:text="赠："
                         android:textColor="@color/orange_order_detail"
                         android:textSize="16sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="9dp"
-                        android:text="千元红包"
-                        android:gravity="center_vertical"
-                        android:drawablePadding="8dp"
-                        android:drawableLeft="@drawable/hognbao"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="19dp"
-                        android:text="200元"
-                        android:gravity="center_vertical"
-                        android:drawablePadding="8dp"
-                        android:drawableLeft="@drawable/icon_coupon"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="19dp"
-                        android:text="10积分"
-                        android:gravity="center_vertical"
-                        android:drawablePadding="8dp"
-                        android:drawableLeft="@drawable/icon_credit"/>
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="千元红包"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:drawableLeft="@drawable/hognbao"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="19dp"
+                                android:text="200元"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:drawableLeft="@drawable/icon_coupon"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="19dp"
+                                android:text="10积分"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:drawableLeft="@drawable/icon_credit"/>
+                        </LinearLayout>
+                        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                            android:id="@+id/rvDonate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
+          <!--  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
@@ -114,10 +129,8 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="14dp"
                     android:background="@color/gray_divider_line"/>
-                <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+
+            </LinearLayout>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -148,110 +161,90 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:visibility="visible">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                android:paddingRight="16dp"
+                android:visibility="visible"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="服务类型"
-                    android:id="@+id/textView8" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="3dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/gray_line_indicator"
+                        android:layout_marginRight="15dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="14dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="服务类型"
+                         />
+                </LinearLayout>
+
 
                 <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flServiceType"
+                    android:layout_marginLeft="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <!--  <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_marginRight="8dp"
-                          android:text="有限公司"/>
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_marginRight="8dp"
-                          android:text="有限合伙企业"/>-->
-                </com.zhy.view.flowlayout.TagFlowLayout>
+                    android:layout_height="wrap_content"/>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/gray_divider_line"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    android:layout_marginTop="14dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="注册地址"
-                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="3dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/gray_line_indicator"
+                        android:layout_marginRight="15dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="自有地址"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="使用推荐地址"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="14dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="注册地址"
                         />
                 </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    android:layout_marginTop="14dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="服务期限"
-                    />
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flAddress"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="3dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/gray_line_indicator"
+                        android:layout_marginRight="15dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="1个月"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="3个月"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="6个月"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/et_invoice_add_head_bg"
-                        android:padding="9dp"
-                        android:text="12个月"
+                        android:layout_marginBottom="14dp"
+                        android:layout_marginTop="14dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:text="服务期限"
                         />
                 </LinearLayout>
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flDate"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
             <LinearLayout
@@ -259,13 +252,13 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:orientation="vertical"
-                android:padding="16dp"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
                 android:visibility="visible"
                 android:layout_marginTop="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="8dp"
+                    android:paddingTop="16dp" android:paddingBottom="16dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:text="附加产品"/>
@@ -273,8 +266,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/gray_divider_line"
-                    android:layout_marginTop="13dp"/>
+                    />
                 <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                    android:id="@+id/rvAppend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -298,10 +292,16 @@
                     android:layout_width="124dp"
                     android:layout_height="31dp"
                     android:background="@drawable/et_invoice_add_head_bg">
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_launcher"/>
+                        android:gravity="center"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/selector_minus_num"/>
+                    </LinearLayout>
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
@@ -315,10 +315,16 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/gray_divider_line"/>
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_launcher"/>
+                        android:gravity="center"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/add_num"/>
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -359,7 +365,7 @@
                     android:layout_marginRight="11dp"
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/phone_call"
-                    android:id="@+id/imageView" />
+                    />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -398,36 +404,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"/>
-   <!-- <ScrollView
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:padding="16dp"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="提供资料"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="办理流程"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="交付物"/>
+    <!-- <ScrollView
+         android:orientation="vertical" android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         >
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@android:color/white"
+             android:padding="16dp"
+             android:orientation="vertical"
+             android:gravity="center_vertical"
+             >
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:text="提供资料"/>
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:text="办理流程"/>
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:text="交付物"/>
 
-        </LinearLayout>
-        </ScrollView>-->
+         </LinearLayout>
+         </ScrollView>-->
 
 
 

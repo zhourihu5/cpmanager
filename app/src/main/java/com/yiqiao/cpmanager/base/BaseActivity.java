@@ -104,11 +104,11 @@ public abstract class BaseActivity extends SupportActivity {
         startActivity(intent);
     }
     protected boolean isLogin(){
-//        boolean isLogin= SharedPreferenceUtil.getLoginState();
-//        if(!isLogin){
-//            toActivity(LoginActivity.class);
-//        }
-//        return isLogin;
-        return true;
+        boolean isLogin= SharedPreferenceUtil.getLoginState();
+        if(!isLogin){
+            toActivity(LoginActivity.class);
+        }
+        return isLogin;
+//        return true;
     }
 }

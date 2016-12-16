@@ -36,6 +36,7 @@
     <color name="text_general">#828a92</color>
     <color name="text_hint">#b4bbbf</color>
     <color name="half_white">#33ffffff</color>
+    <color name="gray_line_indicator">#b4bbbf</color>
 
 
 </resources>

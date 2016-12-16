@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp">
+    <TextView android:id="@+id/tvTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/selector_tag_goods_detail_bg"
+        android:textColor="@color/selector_tag_goods_detail_color"
+        android:padding="9dp"
+        android:text="自有地址"
+        />
+    <ImageView android:id="@+id/ivSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tag_checked"
+        android:layout_alignRight="@+id/tvTag"
+        android:layout_alignBottom="@+id/tvTag"/>
+
+</RelativeLayout>
+

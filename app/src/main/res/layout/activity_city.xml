@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/gray_divider_line"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:layout_marginTop="?attr/actionBarSize"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/blue_bt_pay_order_bg"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="16dp">
                     <TextView android:id="@+id/tvSelected"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -46,7 +46,8 @@
                     <TextView android:id="@+id/tvDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="18dp"
+                        android:lineSpacingExtra="@dimen/text_margin"
                         android:textColor="@android:color/white"
                         android:text="当前正为您推荐北京的服务，您可以切换城市站查看其它城市的服务"/>
                 </LinearLayout>
@@ -74,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
           android:background="@color/gray_divider_line"
-            android:padding="8dp"
+            android:padding="16dp"
             android:textColor="@color/text_general"
             android:text="已开通的城市站："/>
     </android.support.design.widget.AppBarLayout>
@@ -84,8 +85,8 @@
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:background="@color/gray_divider_line"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp">
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycleView"

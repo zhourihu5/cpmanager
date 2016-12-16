@@ -8,7 +8,7 @@ public interface ErrorType {
     /**
      * 正常
      */
-    int SUCCESS = 0;
+    int SUCCESS = 200;
     /**
      * 未知错误
      */

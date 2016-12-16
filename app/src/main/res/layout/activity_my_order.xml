@@ -45,10 +45,11 @@
             android:background="#ffffff"
             app:layout_collapseMode="pin"
             tl:tl_iconVisible="false"
-            tl:tl_indicator_color="#2C97DE"
-            tl:tl_textSelectColor="#2C97DE"
-            tl:tl_textUnselectColor="#66000000"
-            tl:tl_underline_color="#DDDDDD"
+            tl:tl_indicator_color="@color/blue_bt_repay_bg"
+            tl:tl_textSelectColor="@color/blue_bt_repay_bg"
+            tl:tl_textUnselectColor="@color/text_general"
+            tl:tl_underline_color="@color/gray_divider_line"
+            tl:tl_indicator_width="60dp"
             tl:tl_underline_height="1dp"
             android:visibility="visible"/>
     </android.support.design.widget.AppBarLayout>

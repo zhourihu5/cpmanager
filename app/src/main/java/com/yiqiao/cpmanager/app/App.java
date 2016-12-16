@@ -60,7 +60,6 @@ public class App extends Application{
         getScreenSize();
 
         //初始化日志
-        Logger.init(getPackageName()).hideThreadInfo();
         if(BuildConfig.DEBUG){
 //            Logger.init(getPackageName()).hideThreadInfo();
             Logger.init(getPackageName());

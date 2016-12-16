@@ -10,14 +10,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingLeft="25dp"
+        android:paddingLeft="5dp"
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
         android:paddingRight="18dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="1dp"
         android:background="@android:color/white">
-
+        <ImageView
+            android:layout_width="3dp"
+            android:layout_height="18dp"
+            android:background="@color/blue_bt_repay_bg"
+            android:layout_marginRight="15dp" />
         <TextView
             style="@style/text_home_topline_head"
             android:text="热门咨询"

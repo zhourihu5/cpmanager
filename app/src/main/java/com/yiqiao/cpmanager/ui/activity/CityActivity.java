@@ -3,6 +3,7 @@ package com.yiqiao.cpmanager.ui.activity;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
@@ -16,7 +17,11 @@ import com.baidu.location.service.LocationService;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
 import com.yiqiao.cpmanager.base.BaseActivity;
+import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.ui.adapter.CityAdapter;
 import com.yiqiao.cpmanager.util.LogUtils;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +56,7 @@ public class CityActivity extends BaseActivity {
     RecyclerView recycleView;
 
 
+    CityAdapter cityAdapter;
     private LocationService locationService;
     @Override
     protected int getLayout() {
@@ -61,6 +67,13 @@ public class CityActivity extends BaseActivity {
     protected void initEventAndData() {
         tvTitle.setText("城市选择");
 
+        recycleView.setLayoutManager(new GridLayoutManager(mContext,4));
+        ArrayList<OrderVo>arrayList=new ArrayList<>();
+        for(int i=0;i<20;i++){
+            arrayList.add(new OrderVo());
+        }
+        cityAdapter=new CityAdapter(mContext,arrayList);
+        recycleView.setAdapter(cityAdapter);
 
     }
 
