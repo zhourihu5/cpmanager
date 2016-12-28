@@ -17,32 +17,43 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.blankj.utilcode.utils.BarUtils;
+import com.blankj.utilcode.utils.SPUtils;
+import com.google.gson.Gson;
+import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.yiqiao.cpmanager.R;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseFragment;
-import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.entity.HttpResult;
+import com.yiqiao.cpmanager.entity.ServiceListRequestVo;
+import com.yiqiao.cpmanager.entity.ServiceVo;
+import com.yiqiao.cpmanager.http.RetrofitHelper;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.subscribers.RxSubscriber;
+import com.yiqiao.cpmanager.transformer.PageTransformer;
 import com.yiqiao.cpmanager.ui.activity.CpDetailActivity;
 import com.yiqiao.cpmanager.ui.activity.NoticeCenterActivity;
 import com.yiqiao.cpmanager.ui.activity.SearchCpHistoryActivity;
 import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkHistoryActivity;
 import com.yiqiao.cpmanager.ui.activity.TaskCenterActivity;
 import com.yiqiao.cpmanager.ui.adapter.ManagerAdapter;
+import com.yiqiao.cpmanager.util.LogUtils;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
+import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Subscription;
 
 /**
  * Created by codeest on 2016/8/11.
  */
 public class ManagerFragment extends BaseFragment {
 
-
-    @BindView(R.id.ivTaskCenter)
-    ImageView ivTaskCenter;
-    @BindView(R.id.llTaskCenter)
-    LinearLayout llTaskCenter;
+    private static final int PAGE_SIZE = 10;
     @BindView(R.id.ivBack)
     ImageView ivBack;
     @BindView(R.id.tvTitle)
@@ -55,18 +66,23 @@ public class ManagerFragment extends BaseFragment {
     Toolbar toolbar;
     @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
-    @BindView(R.id.app_bar)
-    AppBarLayout appBar;
-    @BindView(R.id.recycleView)
-    RecyclerView recycleView;
-    @BindView(R.id.llTaskCenterRed)
-    LinearLayout llTaskCenterRed;
     @BindView(R.id.ivClose)
     ImageView ivClose;
+    @BindView(R.id.llTaskCenterRed)
+    LinearLayout llTaskCenterRed;
+    @BindView(R.id.app_bar)
+    AppBarLayout appBar;
+    @BindView(R.id.recyclerView)
+    EasyRecyclerView recyclerView;
+
     private PopMenu popWin;
 
     ManagerAdapter adapter;
+    private int page;
 
+    View emptyView;
+    View llToTask;
+    RecyclerView rvRecommend;
     @Override
     protected int getLayoutId() {
         return R.layout.frag_manager;
@@ -82,13 +98,108 @@ public class ManagerFragment extends BaseFragment {
 
         popWin = new PopMenu();
 
-        recycleView.setLayoutManager(new LinearLayoutManager(mActivity));
-        ArrayList<OrderVo> arrayList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            arrayList.add(new OrderVo());
+        emptyView=recyclerView.getEmptyView();
+        llToTask=emptyView.findViewById(R.id.llToTask);
+        llToTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toActivity(TaskCenterActivity.class);
+            }
+        });
+        rvRecommend= (RecyclerView) emptyView.findViewById(R.id.recyclerView);
+
+
+        boolean isLogin = SharedPreferenceUtil.getLoginState();
+        SPUtils spUtils = SharedPreferenceUtil.getAppSp();
+        int uid = spUtils.getInt(Constants.USER_ID);
+        if (uid > 0) {
+//            llTaskCenter.setVisibility(View.GONE);
+            llTaskCenterRed.setVisibility(View.VISIBLE);//TODO 任务做完就不显示了
+            recyclerView.showProgress();
+        } else {
+//            llTaskCenter.setVisibility(View.VISIBLE);
+            recyclerView.showEmpty();
+            llTaskCenterRed.setVisibility(View.GONE);
         }
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
+        ArrayList<ServiceVo> arrayList = new ArrayList<>();
+//        for (int i = 0; i < 20; i++) {
+//            arrayList.add(new OrderVo());
+//        }
         adapter = new ManagerAdapter(mActivity, arrayList);
-        recycleView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    protected void lazyLoadData() {
+        super.lazyLoadData();
+        loadData();
+    }
+
+    private void loadData() {
+        LogUtils.e("loadData");
+        String customId = SharedPreferenceUtil.getAppSp().getInt(Constants.USER_ID) + "";
+        customId = "54142";//todo test
+//        String commentState="0";//"commentState": "是否评价"  1、是 0 、否
+        ServiceListRequestVo orderListRequestVo = new ServiceListRequestVo(customId);
+        orderListRequestVo.setCurrentPage(page);
+        orderListRequestVo.setPageSize(PAGE_SIZE);
+        String sysCode = "111";
+        String timeStamp = String.valueOf(System.currentTimeMillis());
+        String param = new Gson().toJson(orderListRequestVo);
+        String sign = SystemUtil.getSign(sysCode, timeStamp, param);
+
+        Subscription rxSubscription = RetrofitHelper.getXtApiService()
+                .getServiceList(sysCode, timeStamp, param, sign)
+                .compose(new PageTransformer<HttpResult<List<ServiceVo>>>())
+                .subscribe(new RxSubscriber<HttpResult<List<ServiceVo>>>(mActivity) {
+                    // 必须重写
+                    @Override
+                    public void onNext(HttpResult<List<ServiceVo>> contentBeen) {
+                        recyclerView.setRefreshing(false);
+                        if(adapter.getCount()<=0){
+                            recyclerView.showEmpty();
+                        }else {
+                            recyclerView.showRecycler();
+                        }
+                        //todo save img,name etc user's information
+                        if (page == 1) {
+                            adapter.clear();
+                        }
+                        adapter.addAll(contentBeen.getData());
+                        if (contentBeen.getData().size() < PAGE_SIZE) {
+                            adapter.stopMore();
+                        } else {
+//                            adapter.pauseMore();
+                        }
+                        page++;
+                    }
+
+
+                    // 无需设置可以不用重写
+                    // !!!!注意参数为ApiException 类型，要不要写在Throwable那个了
+                    @Override
+                    protected void onError(ApiException ex) {
+                        super.onError(ex);
+                        if (adapter.getCount() <= 0) {
+                            recyclerView.showError();
+                            isFirst=true;
+                        } else {
+                            recyclerView.showRecycler();
+                            recyclerView.setRefreshing(false);
+                            adapter.pauseMore();
+                        }
+                    }
+
+                    // 无需设置可以不用重写
+                    @Override
+                    public void onCompleted() {
+                        super.onCompleted();
+                    }
+                });
+        addSubscrebe(rxSubscription);
     }
 
     private void showPopMenu() {

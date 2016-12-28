@@ -20,6 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_black_title"
+                android:textSize="15sp"
                 android:text="注册公司"/>
             <TextView android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
@@ -32,10 +33,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/red_my"
+            android:textSize="15sp"
+            android:textStyle="bold"
             android:text="-200"/>
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
 </LinearLayout>

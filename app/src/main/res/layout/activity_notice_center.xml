@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_divider_line">
+    android:background="@color/gray_bg">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_black_title"
+                    android:textSize="16sp"
                     android:text="在线咨询"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray_divider_line"
+            android:background="@color/gray_bg"
             android:layout_marginLeft="70dp"/>
         <LinearLayout android:id="@+id/llServiceNotice"
             android:layout_width="match_parent"
@@ -63,6 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_black_title"
+                    android:textSize="16sp"
                     android:text="服务通知"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -74,7 +76,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray_divider_line"
+            android:background="@color/gray_bg"
             android:layout_marginLeft="70dp"/>
         <LinearLayout android:id="@+id/llActivityNotice"
             android:layout_width="match_parent"
@@ -93,6 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_black_title"
+                    android:textSize="16sp"
                     android:text="活动通知"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,7 +107,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray_divider_line"
+            android:background="@color/gray_bg"
             android:layout_marginLeft="70dp"/>
         <LinearLayout android:id="@+id/llSystemNotice"
             android:layout_width="match_parent"
@@ -123,6 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_black_title"
+                    android:textSize="16sp"
                     android:text="系统消息"/>
                 <TextView
                     android:layout_width="wrap_content"

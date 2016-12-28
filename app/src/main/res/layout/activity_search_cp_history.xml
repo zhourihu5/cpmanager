@@ -76,7 +76,7 @@
             android:layout_height="38dp"
             android:paddingLeft="17dp"
             android:gravity="center_vertical"
-            android:background="@color/gray_divider_line"
+            android:background="@color/gray_bg"
             android:textColor="@color/text_general"
             android:text="搜索历史"/>
     </android.support.design.widget.AppBarLayout>

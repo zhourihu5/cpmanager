@@ -48,10 +48,11 @@
             tl:tl_indicator_color="@color/blue_bt_repay_bg"
             tl:tl_textSelectColor="@color/blue_bt_repay_bg"
             tl:tl_textUnselectColor="@color/text_general"
-            tl:tl_underline_color="@color/gray_divider_line"
+            tl:tl_underline_color="@color/gray_bg"
             tl:tl_indicator_width="60dp"
             tl:tl_underline_height="1dp"
-            android:visibility="visible"/>
+            android:visibility="visible"
+             />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -7,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.utils.BarUtils;
@@ -31,10 +32,8 @@ public class MyCreditActivity extends BaseActivity {
 
     @BindView(R.id.tvTitle)
     TextView tvTitle;
-//    @BindView(R.id.tablayout)
+    //    @BindView(R.id.tablayout)
 //    CommonTabLayout tablayout;
-    @BindView(R.id.viewPager)
-    ViewPager viewPager;
 
     ContentPagerAdapter contentPagerAdapter;
     List<Fragment> fragmentList = new ArrayList<>();
@@ -42,14 +41,22 @@ public class MyCreditActivity extends BaseActivity {
     ImageView ivBack;
     @BindView(R.id.tvRight)
     TextView tvRight;
-    @BindView(R.id.llToolbar)
-    LinearLayout llToolbar;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
     @BindView(R.id.app_bar)
     AppBarLayout appBar;
+    @BindView(R.id.llToolbar)
+    RelativeLayout llToolbar;
+    @BindView(R.id.tvAvailableNum)
+    TextView tvAvailableNum;
+    @BindView(R.id.tvTotalNum)
+    TextView tvTotalNum;
+    @BindView(R.id.tvFrosenNum)
+    TextView tvFrosenNum;
+    @BindView(R.id.viewPager)
+    ViewPager viewPager;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
     private String[] mTitles = {"待支付", "已付款", "已取消"};
@@ -59,6 +66,11 @@ public class MyCreditActivity extends BaseActivity {
 //        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
+        tvTitle.setText("我的积分");
+        tvTitle.setTextColor(Color.WHITE);
+        tvRight.setText("积分规则");
+        tvRight.setTextColor(Color.WHITE);
+        ivBack.setImageResource(R.drawable.back_white);
     }
 
     @Override
@@ -70,8 +82,8 @@ public class MyCreditActivity extends BaseActivity {
     protected void initEventAndData() {
 
 
-           Fragment fragment= MyCreditFragment.getInstance();
-            fragmentList.add(fragment);
+        Fragment fragment = MyCreditFragment.getInstance();
+        fragmentList.add(fragment);
         contentPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(contentPagerAdapter);
 

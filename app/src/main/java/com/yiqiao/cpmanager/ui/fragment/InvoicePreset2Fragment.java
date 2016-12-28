@@ -9,7 +9,6 @@ import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.adapter.InvoicePreset2Adapter;
-import com.yiqiao.cpmanager.ui.adapter.InvoicePresetAdapter;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 
 import java.util.ArrayList;
@@ -52,8 +51,8 @@ public class InvoicePreset2Fragment extends BaseFragment  implements RecyclerArr
         adapter=new InvoicePreset2Adapter(mActivity,new ArrayList<OrderVo>());
         adapter.setType(type);
         recyclerView.setAdapterWithProgress(adapter);
-        adapter.setMore(R.layout.view_more, this);
-        adapter.setNoMore(R.layout.view_nomore, new RecyclerArrayAdapter.OnNoMoreListener() {
+        adapter.setMore(R.layout.view_more_footer, this);
+        adapter.setNoMore(R.layout.view_nomore_footer, new RecyclerArrayAdapter.OnNoMoreListener() {
             @Override
             public void onNoMoreShow() {
 //                adapter.resumeMore();
@@ -71,7 +70,7 @@ public class InvoicePreset2Fragment extends BaseFragment  implements RecyclerArr
 //                return true;
 //            }
 //        });
-        adapter.setError(R.layout.view_error, new RecyclerArrayAdapter.OnErrorListener() {
+        adapter.setError(R.layout.view_error_footer, new RecyclerArrayAdapter.OnErrorListener() {
             @Override
             public void onErrorShow() {
                 adapter.resumeMore();

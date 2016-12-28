@@ -129,7 +129,7 @@ public class CpServiceActivity extends BaseActivity {
     }
 
     void unSelectAllTab() {
-        int color = ContextCompat.getColor(mContext, R.color.gray_divider_line);
+        int color = ContextCompat.getColor(mContext, R.color.gray_bg);
         llBusinessService.setBackgroundColor(color);
         llGovermentService.setBackgroundColor(color);
         llIpService.setBackgroundColor(color);

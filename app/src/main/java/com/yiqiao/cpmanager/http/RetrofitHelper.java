@@ -114,5 +114,14 @@ public class RetrofitHelper {
                 .build();
         return gankRetrofit.create(CpMgrApiService.class);
     }
+    public static XtApiService getXtApiService() {
+        Retrofit gankRetrofit = new Retrofit.Builder()
+                .baseUrl(XtApiService.BASE_URL)
+                .client(getOkHttpClient())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        return gankRetrofit.create(XtApiService.class);
+    }
 
 }

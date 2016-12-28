@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_divider_line">
+    android:background="@color/gray_bg">
     <include layout="@layout/toolbar_layout_public"/>
 
     <ScrollView
@@ -18,7 +18,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:src="@drawable/ic_launcher"/>
+                android:src="@drawable/do_invoice_step2"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

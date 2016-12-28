@@ -54,13 +54,14 @@ public class MyCouponActivity extends BaseActivity {
     AppBarLayout appBar;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
-    private String[] mTitles = {"待支付", "已付款", "已取消"};
+    private String[] mTitles = {"未使用", "已使用", "已过期"};
 
     @Override
     protected void setStatusBar() {
 //        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
+        tvTitle.setText("我的优惠券");
     }
 
     @Override
@@ -71,7 +72,6 @@ public class MyCouponActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
-
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
@@ -93,6 +93,7 @@ public class MyCouponActivity extends BaseActivity {
             public void onTabReselect(int position) {
             }
         });
+        viewPager.setOffscreenPageLimit(3);
         contentPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(contentPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

@@ -14,9 +14,11 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.Poi;
 import com.baidu.location.service.LocationService;
+import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
 import com.yiqiao.cpmanager.base.BaseActivity;
+import com.yiqiao.cpmanager.entity.CityVo;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.adapter.CityAdapter;
 import com.yiqiao.cpmanager.util.LogUtils;
@@ -68,13 +70,23 @@ public class CityActivity extends BaseActivity {
         tvTitle.setText("城市选择");
 
         recycleView.setLayoutManager(new GridLayoutManager(mContext,4));
-        ArrayList<OrderVo>arrayList=new ArrayList<>();
+        ArrayList<CityVo>arrayList=new ArrayList<>();
         for(int i=0;i<20;i++){
-            arrayList.add(new OrderVo());
+            CityVo cityVo=  new CityVo();
+            cityVo.setName("城市"+i);
+            arrayList.add(cityVo);
         }
         cityAdapter=new CityAdapter(mContext,arrayList);
         recycleView.setAdapter(cityAdapter);
-
+        cityAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                CityVo cityVo= cityAdapter.getItem(position);
+                tvSelected.setText(cityVo.getName());
+                cityAdapter.setSelected(position);
+                tvDesc.setText(String.format("当前正为您推荐%s的服务，您可以切换城市站查看其它城市的服务",cityVo.getName()));
+            }
+        });
     }
 
     @Override

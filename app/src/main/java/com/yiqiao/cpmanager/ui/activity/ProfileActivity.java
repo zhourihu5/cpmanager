@@ -70,7 +70,7 @@ public class ProfileActivity extends MyTakePhotoActivity implements
 
     @Override
     protected void initEventAndData() {
-
+        tvTitle.setText("账户信息");
     }
 
     @Override

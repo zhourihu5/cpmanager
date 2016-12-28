@@ -20,4 +20,7 @@
     <dimen name="item_my_order_gray_divide">9dp</dimen>
     <dimen name="text_margin">8dp</dimen>
     <dimen name="text_title_size">18sp</dimen>
+
+
+
 </resources>

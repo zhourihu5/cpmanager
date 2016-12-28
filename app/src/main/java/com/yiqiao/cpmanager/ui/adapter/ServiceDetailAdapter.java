@@ -8,6 +8,8 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
 
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 
 
@@ -18,8 +20,8 @@ import butterknife.ButterKnife;
  */
 public class ServiceDetailAdapter extends RecyclerArrayAdapter<OrderVo> {
 
-    public ServiceDetailAdapter(Context context) {
-        super(context);
+    public ServiceDetailAdapter(Context context, ArrayList<OrderVo> arrayList) {
+        super(context,arrayList);
     }
 
     @Override

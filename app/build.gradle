@@ -14,11 +14,25 @@ android {
 
     defaultConfig {
         applicationId "com.yiqiao.cpmanager"
+//        applicationId "work.smoothly.com.smoothlyworking"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "你的appkey", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
     }
+
 
     buildTypes {
         release {
@@ -91,6 +105,9 @@ dependencies {
     compile 'pub.devrel:easypermissions:0.2.1'
 //    compile 'com.jph.takephoto:takephoto_library:2.0.4'//拍照选择照片处理的库
     compile(name:'takephoto_library-release', ext:'aar')
+    //jpush
+    compile 'cn.jiguang.sdk:jpush:3.0.0'  // 此处以JPush 3.0.0 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.0.0'  // 此处以JCore 1.0.0 版本为例。
 
     //widget
     compile 'com.victor:lib:1.0.4'

@@ -32,15 +32,18 @@
                 android:singleLine="true"
                 android:layout_marginTop="11dp"
                 android:gravity="center"
+                android:drawableLeft="@drawable/icon_give"
+                android:drawablePadding="8dp"
                 android:text="xxxxxxxxxxxxxx"/>
         </LinearLayout>
         <TextView
             android:layout_width="39dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:background="@drawable/blue_task_center_bg"
+            android:background="@drawable/orange_task_center_bg"
             android:text="做\n任\n务"
             android:textColor="@android:color/white"
+            android:textSize="13sp"
             />
 
     </LinearLayout>
@@ -48,6 +51,6 @@
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/task_recommend"
         />
 </RelativeLayout>

@@ -1,10 +1,15 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -25,18 +30,25 @@ import butterknife.ButterKnife;
 
 public class SearchSpuActivity extends BaseActivity implements RecyclerArrayAdapter.OnLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
 
+    public static final String KEY_WORD = "keyWord";
     SearchSpuAdapter adapter;
     @BindView(R.id.ivBack)
     ImageView ivBack;
-//    @BindView(R.id.tvTitle)
+    //    @BindView(R.id.tvTitle)
 //    TextView tvTitle;
 //    @BindView(R.id.tvRight)
 //    TextView tvRight;
-    @BindView(R.id.llToolbar)
-    LinearLayout llToolbar;
     @BindView(R.id.recyclerView)
     EasyRecyclerView recyclerView;
+    @BindView(R.id.etSearch)
+    EditText etSearch;
+    @BindView(R.id.ivDelete)
+    ImageView ivDelete;
+    @BindView(R.id.llToolbar)
+    LinearLayout llToolbar;
     private int page;
+
+    String keyword;
 
     @Override
     protected int getLayout() {
@@ -45,7 +57,8 @@ public class SearchSpuActivity extends BaseActivity implements RecyclerArrayAdap
 
     @Override
     protected void initEventAndData() {
-
+        keyword = getIntent().getStringExtra(KEY_WORD);
+        etSearch.setText(keyword);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        DividerDecoration itemDecoration = new DividerDecoration(Color.GRAY,Util.dip2px(this,0.5f), Util.dip2px(this,72),0);
 //        itemDecoration.setDrawLastItem(false);
@@ -53,8 +66,8 @@ public class SearchSpuActivity extends BaseActivity implements RecyclerArrayAdap
 
         adapter = new SearchSpuAdapter(this, new ArrayList<OrderVo>());
         recyclerView.setAdapterWithProgress(adapter);
-        adapter.setMore(R.layout.view_more, this);
-        adapter.setNoMore(R.layout.view_nomore, new RecyclerArrayAdapter.OnNoMoreListener() {
+        adapter.setMore(R.layout.view_more_footer, this);
+        adapter.setNoMore(R.layout.view_nomore_footer, new RecyclerArrayAdapter.OnNoMoreListener() {
             @Override
             public void onNoMoreShow() {
 //                adapter.resumeMore();
@@ -72,7 +85,7 @@ public class SearchSpuActivity extends BaseActivity implements RecyclerArrayAdap
 //                return true;
 //            }
 //        });
-        adapter.setError(R.layout.view_error, new RecyclerArrayAdapter.OnErrorListener() {
+        adapter.setError(R.layout.view_error_footer, new RecyclerArrayAdapter.OnErrorListener() {
             @Override
             public void onErrorShow() {
                 adapter.resumeMore();
@@ -85,8 +98,21 @@ public class SearchSpuActivity extends BaseActivity implements RecyclerArrayAdap
         });
 
         recyclerView.setRefreshListener(this);
+
+        etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    keyword=etSearch.getText().toString();
+                    //todo searchData and save keyword
+                }
+                return false;
+            }
+        });
+        //todo searchData
         onRefresh();
     }
+
 
     @Override
     public void onRefresh() {

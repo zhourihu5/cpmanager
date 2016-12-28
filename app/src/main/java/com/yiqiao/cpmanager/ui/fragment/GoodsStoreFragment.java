@@ -8,7 +8,6 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.adapter.MyOrderAdapter;
 import com.yiqiao.cpmanager.ui.adapter.StoreAdapter;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 
@@ -50,8 +49,8 @@ public class GoodsStoreFragment extends BaseFragment  implements RecyclerArrayAd
 
         adapter=new StoreAdapter(mActivity,new ArrayList<OrderVo>());
         recyclerView.setAdapterWithProgress(adapter);
-        adapter.setMore(R.layout.view_more, this);
-        adapter.setNoMore(R.layout.view_nomore, new RecyclerArrayAdapter.OnNoMoreListener() {
+        adapter.setMore(R.layout.view_more_footer, this);
+        adapter.setNoMore(R.layout.view_nomore_footer, new RecyclerArrayAdapter.OnNoMoreListener() {
             @Override
             public void onNoMoreShow() {
 //                adapter.resumeMore();
@@ -70,7 +69,7 @@ public class GoodsStoreFragment extends BaseFragment  implements RecyclerArrayAd
 //                return true;
 //            }
 //        });
-        adapter.setError(R.layout.view_error, new RecyclerArrayAdapter.OnErrorListener() {
+        adapter.setError(R.layout.view_error_footer, new RecyclerArrayAdapter.OnErrorListener() {
             @Override
             public void onErrorShow() {
                 adapter.resumeMore();

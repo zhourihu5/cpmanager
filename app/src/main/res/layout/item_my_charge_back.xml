@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/gray_divider_line">
+    android:background="@color/gray_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView android:id="@+id/tvOrderNum"
+            <TextView android:id="@+id/tvName"
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="商品名"
@@ -29,29 +29,31 @@
             <TextView android:id="@+id/tvOrderStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
                 android:text="申请中"/>
         </LinearLayout>
         <TextView android:id="@+id/tvServeStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="未服务"
+            android:textSize="12sp"
             android:background="@drawable/bt_charge_back_status_bg"
             android:textColor="@android:color/white"
             android:paddingLeft="8dp" android:paddingRight="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             />
-        <TextView
+        <TextView android:id="@+id/tvSite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="服务网点：xxxx"/>
 
-        <TextView
+        <TextView android:id="@+id/tvLinkman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_margin"
             android:text="联系人：xxx"/>
-        <TextView
+        <TextView android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/text_margin"
@@ -61,11 +63,12 @@
             android:layout_height="1dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@color/gray_divider_line"/>
-        <TextView
+            android:background="@color/gray_bg"/>
+        <TextView android:id="@+id/tvBuyAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="实付金额：xxx"
+            android:textColor="@color/text_black_title"
             />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -74,11 +77,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/text_black_title"
                 android:text="退款金额："/>
-            <TextView
+            <TextView android:id="@+id/tvChargeBackNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/red_my"
+                android:textSize="15dp"
                 android:text="120元"/>
         </LinearLayout>
 

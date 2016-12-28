@@ -1,5 +1,7 @@
 package com.yiqiao.cpmanager.util;
 
+import android.util.Log;
+
 import com.orhanobut.logger.Logger;
 import com.yiqiao.cpmanager.BuildConfig;
 
@@ -9,16 +11,16 @@ import com.yiqiao.cpmanager.BuildConfig;
 public class LogUtils {
 
     public static boolean isDebug = BuildConfig.DEBUG;
-    private static final String TAG = "com.yiqiao.cpmanager";
+    private static final String TAG = "LogUtils";
 
-    public static void e(String tag,Object o) {
+    public static void e(String msg,Object o) {
         if(isDebug) {
-            Logger.e(tag, o);
+            Logger.e(msg, o);
         }
     }
 
-    public static void e(Object o) {
-        LogUtils.e(TAG,o);
+    public static void e(String msg) {
+        Logger.e(msg);
     }
 
     public static void w(String tag,Object o) {

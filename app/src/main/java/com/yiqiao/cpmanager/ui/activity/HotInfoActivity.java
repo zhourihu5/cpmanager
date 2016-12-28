@@ -55,8 +55,8 @@ public class HotInfoActivity extends BaseActivity implements RecyclerArrayAdapte
 
         adapter = new HomeHotInfoAdapter(this, new ArrayList<OrderVo>());
         recyclerView.setAdapterWithProgress(adapter);
-        adapter.setMore(R.layout.view_more, this);
-        adapter.setNoMore(R.layout.view_nomore, new RecyclerArrayAdapter.OnNoMoreListener() {
+        adapter.setMore(R.layout.view_more_footer, this);
+        adapter.setNoMore(R.layout.view_nomore_footer, new RecyclerArrayAdapter.OnNoMoreListener() {
             @Override
             public void onNoMoreShow() {
 //                adapter.resumeMore();
@@ -74,7 +74,7 @@ public class HotInfoActivity extends BaseActivity implements RecyclerArrayAdapte
 //                return true;
 //            }
 //        });
-        adapter.setError(R.layout.view_error, new RecyclerArrayAdapter.OnErrorListener() {
+        adapter.setError(R.layout.view_error_footer, new RecyclerArrayAdapter.OnErrorListener() {
             @Override
             public void onErrorShow() {
                 adapter.resumeMore();

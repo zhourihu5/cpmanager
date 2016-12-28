@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/gray_divider_line">
+            android:background="@color/gray_bg">
 
             <!--  <include layout="@layout/frag_manager_head" />-->
             <TextView

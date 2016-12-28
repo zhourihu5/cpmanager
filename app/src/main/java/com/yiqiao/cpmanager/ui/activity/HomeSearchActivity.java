@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -18,11 +19,16 @@ import com.blankj.utilcode.utils.BarUtils;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
+import com.yiqiao.cpmanager.db.RealmHelper;
+import com.yiqiao.cpmanager.db.SearchSkuVo;
+import com.yiqiao.cpmanager.db.SearchTradeMarkVo;
 import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.adapter.SearchCpHistoryAdapter;
+import com.yiqiao.cpmanager.ui.adapter.SearchSkuHistoryAdapter;
+import com.yiqiao.cpmanager.ui.adapter.SearchTrademarkHistoryAdapter;
 import com.yiqiao.cpmanager.util.ToastUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,7 +40,7 @@ import butterknife.OnClick;
 
 public class HomeSearchActivity extends BaseActivity {
 
-    SearchCpHistoryAdapter adapter;
+    SearchSkuHistoryAdapter adapter;
     @BindView(R.id.recycleView)
     RecyclerView recycleView;
     @BindView(R.id.ivBack)
@@ -77,14 +83,15 @@ public class HomeSearchActivity extends BaseActivity {
     @Override
     protected void initEventAndData() {
         recycleView.setLayoutManager(new LinearLayoutManager(mContext));
-        adapter = new SearchCpHistoryAdapter(mContext, new ArrayList<OrderVo>());
-        ArrayList<OrderVo> arrayList = new ArrayList<OrderVo>();
+        adapter = new SearchSkuHistoryAdapter(mContext, new ArrayList<SearchSkuVo>());
+        ArrayList<SearchTradeMarkVo> arrayList = new ArrayList<SearchTradeMarkVo>();
+        List<SearchSkuVo>list= RealmHelper.getInstance().getSearchSkuVoList();
         //todo 显示最近的8条
-        for (int i = 0; i < 8; i++) {
-            OrderVo orderVo = new OrderVo();
-            arrayList.add(orderVo);
-        }
-        adapter.addAll(arrayList);
+//        for (int i = 0; i < 8; i++) {
+//            SearchTradeMarkVo orderVo = new SearchTradeMarkVo();
+//            arrayList.add(orderVo);
+//        }
+        adapter.addAll(list);
         recycleView.setAdapter(adapter);
 
         View footer = View.inflate(mContext, R.layout.search_bottom_clear_hitory, null);
@@ -96,8 +103,8 @@ public class HomeSearchActivity extends BaseActivity {
 
             @Override
             public void onNoMoreClick() {
-                ToastUtil.shortShow("清空历史");
-//                adapter.resumeMore();
+                adapter.clear();
+                RealmHelper.getInstance().clearSearchSkuVos();
             }
         });
         adapter.stopMore();
@@ -106,11 +113,9 @@ public class HomeSearchActivity extends BaseActivity {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    toActivity(SearchTradeMarkActivity.class);
-//                    SearchTradeMarkVo searchTradeMarkVo=new SearchTradeMarkVo();
-//                    searchTradeMarkVo.set
-//                    RealmHelper.getInstance().save();
-
+                    Intent intent=new Intent(mContext,SearchSpuActivity.class);
+                    intent.putExtra(SearchSpuActivity.KEY_WORD,etSearch.getText().toString());
+                    startActivity(intent);
                 }
                 return false;
             }

@@ -10,8 +10,13 @@ import android.support.annotation.Nullable;
 import com.blankj.utilcode.utils.BarUtils;
 import com.umeng.analytics.MobclickAgent;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.subscribers.RxSubscriber;
 import com.yiqiao.cpmanager.ui.activity.LoginActivity;
+import com.yiqiao.cpmanager.util.DialogHelper;
+import com.yiqiao.cpmanager.util.NetworkUtil;
 import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
+import com.yiqiao.cpmanager.util.ToastUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -25,9 +30,9 @@ import rx.subscriptions.CompositeSubscription;
  * 无MVP的activity基类
  */
 
-public abstract class BaseActivity extends SupportActivity {
+public abstract class BaseActivity extends SupportActivity implements RxSubscriber.Callback {
 
-    protected Activity mContext;
+    protected BaseActivity mContext;
 
     private Unbinder mUnBinder;
     @Override
@@ -110,5 +115,31 @@ public abstract class BaseActivity extends SupportActivity {
         }
         return isLogin;
 //        return true;
+    }
+
+    @Override
+    public boolean isNetworkAvailable() {
+        return NetworkUtil.isNetworkAvailable(this);
+    }
+
+    @Override
+    public void onNetUnAvailable() {
+        ToastUtil.shortShow("当前无网络，请检查网络情况");
+    }
+
+    @Override
+    public void onRequestStart() {
+        DialogHelper.showProgressDlg(mContext, "正在加载数据");
+    }
+
+    @Override
+    public void onRequestCompleted() {
+        DialogHelper.stopProgressDlg();
+    }
+
+    @Override
+    public void onRequestError(ApiException ex) {
+        DialogHelper.stopProgressDlg();
+        ToastUtil.shortShow(ex.message);
     }
 }

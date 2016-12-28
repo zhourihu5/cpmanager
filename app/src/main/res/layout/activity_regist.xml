@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
     <com.yiqiao.cpmanager.widget.UnScrollViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"

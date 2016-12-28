@@ -6,7 +6,8 @@ import android.view.ViewGroup;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.entity.TrademarkVo;
+import com.yiqiao.cpmanager.entity.TrademarkVo;
 
 import java.util.ArrayList;
 
@@ -18,17 +19,17 @@ import butterknife.ButterKnife;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class SearchTradeMarkAdapter extends RecyclerArrayAdapter<OrderVo> {
+public class SearchTradeMarkAdapter extends RecyclerArrayAdapter<TrademarkVo> {
 
-    public SearchTradeMarkAdapter(Context context, ArrayList<OrderVo> orderVos) {
-        super(context,orderVos);
+    public SearchTradeMarkAdapter(Context context, ArrayList<TrademarkVo> TrademarkVos) {
+        super(context,TrademarkVos);
     }
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
         return new RecommendViewHolder(parent);
     }
-    class RecommendViewHolder extends BaseViewHolder<OrderVo> {
+    class RecommendViewHolder extends BaseViewHolder<TrademarkVo> {
 
         public RecommendViewHolder(ViewGroup parent) {
             super(parent, R.layout.item_search_trade_mark);
@@ -36,7 +37,7 @@ public class SearchTradeMarkAdapter extends RecyclerArrayAdapter<OrderVo> {
         }
 
         @Override
-        public void setData(OrderVo data) {
+        public void setData(TrademarkVo data) {
 
         }
 

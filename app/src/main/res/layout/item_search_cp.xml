@@ -20,11 +20,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="上市公司"
+            android:textColor="@color/blue_bt_repay_bg"
+            android:textSize="12sp"
+            android:background="@color/blue_tag_search_cp_bg"
             android:layout_marginLeft="5dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:background="@color/pink_order_detail"
+            android:textColor="@color/orange_order_detail"
+            android:textSize="12sp"
             android:text="存续"/>
     </LinearLayout>
     <LinearLayout
@@ -33,7 +39,7 @@
         android:layout_marginTop="11dp"
         android:paddingTop="16dp" android:paddingLeft="14dp"
         android:paddingBottom="16dp" android:paddingRight="14dp"
-        android:background="@color/gray_divider_line"
+        android:background="@color/gray_bg"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -43,6 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 android:text="法定代表人"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -60,6 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 android:text="注册资金（人民币）"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -76,6 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 android:text="成立日期"/>
             <TextView
                 android:layout_width="wrap_content"

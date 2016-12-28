@@ -22,8 +22,8 @@
     <color name="comment_btn">#bfbfbf</color>
 
     <color name="comment_at">#5d8698</color>
-    <color name="red_my">#fd2442</color>
-    <color name="gray_divider_line">#f5f5f5</color>
+    <color name="red_my">#ff5b5c</color>
+    <color name="gray_bg">#f5f5f5</color>
     <color name="blue_bt_charge_back_status">#488ef0</color>
     <color name="blue_my_hot_line">#6ba6f5</color>
     <color name="blue_bt_repay_bg">#488ef0</color>
@@ -37,6 +37,7 @@
     <color name="text_hint">#b4bbbf</color>
     <color name="half_white">#33ffffff</color>
     <color name="gray_line_indicator">#b4bbbf</color>
+    <color name="blue_tag_search_cp_bg">#e4f0ff</color>
 
 
 </resources>

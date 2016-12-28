@@ -14,7 +14,7 @@
         <LinearLayout
             android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray_divider_line">
+            android:background="@color/gray_bg">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -25,7 +25,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
                     android:textColor="@color/text_black_title"
                     android:text="商品名"/>
 
@@ -38,7 +39,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/red_my"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:text="1520"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -47,19 +48,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="10dp"
                         android:paddingLeft="7dp" android:paddingRight="7dp"
                         android:background="@drawable/pink_tv_use_red_lucky_bg"
                         android:text="使用红包可省30元"
                         android:textColor="@color/orange_order_detail"/>
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="20dp"
-                    android:textColor="@color/text_hint"
-                    android:text="云数据库xxxxxxxxxx"/>
+                    android:text="云数据库xxxxxxxxxx"
+                    android:id="@+id/textView3" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -265,7 +268,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/gray_divider_line"
+                    android:background="@color/gray_bg"
                     />
                 <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
                     android:id="@+id/rvAppend"
@@ -305,7 +308,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <TextView
                         android:layout_width="0dp" android:layout_weight="2"
                         android:layout_height="match_parent"
@@ -314,7 +317,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <LinearLayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent"

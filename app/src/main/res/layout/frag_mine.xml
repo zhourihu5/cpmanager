@@ -15,8 +15,8 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="@color/red_my"
-            app:statusBarScrim="@color/red_my"
+            app:contentScrim="@color/blue_bt_repay_bg"
+            app:statusBarScrim="@color/blue_bt_repay_bg"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=" "
             >
@@ -50,7 +50,7 @@
                     android:id="@+id/ivHead"
                     android:layout_width="@dimen/iv_my_head"
                     android:layout_height="@dimen/iv_my_head"
-                    android:src="@drawable/img_default"/>
+                    android:src="@drawable/img_head"/>
                 <TextView android:id="@+id/tvUname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray_divider_line"
+            android:background="@color/gray_bg"
             android:orientation="vertical"
             >
             <LinearLayout

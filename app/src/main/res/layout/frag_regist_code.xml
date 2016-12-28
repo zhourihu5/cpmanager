@@ -17,7 +17,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
     <Button android:id="@+id/btLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

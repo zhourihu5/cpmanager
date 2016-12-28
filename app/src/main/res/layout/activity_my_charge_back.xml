@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
     <include layout="@layout/toolbar_layout_public"/>
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/recyclerView"
@@ -12,7 +13,7 @@
         app:scrollbarStyle="insideOverlay"
         app:layout_progress="@layout/view_progress"
         app:layout_empty="@layout/view_empty"
-        app:layout_error="@layout/view_error"
+        app:layout_error="@layout/view_error_footer"
         />
 
 </LinearLayout>

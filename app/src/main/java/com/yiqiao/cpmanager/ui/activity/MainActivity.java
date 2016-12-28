@@ -66,6 +66,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         fragmentList.add(mineFragment);
 
         contentPagerAdapter=new ContentPagerAdapter(getSupportFragmentManager(),fragmentList);
+        vpContent.setOffscreenPageLimit(3);
         vpContent.setAdapter(contentPagerAdapter);
     }
 
@@ -112,13 +113,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 BarUtils.StatusBarLightMode(mContext);
                 break;
             case R.id.menu_mine:
-                if(isLogin()){
+//                if(isLogin()){
                     vpContent.setCurrentItem(2);
                     BarUtils.StatusBarDarkMode(mContext);
                     return true;
-                }else {
-                    return false;
-                }
+//                }else {
+//                    return false;
+//                }
             default:
                 return false;
         }

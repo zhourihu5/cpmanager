@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
     <LinearLayout  android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="40dp"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:maxLength="20"
+            android:maxLength="11"
             android:inputType="phone"
             android:background="@null"
             android:paddingBottom="12dp"
@@ -26,7 +26,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray_divider_line"/>
+            android:background="@color/gray_bg"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,10 +40,12 @@
                 android:singleLine="true"
                 android:maxLength="20"
                 android:inputType="textPassword"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:background="@null"
                 android:drawablePadding="32dp"
                 android:hint="请输入登录密码"
-                android:drawableLeft="@drawable/icon_pwd"/>
+                android:drawableLeft="@drawable/icon_pwd"
+                />
             <CheckBox android:id="@+id/cbPwdEncode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,7 +55,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/gray_divider_line"/>
+            android:background="@color/gray_bg"/>
         <TextView android:id="@+id/tvFindPwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

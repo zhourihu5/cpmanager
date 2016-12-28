@@ -52,6 +52,8 @@ public class Constants {
     //================= PREFERENCE ====================
 
     public static final String LOGIN = "login";
+    public static final String USER_ID = "userId";
+    public static final String USER_NAME = "uName";
 
     public static java.lang.String APP_ID="";//wechat appid
 }

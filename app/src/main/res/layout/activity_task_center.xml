@@ -19,17 +19,22 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:title=" "
             >
+           <!-- android:layout_marginTop="?attr/actionBarSize"-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="?attr/actionBarSize"
+               android:layout_marginTop="44dp"
                 android:orientation="vertical"
                 android:paddingTop="36dp"
                 android:paddingBottom="36dp"
                 android:gravity="center"
-                android:background="@color/red_my"
+                android:background="@drawable/task_center_bg"
                 app:layout_collapseMode="parallax">
-                <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/task_center_text"/>
+               <!-- <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="做任务领奖励"
@@ -39,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="千万创业基金，200多项服务等你来选"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"/>-->
             </LinearLayout>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -65,6 +70,7 @@
         android:padding="10dp"
         android:background="@android:color/white"
         android:textColor="@color/text_general"
+        android:textSize="12sp"
         android:text="任务完成后，奖励内容立即到账"/>
     </android.support.design.widget.AppBarLayout>
     <LinearLayout

@@ -1,6 +1,5 @@
 package com.yiqiao.cpmanager.http;
 
-import com.yiqiao.cpmanager.entity.ContentBean;
 import com.yiqiao.cpmanager.entity.HttpResult;
 import com.yiqiao.cpmanager.entity.LoginVo;
 
@@ -18,11 +17,14 @@ public interface CpMgrApiService {
 //    public static final String BASE_URL = "http://xtapi.12366.com/testAPI.jsp";
     public static final String BASE_URL = "http://192.168.80.60:8060/api/";
 
-    @GET("top250")
-    Observable<HttpResult<List<ContentBean>>> getTopMovie(@Query("start") int start, @Query("count") int count);
 
     @GET("user/login")
-    Observable<HttpResult<LoginVo>> login(@Query("username") String name, @Query("password") String pwd);
+    Observable<HttpResult<LoginVo>> login(@Query("systemcode") String systemcode
+            , @Query("ts") String ts,@Query("param") String param,@Query("sign") String sign);
+
+    @GET("user/login")
+    Observable<HttpResult<String>> regist(@Query("system_code") String system_code
+            , @Query("ts") String ts,@Query("param") String param,@Query("sign") String sign);
 
 
 }

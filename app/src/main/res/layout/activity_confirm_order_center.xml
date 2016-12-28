@@ -6,7 +6,7 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_divider_line">
+        android:background="@color/gray_bg">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
                 android:layout_height="1dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/gray_divider_line"/>
+                android:background="@color/gray_bg"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -169,6 +169,8 @@
                     android:layout_width="0dp" android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
+                    android:textColor="@color/text_hint"
+                    android:textSize="12sp"
                     android:text="可用红包金额：xxx"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -227,7 +229,7 @@
                 android:layout_height="1dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@color/gray_divider_line"/>
+                android:background="@color/gray_bg"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -261,6 +263,7 @@
             android:background="@android:color/white"
             android:padding="16dp"
             android:layout_marginBottom="15dp"
+            android:textSize="14sp"
             android:hint="详细描述您的需求，方便工作人员更好的为您服务"/>
     </LinearLayout>
 </ScrollView>

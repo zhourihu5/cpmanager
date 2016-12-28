@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:gravity="center"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:text="神州易桥有限公司"
         android:id="@+id/textView5" />
 
@@ -33,7 +33,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
             android:text="有限责任公司（法人独资）" />
 
         <TextView
@@ -74,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
+                android:textSize="12sp"
                 android:text="法定代表人" />
 
             <TextView
@@ -100,6 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
+                    android:textSize="12sp"
                     android:text="注册资金（人民币）" />
 
                 <TextView
@@ -122,6 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/white"
+                android:textSize="12sp"
                 android:text="成立日期" />
 
             <TextView

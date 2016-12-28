@@ -23,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -69,16 +70,15 @@ public class MyOrderActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
-
-
+        tvTitle.setText("我的订单");
+        fragmentList.clear();
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
-           Fragment fragment= MyOrderFragment.getInstance(i);
+            Fragment fragment = MyOrderFragment.getInstance(i);
             fragmentList.add(fragment);
         }
         tablayout.setTabData(mTabEntities);
 
-        tablayout.showMsg(0, 5);
 //        tablayout.setMsgMargin(0, -5, 5);
         tablayout.setMsgMargin(0, 5, 5);
         tablayout.setOnTabSelectListener(new OnTabSelectListener() {
@@ -92,6 +92,7 @@ public class MyOrderActivity extends BaseActivity {
             }
         });
         contentPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragmentList);
+        viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(contentPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -112,11 +113,24 @@ public class MyOrderActivity extends BaseActivity {
 
     }
 
+    public void showUnpaidNum(int num) {
+        if (num > 0) {
+            tablayout.showMsg(0, num);
+        } else {
+            tablayout.hideMsg(0);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.ivBack)
+    public void onClick() {
+        onBackPressedSupport();
     }
 
     class TabEntity implements CustomTabEntity {

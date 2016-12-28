@@ -56,14 +56,16 @@
                         tl:tl_indicator_color="@color/blue_bt_repay_bg"
                         tl:tl_textSelectColor="@color/text_black_title"
                         tl:tl_textUnselectColor="@color/text_general"
-                        tl:tl_underline_color="@color/gray_divider_line"
+                        tl:tl_underline_color="@color/gray_bg"
                         tl:tl_underline_height="1dp"
+                        tl:tl_textsize="15sp"
                         android:visibility="visible"
-                        android:layout_centerInParent="true"/>
+                        android:layout_centerInParent="true"
+                        />
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/gray_divider_line"
+                        android:background="@color/gray_bg"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
 

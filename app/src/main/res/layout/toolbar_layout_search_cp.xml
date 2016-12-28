@@ -39,7 +39,8 @@
             android:hint="请输入企业名、人名、品牌等关键字"
             android:textColor="@color/text_black_title"
             android:textColorHint="@color/text_hint"
-            android:textSize="10sp"/>
+            android:textSize="10sp"
+            android:imeOptions="actionSearch"/>
         <ImageView android:id="@+id/ivDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

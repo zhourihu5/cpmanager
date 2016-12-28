@@ -34,6 +34,7 @@
                     android:layout_marginBottom="12dp"
                     android:gravity="center_vertical"
                     android:textColor="@color/text_general"
+                    android:textSize="12sp"
                     android:text="分类筛选"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,6 +75,7 @@
                         android:text="知识产权"/>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -126,7 +128,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -142,13 +144,14 @@
             android:layout_marginBottom="17dp"
             android:gravity="center_vertical"
             android:textColor="@color/text_general"
+            android:textSize="12sp"
             android:text="最近搜索"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/gray_divider_line"/>
+            android:background="@color/gray_bg"/>
 
     </android.support.design.widget.AppBarLayout>
 

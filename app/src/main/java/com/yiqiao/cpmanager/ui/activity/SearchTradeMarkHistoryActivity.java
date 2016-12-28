@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -21,11 +22,9 @@ import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.db.RealmHelper;
 import com.yiqiao.cpmanager.db.SearchTradeMarkVo;
-import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.adapter.SearchCpHistoryAdapter;
-import com.yiqiao.cpmanager.util.ToastUtil;
+import com.yiqiao.cpmanager.ui.adapter.SearchTrademarkHistoryAdapter;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +36,7 @@ import butterknife.OnClick;
 
 public class SearchTradeMarkHistoryActivity extends BaseActivity {
 
-    SearchCpHistoryAdapter adapter;
+    SearchTrademarkHistoryAdapter adapter;
     @BindView(R.id.ivBack)
     ImageView ivBack;
     @BindView(R.id.tvTitle)
@@ -78,14 +77,8 @@ public class SearchTradeMarkHistoryActivity extends BaseActivity {
     @Override
     protected void initEventAndData() {
         recycleView.setLayoutManager(new LinearLayoutManager(mContext));
-        adapter = new SearchCpHistoryAdapter(mContext, new ArrayList<OrderVo>());
-        ArrayList<OrderVo> arrayList = new ArrayList<OrderVo>();
-        //todo 显示最近的8条
-        for (int i = 0; i < 8; i++) {
-            OrderVo orderVo = new OrderVo();
-            arrayList.add(orderVo);
-        }
-        adapter.addAll(arrayList);
+        List<SearchTradeMarkVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
+        adapter = new SearchTrademarkHistoryAdapter(mContext, list);
         recycleView.setAdapter(adapter);
 
         View footer = View.inflate(mContext, R.layout.search_bottom_clear_hitory, null);
@@ -97,7 +90,8 @@ public class SearchTradeMarkHistoryActivity extends BaseActivity {
 
             @Override
             public void onNoMoreClick() {
-                ToastUtil.shortShow("清空历史");
+                RealmHelper.getInstance().clearSearchTradeMarkVos();
+                adapter.clear();
 //                adapter.resumeMore();
             }
         });
@@ -107,15 +101,22 @@ public class SearchTradeMarkHistoryActivity extends BaseActivity {
             @Override
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if(actionId== EditorInfo.IME_ACTION_SEARCH){
-                    toActivity(SearchTradeMarkActivity.class);
-//                    SearchTradeMarkVo searchTradeMarkVo=new SearchTradeMarkVo();
-//                    searchTradeMarkVo.set
-//                    RealmHelper.getInstance().save();
+                    Intent intent=new Intent(mContext,SearchTradeMarkActivity.class);
+                    intent.putExtra(SearchTradeMarkActivity.KEY_WORD,etSearch.getText().toString());
+                    startActivity(intent);
 
                 }
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        adapter.clear();
+        List<SearchTradeMarkVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
+        adapter.addAll(list);
     }
 
     @Override

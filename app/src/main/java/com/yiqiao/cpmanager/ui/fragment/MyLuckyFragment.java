@@ -2,7 +2,6 @@ package com.yiqiao.cpmanager.ui.fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -10,7 +9,6 @@ import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseFragment;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.adapter.MyLuckyAdapter;
-import com.yiqiao.cpmanager.ui.adapter.MyOrderAdapter;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 
 import java.util.ArrayList;
@@ -45,8 +43,8 @@ public class MyLuckyFragment extends BaseFragment implements RecyclerArrayAdapte
 
 
         recyclerView.setAdapterWithProgress(adapter=new MyLuckyAdapter(mActivity,new ArrayList<OrderVo>()));
-        adapter.setMore(R.layout.view_more, this);
-        adapter.setNoMore(R.layout.view_nomore, new RecyclerArrayAdapter.OnNoMoreListener() {
+        adapter.setMore(R.layout.view_more_footer, this);
+        adapter.setNoMore(R.layout.view_nomore_footer, new RecyclerArrayAdapter.OnNoMoreListener() {
             @Override
             public void onNoMoreShow() {
 //                adapter.resumeMore();
@@ -64,7 +62,7 @@ public class MyLuckyFragment extends BaseFragment implements RecyclerArrayAdapte
 //                return true;
 //            }
 //        });
-        adapter.setError(R.layout.view_error, new RecyclerArrayAdapter.OnErrorListener() {
+        adapter.setError(R.layout.view_error_footer, new RecyclerArrayAdapter.OnErrorListener() {
             @Override
             public void onErrorShow() {
                 adapter.resumeMore();

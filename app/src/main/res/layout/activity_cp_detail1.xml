@@ -76,7 +76,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <com.yiqiao.cpmanager.widget.SquareRelativelayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent">
@@ -98,7 +98,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <com.yiqiao.cpmanager.widget.SquareRelativelayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent">
@@ -122,7 +122,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/gray_divider_line"/>
+                    android:background="@color/gray_bg"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
@@ -147,7 +147,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <com.yiqiao.cpmanager.widget.SquareRelativelayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent">
@@ -169,7 +169,7 @@
                     <ImageView
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/gray_divider_line"/>
+                        android:background="@color/gray_bg"/>
                     <com.yiqiao.cpmanager.widget.SquareRelativelayout
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent">

@@ -23,5 +23,5 @@
         android:layout_height="1dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
 </LinearLayout>

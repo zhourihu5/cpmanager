@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"/>
+        android:background="@color/gray_bg"/>
     <LinearLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         app:scrollbarStyle="insideOverlay"
         app:layout_progress="@layout/view_progress"
         app:layout_empty="@layout/search_cp_empty"
-        app:layout_error="@layout/view_error"
+        app:layout_error="@layout/view_error_footer"
         />
 
 

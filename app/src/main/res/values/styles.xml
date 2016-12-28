@@ -126,7 +126,7 @@
     <style name="tv_invoice_detail_label">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/gray_divider_line</item>
+        <item name="android:background">@color/gray_bg</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingTop">14dp</item>
         <item name="android:paddingBottom">11dp</item>
@@ -163,7 +163,7 @@
     <style name="activity_do_invoice2_iv_line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/gray_divider_line</item>
+        <item name="android:background">@color/gray_bg</item>
     </style>
     <style name="activity_do_invoice3_ll_white_container">
         <item name="android:layout_width">match_parent</item>

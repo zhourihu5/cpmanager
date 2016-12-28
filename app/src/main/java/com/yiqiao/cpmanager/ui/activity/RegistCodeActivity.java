@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class RegistCodeActivity extends BaseActivity {
 
     String phone;
     public static final String PHONE = "phone";
+    public static final String VERI_CODE_KEY="veriCode";
     @BindView(R.id.ivBack)
     ImageView ivBack;
     @BindView(R.id.tvTitle)
@@ -60,7 +62,10 @@ public class RegistCodeActivity extends BaseActivity {
                 tvTitle.setText("手机号登录");
                 btLogin.setText("快捷登录");
                 break;
-
+            case RegistPhoneActivity.TYPE_FIND_PWD:
+                tvTitle.setText("忘记密码");
+                btLogin.setText("下一步");
+                break;
         }
     }
 
@@ -80,7 +85,14 @@ public class RegistCodeActivity extends BaseActivity {
             case R.id.btLogin:
                 switch (type) {
                     case RegistPhoneActivity.TYPE_REGIST_PHONE:
+                        //todo 验证码
+
                         //TODO 下一步 设置密码
+
+                        Intent intent=getIntent();
+                        intent.setClass(mContext,RegistPwdActivity.class);
+                        startActivity(intent);
+                        finish();
                         break;
                     case RegistPhoneActivity.TYPE_QUICK_LOGIN_PHONE:
                         //TODO 快速登录

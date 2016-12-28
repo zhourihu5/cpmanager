@@ -140,4 +140,8 @@ public class DateUtil {
             }
         }
     }
+    public static String formartTimeStamp(long timeStamp){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+        return df.format(new Date(timeStamp));
+    }
 }

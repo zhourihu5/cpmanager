@@ -12,7 +12,7 @@
         app:scrollbarStyle="insideOverlay"
         app:layout_progress="@layout/view_progress"
         app:layout_empty="@layout/search_cp_empty"
-        app:layout_error="@layout/view_error"
+        app:layout_error="@layout/view_error_footer"
         />
 
 

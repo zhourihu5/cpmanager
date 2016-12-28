@@ -29,6 +29,7 @@ public class RegistPhoneActivity extends BaseActivity {
     int type;
     public static final int TYPE_QUICK_LOGIN_PHONE = 1;
     public static final int TYPE_REGIST_PHONE = 0;
+    public static final int TYPE_FIND_PWD = 2;
     public static final String TYPE_STR = "type";
     @BindView(R.id.ivBack)
     ImageView ivBack;
@@ -57,6 +58,9 @@ public class RegistPhoneActivity extends BaseActivity {
                 break;
             case TYPE_QUICK_LOGIN_PHONE:
                 tvTitle.setText("手机号登录");
+                break;
+            case TYPE_FIND_PWD:
+                tvTitle.setText("忘记密码");
                 break;
 
         }
@@ -87,22 +91,23 @@ public class RegistPhoneActivity extends BaseActivity {
                     return;
                 }
 
-                Intent intent=new Intent(this,RegistCodeActivity.class);
-                intent.putExtra(RegistPhoneActivity.TYPE_STR,RegistPhoneActivity.TYPE_QUICK_LOGIN_PHONE);
+                Intent intent=getIntent();
+                intent.setClass(mContext,RegistCodeActivity.class);
                 intent.putExtra(RegistCodeActivity.PHONE,phone);
                 switch (type) {
                     case TYPE_REGIST_PHONE:
                         //todo 服务器校验是否已注册了
-
+//                        intent.putExtra(RegistPhoneActivity.TYPE_STR,RegistPhoneActivity.TYPE_REGIST_PHONE);
 
                         break;
                     case TYPE_QUICK_LOGIN_PHONE:
                         //todo
-
+//                        intent.putExtra(RegistPhoneActivity.TYPE_STR,RegistPhoneActivity.TYPE_QUICK_LOGIN_PHONE);
                         break;
 
                 }
                 startActivity(intent);
+                finish();
                 break;
         }
     }

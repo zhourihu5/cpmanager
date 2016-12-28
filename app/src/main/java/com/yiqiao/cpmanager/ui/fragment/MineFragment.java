@@ -24,7 +24,6 @@ import com.blankj.utilcode.utils.SizeUtils;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
 import com.yiqiao.cpmanager.base.BaseFragment;
-import com.yiqiao.cpmanager.entity.ContentBean;
 import com.yiqiao.cpmanager.http.exception.ApiException;
 import com.yiqiao.cpmanager.http.RetrofitHelper;
 import com.yiqiao.cpmanager.subscribers.RxSubscriber;
@@ -161,34 +160,6 @@ public class MineFragment extends BaseFragment {
                 .setMargin(0, 7, 7, 0)//必须指定宽高
                 .bind(ivInvoice);
 
-    }
-
-    private void registerEvent() {
-        Subscription rxSubscription = RetrofitHelper.getCpMgrApiService()
-                .getTopMovie(0, 10)
-                .compose(new DefaultTransformer<List<ContentBean>>())
-                .subscribe(new RxSubscriber<List<ContentBean>>(mActivity) {
-                    // 必须重写
-                    @Override
-                    public void onNext(List<ContentBean> contentBeen) {
-                        Log.d("main", "onNext: " + contentBeen);
-                    }
-
-
-                    // 无需设置可以不用重写
-                    // !!!!注意参数为ApiException 类型，要不要写在Throwable那个了
-                    @Override
-                    protected void onError(ApiException ex) {
-                        super.onError(ex);
-                    }
-
-                    // 无需设置可以不用重写
-                    @Override
-                    public void onCompleted() {
-                        super.onCompleted();
-                    }
-                });
-        addSubscrebe(rxSubscription);
     }
 
     @Override

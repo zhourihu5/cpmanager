@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white">
-    <TextView
+    <TextView android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -12,10 +12,11 @@
         android:layout_marginBottom="21dp"
         android:drawableLeft="@drawable/search_history"
         android:drawablePadding="12dp"
+        android:textColor="@color/text_black_title"
         android:text="公司名"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray_divider_line"
+        android:background="@color/gray_bg"
         android:layout_marginLeft="15dp"/>
 </LinearLayout>

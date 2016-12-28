@@ -69,7 +69,7 @@ public class CpServiceFragment extends BaseFragment {
 //            public void onHeaderDoubleClick(View view, int id, int position) {
 //            }
 //        };
-//        recycleView.addItemDecoration(new PinnedHeaderItemDecoration.Builder(CpServiceAdapter.TYPE_HEADER).setDividerId(R.drawable.divider).enableDivider(true)
+//        recyclerView.addItemDecoration(new PinnedHeaderItemDecoration.Builder(CpServiceAdapter.TYPE_HEADER).setDividerId(R.drawable.divider).enableDivider(true)
 //                .setHeaderClickListener(headerClickListener).create());
         mAdapter.onAttachedToRecyclerView(recycleView);
         mAdapter.notifyDataSetChanged();
