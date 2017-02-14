@@ -27,6 +27,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -58,6 +59,8 @@ public class MyLuckyMoneyActivity extends BaseActivity {
     AppBarLayout appBar;
     @BindView(R.id.sTabLayout)
     TabLayout sTabLayout;
+    @BindView(R.id.tvNum)
+    TextView tvNum;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
     private String[] mTitles = {"全部", "获取", "支出"};
@@ -80,10 +83,10 @@ public class MyLuckyMoneyActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
-
+        tvNum.setText("");
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
-            fragmentList.add(new MyLuckyFragment());
+            fragmentList.add(MyLuckyFragment.getInstance(i));
         }
         tablayout.setTabData(mTabEntities);
 
@@ -100,6 +103,7 @@ public class MyLuckyMoneyActivity extends BaseActivity {
             }
         });
         contentPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragmentList);
+        viewPager.setOffscreenPageLimit(3);
         viewPager.setAdapter(contentPagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -127,11 +131,20 @@ public class MyLuckyMoneyActivity extends BaseActivity {
 //        sTabLayout.setTabsFromPagerAdapter(contentPagerAdapter);
     }
 
+    public void setLuckyNum(String num) {
+        tvNum.setText(num);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.ivBack)
+    public void onClick() {
+        onBackPressedSupport();
     }
 
 

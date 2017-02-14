@@ -8,15 +8,21 @@ import java.io.Serializable;
 public class ChargeBackVo implements Serializable{
 
     /**
-     * applyTime : 2016-06-02 11:48:10
-     * buyAmount : 466.66
-     * dealState : 4
-     * ordersNo : X20160602094024309
-     * returnsAmount : 466.66
-     * returnsFinal : 0
-     * returnsNO : TX20160602094024309
-     * returnsType : 部分
-     * skuName : 小规模纳税人记账（无出口免税）-松山湖
+
+     {
+     "applyTime": "2016-04-23 21:30:02",//申请时间
+     "buyAmount": "95",//购买金额
+     "ordersNo": "X20160423184048555",//订单编号
+     "returnsAmount": "0",//退款金额
+     "returnsFinal": "95",//实际退款金额
+     "returnsNO": "TX20160423184048555",//退款申请号
+     "returnsType": "全部",//退款类型  全部 ，部分  （和订单的收款金额比较）
+     "skuName": "12个月小规模记账"产品名称
+     "deptName":"东莞市松山湖创新科技园店"//门店名称
+     "contacts":"蔡经理"//经理名称
+     "phone":"13200000051" 电话
+     }
+
      */
 
     private String applyTime;
@@ -28,6 +34,33 @@ public class ChargeBackVo implements Serializable{
     private String returnsNO;
     private String returnsType;
     private String skuName;
+    private String deptName;
+    private String contacts;
+    private String phone;
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(String contacts) {
+        this.contacts = contacts;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getApplyTime() {
         return applyTime;

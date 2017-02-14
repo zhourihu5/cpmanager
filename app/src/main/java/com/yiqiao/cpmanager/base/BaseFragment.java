@@ -1,6 +1,6 @@
 package com.yiqiao.cpmanager.base;
 
-import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.umeng.analytics.MobclickAgent;
 import com.yiqiao.cpmanager.http.exception.ApiException;
 import com.yiqiao.cpmanager.subscribers.RxSubscriber;
-import com.yiqiao.cpmanager.util.DialogHelper;
 import com.yiqiao.cpmanager.util.LogUtils;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 import com.yiqiao.cpmanager.util.ToastUtil;
@@ -176,19 +175,29 @@ public abstract class BaseFragment extends SupportFragment implements RxSubscrib
         ToastUtil.shortShow("当前无网络，请检查网络情况");
     }
 
+    protected ProgressDialog progressDialog;
+    protected void initProgressDialog(){
+        if(progressDialog==null){
+            progressDialog=new ProgressDialog(mContext);
+            progressDialog.setMessage("加载中...");
+        }
+    }
     @Override
     public void onRequestStart() {
-        DialogHelper.showProgressDlg(mContext, "正在加载数据");
     }
 
     @Override
     public void onRequestCompleted() {
-        DialogHelper.stopProgressDlg();
+        if(progressDialog!=null){
+            progressDialog.dismiss();
+        }
     }
 
     @Override
     public void onRequestError(ApiException ex) {
-        DialogHelper.stopProgressDlg();
+        if(progressDialog!=null){
+            progressDialog.dismiss();
+        }
         ToastUtil.shortShow(ex.message);
     }
 }

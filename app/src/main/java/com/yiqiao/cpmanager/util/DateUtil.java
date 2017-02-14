@@ -144,4 +144,8 @@ public class DateUtil {
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
         return df.format(new Date(timeStamp));
     }
+    public static String formartTimeStamp(long timeStamp,String format){
+        SimpleDateFormat df = new SimpleDateFormat(format);
+        return df.format(new Date(timeStamp));
+    }
 }

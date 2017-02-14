@@ -2,9 +2,11 @@ package com.yiqiao.cpmanager.ui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.blankj.utilcode.utils.StringUtils;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
@@ -59,34 +61,63 @@ public class MyChargeBackAdapter extends RecyclerArrayAdapter<ChargeBackVo> {
         public void setData(ChargeBackVo data) {
             tvName.setText(data.getSkuName());
             tvChargeBackNum.setText(String.format("%s元",data.getReturnsAmount()));
-            tvBuyAmount.setText(String.format("实付金额：%s元",data.getBuyAmount()));
-            tvDate.setText(String.format("申请时间：%s",data.getApplyTime()));
-//            tvLinkman.setText(String.format("联系人：%s",data.getApplyTime()));
-//            tvLinkman.setText(String.format("服务网点：%s",data.getApplyTime()));
-            switch (data.getDealState()){//"dealState": 退单状态 1待提交 2未退款 3已退款 4已取消 5待确认
-
-                case "3":
-                    tvOrderStatus.setText("退款成功");
-                    tvOrderStatus.setTextColor(Color.parseColor("#ff7c00"));
-                    break;
-                case "4":
-                    tvOrderStatus.setText("退款驳回");
-                    tvOrderStatus.setTextColor(Color.parseColor("#828a92"));
-                    break;
-                default:
-                    tvOrderStatus.setText("申请中");
-                    tvOrderStatus.setTextColor(Color.parseColor("#0eb98f"));
-                    break;
-
-
+            String temp=data.getBuyAmount();
+            if(!StringUtils.isEmpty(temp)){
+                temp=String.format("实付金额：%s元",data.getBuyAmount());
             }
-            switch (data.getReturnsType()){
-                case "0":
-                    tvServeStatus.setText("未服务");
-                    break;
-                default:
-                    tvServeStatus.setText("已服务");
-                    break;
+            tvBuyAmount.setText(temp);
+
+            temp=data.getApplyTime();
+            if(!StringUtils.isEmpty(temp)){
+                temp=String.format("申请时间：%s",data.getApplyTime());
+            }
+            tvDate.setText(temp);
+
+            temp=data.getDeptName();
+            if(!StringUtils.isEmpty(temp)){
+                temp=String.format("服务网点：%s",data.getDeptName());
+            }
+            tvSite.setText(temp);
+
+            temp=data.getContacts();
+            if(!StringUtils.isEmpty(data.getContacts())&&!StringUtils.isEmpty(data.getPhone())){
+                temp=String.format("联系人：%s %s",data.getContacts(),data.getPhone());
+            }
+            else if(!StringUtils.isEmpty(data.getContacts())&&StringUtils.isEmpty(data.getPhone())){
+                temp=String.format("联系人：%s",data.getContacts());
+            }
+            else if(!StringUtils.isEmpty(data.getPhone())&&StringUtils.isEmpty(data.getContacts())){
+                temp=String.format("联系人：%s",data.getPhone());
+            }
+            tvLinkman.setText(temp);
+
+            String dealState=data.getDealState();
+            if(dealState==null){
+                tvOrderStatus.setVisibility(View.GONE);
+            }else {
+                tvOrderStatus.setVisibility(View.VISIBLE);
+                switch (data.getDealState()){//"dealState": 退单状态 1待提交 2未退款 3已退款 4已取消 5待确认
+
+                    case "3":
+                        tvOrderStatus.setText("退款成功");
+                        tvOrderStatus.setTextColor(Color.parseColor("#ff7c00"));
+                        break;
+                    case "4":
+                        tvOrderStatus.setText("退款驳回");
+                        tvOrderStatus.setTextColor(Color.parseColor("#828a92"));
+                        break;
+                    default:
+                        tvOrderStatus.setText("申请中");
+                        tvOrderStatus.setTextColor(Color.parseColor("#0eb98f"));
+                        break;
+
+
+                }
+            }
+            if("0".equals(data.getReturnsType())){
+                tvServeStatus.setText("未服务");
+            }else {
+                tvServeStatus.setText("已服务");
             }
 
         }

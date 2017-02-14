@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg">
     <com.jude.easyrecyclerview.EasyRecyclerView
     android:id="@+id/recyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:scrollbarStyle="insideOverlay"
     app:layout_progress="@layout/view_progress"
-    app:layout_empty="@layout/view_empty"
+    app:layout_empty="@layout/empty_my_lucky"
     app:layout_error="@layout/view_error"
-    />
+         />
 </LinearLayout>

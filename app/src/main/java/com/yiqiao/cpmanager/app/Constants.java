@@ -7,27 +7,6 @@ import java.io.File;
  */
 public class Constants {
 
-    //================= TYPE ====================
-
-    public static final int TYPE_ZHIHU = 101;
-
-    public static final int TYPE_ANDROID = 102;
-
-    public static final int TYPE_IOS = 103;
-
-    public static final int TYPE_WEB = 104;
-
-    public static final int TYPE_GIRL = 105;
-
-    public static final int TYPE_WECHAT = 106;
-
-    public static final int TYPE_GANK = 107;
-
-    public static final int TYPE_SETTING = 108;
-
-    public static final int TYPE_LIKE = 109;
-
-    public static final int TYPE_ABOUT = 110;
 
     //================= KEY ====================
 
@@ -51,9 +30,16 @@ public class Constants {
 
     //================= PREFERENCE ====================
 
-    public static final String LOGIN = "login";
+//    public static final String LOGIN = "login";
     public static final String USER_ID = "userId";
     public static final String USER_NAME = "uName";
+    public static final String USER_PHONE = "phone";
+    public static final String USER_IMG = "userImg";
+    public static final String FIRST_OPEN = "firstOpen";
 
-    public static java.lang.String APP_ID="";//wechat appid
+    public static final String CURRENT_CITY_ID = "currentCityId";
+    public static final String CURRENT_CITY_NAME = "currentCityName";
+
+
+    public static java.lang.String APP_ID="wxf1bea8e164549611";//wechat appid
 }

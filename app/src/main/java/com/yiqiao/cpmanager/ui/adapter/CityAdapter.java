@@ -24,6 +24,12 @@ import butterknife.ButterKnife;
 public class CityAdapter extends RecyclerArrayAdapter<CityVo> {
 
     int selected=-1;
+    String currentCityId;
+
+    public void setCurrentCityId(String currentCityId) {
+        this.currentCityId = currentCityId;
+        notifyDataSetChanged();
+    }
 
     public void setSelected(int selected) {
 //        int preSelected=this.selected;
@@ -33,8 +39,12 @@ public class CityAdapter extends RecyclerArrayAdapter<CityVo> {
 //        notifyItemChanged(this.selected);
     }
 
+    public int getSelected() {
+        return selected;
+    }
+
     public CityAdapter(Context context, ArrayList<CityVo> arrayList) {
-        super(context, arrayList);
+        super(context, arrayList==null?new ArrayList<CityVo>():arrayList);
     }
 
     @Override
@@ -54,8 +64,12 @@ public class CityAdapter extends RecyclerArrayAdapter<CityVo> {
 
         @Override
         public void setData(CityVo data) {
-            tvName.setText(data.getName());
-            if(getDataPosition()==selected){
+            tvName.setText(data.getAreaDesc());
+            boolean isCurrent=false;
+//            isCurrent=Boolean.valueOf(data.getCurrentCity());
+            isCurrent=data.getId().equals(currentCityId);
+            if(isCurrent){
+                selected=getAdapterPosition();
                 tvName.setCompoundDrawablesWithIntrinsicBounds(R.drawable.location_blue,0,0,0);
                 tvName.setTextColor(ContextCompat.getColor(getContext(),R.color.blue_bt_repay_bg));
             }else {

@@ -9,8 +9,8 @@
         <item name="actionMenuTextColor">#ffffff</item>
 
         //沉浸状态栏
-      <!--  <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowTranslucentStatus">true</item>-->
+        <!--  <item name="android:windowIsTranslucent">true</item>
+          <item name="android:windowTranslucentStatus">true</item>-->
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -18,14 +18,14 @@
         <item name="colorControlNormal">@android:color/white</item>
 
         <item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>
-       <!-- 颜色默认值-->
+        <!-- 颜色默认值-->
         <item name="android:textColor">@color/text_general</item>
     </style>
 
 
     <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
-       <!-- <item name="llEmptyImage">@mipmap/empty</item>
-        <item name="llErrorImage">@mipmap/error</item>-->
+        <!-- <item name="llEmptyImage">@mipmap/empty</item>
+         <item name="llErrorImage">@mipmap/error</item>-->
     </style>
 
     <style name="TextAppearance.ExpandedTitle"
@@ -36,6 +36,8 @@
     <style name="SplashTheme" parent="AppTheme">
         <item name="android:windowBackground">@drawable/splash_bg</item>
         <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>    
+       <item name="android:windowFullscreen">true</item>   
     </style>
 
     <style name="frag_home_text_cpservice">
@@ -50,7 +52,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:gravity">center</item>
-        <item name="android:drawableRight">@drawable/ic_launcher</item>
+        <item name="android:drawableRight">@drawable/img_default</item>
     </style>
 
     <style name="frag_my_vg_myorder">
@@ -64,9 +66,10 @@
     <style name="frag_my_vg_coupon">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@android:color/white</item>
 
     </style>
 
@@ -86,7 +89,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:drawableLeft">@drawable/ic_launcher</item>
+        <item name="android:drawableLeft">@drawable/img_default</item>
         <item name="android:drawablePadding">12dp</item>
         <item name="android:textColor">@color/text_black_title</item>
     </style>
@@ -233,5 +236,22 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_title_size</item>
         <item name="android:textColor">@color/text_black_title</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+                  <item name="android:windowFrame">@null</item> <!--边框 -->
+                  <item name="android:windowIsFloating">true</item> <!--是否浮现在activity之上 -->
+                  <item name="android:windowIsTranslucent">false</item><!--半透明 -->
+                  <item name="android:windowNoTitle">true</item><!--无标题 -->
+                  <!--背景透明 -->
+                         <item name="android:backgroundDimEnabled">true</item><!--模糊 -->
+      <!--  <item name="android:windowBackground">@android:color/transparent</item>-->
+      <!--  背景值不起作用-->
+        <item name="android:windowBackground">@color/half_transparent</item>
+    </style>
+
+    <style name="TRM_ANIM_STYLE">
+        <item name="android:windowEnterAnimation">@anim/trm_popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/trm_popup_exit</item>
     </style>
 </resources>

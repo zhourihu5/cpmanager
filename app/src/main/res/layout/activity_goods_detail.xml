@@ -46,6 +46,14 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:src="@drawable/back"/>
+                    <ImageView android:id="@+id/ivShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:src="@drawable/share"/>
                     <com.flyco.tablayout.CommonTabLayout
                         android:id="@+id/tablayout"
                         android:layout_width="150dp"

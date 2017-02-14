@@ -1,11 +1,11 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Selection;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.blankj.utilcode.utils.EncryptUtils;
 import com.blankj.utilcode.utils.RegexUtils;
 import com.blankj.utilcode.utils.SPUtils;
 import com.blankj.utilcode.utils.StringUtils;
@@ -37,6 +36,7 @@ import com.yiqiao.cpmanager.util.ToastUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.xiaoneng.uiapi.Ntalker;
 import rx.Subscription;
 
 /**
@@ -76,6 +76,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
+        tvTitle.setText("登录");
         cbPwdEncode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -105,12 +106,6 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 
     @OnClick({R.id.ivBack, R.id.tvFindPwd, R.id.btLogin, R.id.tvRegist, R.id.tvQuickLogin})
     public void onClick(View view) {
@@ -119,7 +114,10 @@ public class LoginActivity extends BaseActivity {
                 onBackPressedSupport();
                 break;
             case R.id.tvFindPwd:
-                toActivity(FindPwdActivity.class);
+//                toActivity(FindPwdActivity.class);
+                Intent intent = new Intent(this, RegistPhoneActivity.class);
+                intent.putExtra(RegistPhoneActivity.TYPE_STR, RegistPhoneActivity.TYPE_FIND_PWD);
+                startActivity(intent);
                 break;
             case R.id.btLogin:
                 String uname = etPhone.getText().toString();
@@ -129,10 +127,12 @@ public class LoginActivity extends BaseActivity {
                 }
                 break;
             case R.id.tvRegist:
-                toActivity(RegistPhoneActivity.class);
+                intent = new Intent(this, RegistPhoneActivity.class);
+                intent.putExtra(RegistPhoneActivity.TYPE_STR, RegistPhoneActivity.TYPE_REGIST_PHONE);
+                startActivity(intent);
                 break;
             case R.id.tvQuickLogin:
-                Intent intent = new Intent(this, RegistPhoneActivity.class);
+                intent = new Intent(this, RegistPhoneActivity.class);
                 intent.putExtra(RegistPhoneActivity.TYPE_STR, RegistPhoneActivity.TYPE_QUICK_LOGIN_PHONE);
                 startActivity(intent);
                 break;
@@ -155,7 +155,7 @@ public class LoginActivity extends BaseActivity {
         return true;
     }
 
-    private void login(String uname, String pwd) {
+    private void login(final String uname, String pwd) {
         LoginRequestVo loginRequestVo=new LoginRequestVo(uname,pwd);
         String sysCode="111";
         String timeStamp=String.valueOf(System.currentTimeMillis()/1000);
@@ -170,14 +170,13 @@ public class LoginActivity extends BaseActivity {
                     // 必须重写
                     @Override
                     public void onNext(LoginVo contentBeen) {
-                        LogUtils.e(contentBeen.toString());
-                        ToastUtil.shortShow(contentBeen.toString());
-                        SharedPreferenceUtil.setLoginState(true);
+//                        SharedPreferenceUtil.setLoginState(true);
                         SPUtils spUtils= SharedPreferenceUtil.getAppSp();
                         spUtils .putInt(Constants.USER_ID,contentBeen.getCustomerId());
                         spUtils.putString(Constants.USER_NAME,contentBeen.getUsername());
+                        spUtils.putString(Constants.USER_PHONE,uname);
                         //todo save img,name etc user's information
-
+                        Ntalker.getInstance().login(contentBeen.getCustomerId()+"",contentBeen.getPhone(),0);//小能登录
                         finish();
                     }
 
@@ -197,4 +196,17 @@ public class LoginActivity extends BaseActivity {
                 });
         addSubscrebe(rxSubscription);
     }
+
+    @Override
+    public void onRequestStart() {
+        super.onRequestStart();
+       initProgressDialog();
+        progressDialog.show();
+    }
+
+    @Override
+    public void onRequestCompleted() {
+        super.onRequestCompleted();
+    }
+
 }

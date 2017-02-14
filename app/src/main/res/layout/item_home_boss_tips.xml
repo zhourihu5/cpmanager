@@ -6,5 +6,5 @@
         android:layout_width="match_parent"
         android:layout_height="81dp"
         android:layout_margin="5dp"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/img_default"/>
 </LinearLayout>

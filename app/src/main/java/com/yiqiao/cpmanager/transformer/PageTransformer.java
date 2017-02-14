@@ -1,13 +1,9 @@
 package com.yiqiao.cpmanager.transformer;
 
 import com.yiqiao.cpmanager.entity.HttpResult;
-import com.yiqiao.cpmanager.http.ExceptionEngine;
-import com.yiqiao.cpmanager.http.exception.ErrorType;
-import com.yiqiao.cpmanager.http.exception.ServerException;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**

@@ -36,21 +36,17 @@
                     android:textColor="@color/text_general"
                     android:textSize="12sp"
                     android:text="分类筛选"/>
-                <LinearLayout
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flServiceType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+              <!--  <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp">
-                    <TextView android:id="@+id/tvTag1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="12dp"
-                        android:paddingRight="12dp"
-                        android:paddingTop="9dp"
-                        android:paddingBottom="9dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="@color/text_black_title"
-                        android:background="@drawable/gray_tag_bg"
-                        android:text="工商服务"/>
+
+                    <include layout="@layout/item_tag_home_search" />
+
                     <TextView android:id="@+id/tvTag2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -104,7 +100,7 @@
                         android:background="@drawable/gray_tag_bg"
                         android:text="人事社保"/>
 
-                </LinearLayout>
+                </LinearLayout>-->
             </LinearLayout>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -164,7 +160,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             />
 
         <!-- <include layout="@layout/search_bottom_clear_hitory" />-->

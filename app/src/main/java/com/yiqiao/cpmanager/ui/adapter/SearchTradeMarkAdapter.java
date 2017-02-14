@@ -7,7 +7,6 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.TrademarkVo;
-import com.yiqiao.cpmanager.entity.TrademarkVo;
 
 import java.util.ArrayList;
 

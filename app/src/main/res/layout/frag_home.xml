@@ -75,9 +75,9 @@
                 android:layout_height="match_parent"
                 android:gravity="center">
                 <TextView
-                    android:text="法律咨询"
+                    android:text="谁是优惠"
                     style="@style/frag_home_text_cpservice"
-                    android:drawableLeft="@drawable/icon_lawsuit"
+                    android:drawableLeft="@drawable/tax_offer"
                     android:textColor="@color/text_black_title"/>
             </LinearLayout>
             <View
@@ -90,9 +90,9 @@
                 android:layout_height="match_parent"
                 android:gravity="center">
                 <TextView
-                    android:text="空间场地"
+                    android:text="百城千店"
                     style="@style/frag_home_text_cpservice"
-                    android:drawableLeft="@drawable/icon_spot"
+                    android:drawableLeft="@drawable/store"
                     android:textColor="@color/text_black_title"/>
             </LinearLayout>
 
@@ -114,6 +114,11 @@
 
             <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
                 android:id="@+id/rvService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+            <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                android:id="@+id/rvSpecial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"/>

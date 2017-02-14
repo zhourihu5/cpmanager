@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="网络错误，数据加载失败,点击重试"/>
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:gravity="center_horizontal"
+        android:drawableTop="@drawable/empty_no_network"
+        android:drawablePadding="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="网络错误,数据加载失败"/>
+    <TextView android:id="@+id/retry_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp" android:paddingRight="20dp"
+        android:paddingTop="8dp" android:paddingBottom="8dp"
+        android:textColor="@android:color/white"
+        android:text="@string/retry_text"
+        android:textSize="16sp"
+        android:background="@drawable/red_rec_bt_retry_bg"/>
 </LinearLayout>

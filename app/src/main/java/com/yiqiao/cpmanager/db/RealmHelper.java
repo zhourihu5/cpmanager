@@ -44,7 +44,7 @@ public class RealmHelper {
      * 增加 查询商标记录
      * @param bean
      */
-    public void save(final SearchTradeMarkVo bean) {
+    public void save(final SearchTradeMarkHistoryVo bean) {
         mRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -59,7 +59,7 @@ public class RealmHelper {
      * 增加 查询商品记录
      * @param bean
      */
-    public void save(final SearchSkuVo bean) {
+    public void save(final SearchSkuHistoryVo bean) {
         mRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -71,11 +71,11 @@ public class RealmHelper {
 
     }
 
-    public List<SearchTradeMarkVo> getSearchTradeMarkVoList() {
+    public List<SearchTradeMarkHistoryVo> getSearchTradeMarkVoList() {
         //使用findAllSort ,先findAll再result.sort无效
-        final RealmResults<SearchTradeMarkVo> results = mRealm.where(SearchTradeMarkVo.class).findAll().sort("time", Sort.DESCENDING);
-        final List<SearchTradeMarkVo>list= mRealm.copyFromRealm(results);
-        final List<SearchTradeMarkVo>resultList=new ArrayList<>();
+        final RealmResults<SearchTradeMarkHistoryVo> results = mRealm.where(SearchTradeMarkHistoryVo.class).findAll().sort("time", Sort.DESCENDING);
+        final List<SearchTradeMarkHistoryVo>list= mRealm.copyFromRealm(results);
+        final List<SearchTradeMarkHistoryVo>resultList=new ArrayList<>();
         if(list.size()>8){
             mRealm.beginTransaction();
             results.deleteAllFromRealm();
@@ -89,11 +89,11 @@ public class RealmHelper {
         }
         return resultList;
     }
-    public List<SearchSkuVo> getSearchSkuVoList() {
+    public List<SearchSkuHistoryVo> getSearchSkuVoList() {
         //使用findAllSort ,先findAll再result.sort无效
-        final RealmResults<SearchSkuVo> results = mRealm.where(SearchSkuVo.class).findAll().sort("time", Sort.DESCENDING);
-        final List<SearchSkuVo>list= mRealm.copyFromRealm(results);
-        final List<SearchSkuVo>resultList=new ArrayList<>();
+        final RealmResults<SearchSkuHistoryVo> results = mRealm.where(SearchSkuHistoryVo.class).findAll().sort("time", Sort.DESCENDING);
+        final List<SearchSkuHistoryVo>list= mRealm.copyFromRealm(results);
+        final List<SearchSkuHistoryVo>resultList=new ArrayList<>();
         if(list.size()>8){
             mRealm.beginTransaction();
             results.deleteAllFromRealm();
@@ -111,7 +111,7 @@ public class RealmHelper {
         mRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                RealmResults<SearchTradeMarkVo> results = mRealm.where(SearchTradeMarkVo.class).findAll();
+                RealmResults<SearchTradeMarkHistoryVo> results = mRealm.where(SearchTradeMarkHistoryVo.class).findAll();
                 results.deleteAllFromRealm();
             }
         });
@@ -121,7 +121,7 @@ public class RealmHelper {
         mRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                RealmResults<SearchSkuVo> results = mRealm.where(SearchSkuVo.class).findAll();
+                RealmResults<SearchSkuHistoryVo> results = mRealm.where(SearchSkuHistoryVo.class).findAll();
                 results.deleteAllFromRealm();
             }
         });

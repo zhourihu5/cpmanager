@@ -12,14 +12,10 @@ import com.google.gson.Gson;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.db.RealmHelper;
-import com.yiqiao.cpmanager.db.SearchTradeMarkVo;
+import com.yiqiao.cpmanager.db.SearchTradeMarkHistoryVo;
 import com.yiqiao.cpmanager.entity.HttpResult;
-import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.entity.ServiceListRequestVo;
-import com.yiqiao.cpmanager.entity.ServiceVo;
 import com.yiqiao.cpmanager.entity.TrademarkListRequestVo;
 import com.yiqiao.cpmanager.entity.TrademarkVo;
 import com.yiqiao.cpmanager.http.RetrofitHelper;
@@ -28,8 +24,6 @@ import com.yiqiao.cpmanager.subscribers.RxSubscriber;
 import com.yiqiao.cpmanager.transformer.PageTransformer;
 import com.yiqiao.cpmanager.ui.adapter.SearchTradeMarkAdapter;
 import com.yiqiao.cpmanager.util.LogUtils;
-import com.yiqiao.cpmanager.util.NetworkUtil;
-import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.util.ArrayList;
@@ -120,7 +114,7 @@ public class SearchTradeMarkActivity extends BaseActivity implements RecyclerArr
 
     private void loadData() {
         LogUtils.e("loadData");
-        SearchTradeMarkVo searchTradeMarkVo=new SearchTradeMarkVo();
+        SearchTradeMarkHistoryVo searchTradeMarkVo=new SearchTradeMarkHistoryVo();
         searchTradeMarkVo.setName(keyWord);
         searchTradeMarkVo.setTime(System.currentTimeMillis());
         RealmHelper.getInstance().save(searchTradeMarkVo);

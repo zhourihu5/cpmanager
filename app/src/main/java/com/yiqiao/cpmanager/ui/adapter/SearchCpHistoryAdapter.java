@@ -1,8 +1,6 @@
 package com.yiqiao.cpmanager.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -10,7 +8,6 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity;
 
 import java.util.List;
 

@@ -2,10 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <corners
-        android:bottomLeftRadius="5dp"
-        android:bottomRightRadius="5dp"
-        android:topLeftRadius="5dp"
-        android:topRightRadius="5dp" />
+        android:radius="5dp"
+       />
 
     <stroke android:color="@color/blue_bt_repay_bg"
         android:width="1dp"/>

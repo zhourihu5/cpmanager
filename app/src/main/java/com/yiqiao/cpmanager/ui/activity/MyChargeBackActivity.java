@@ -3,6 +3,7 @@ package com.yiqiao.cpmanager.ui.activity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,20 +17,12 @@ import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.entity.ChargeBackVo;
 import com.yiqiao.cpmanager.entity.ChargebackListRequestVo;
 import com.yiqiao.cpmanager.entity.HttpResult;
-import com.yiqiao.cpmanager.entity.OrderDetailRequestVo;
-import com.yiqiao.cpmanager.entity.OrderDetailVo;
-import com.yiqiao.cpmanager.entity.OrderListRequestVo;
-import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.http.RetrofitHelper;
 import com.yiqiao.cpmanager.http.exception.ApiException;
 import com.yiqiao.cpmanager.subscribers.RxSubscriber;
-import com.yiqiao.cpmanager.transformer.DefaultTransformer;
 import com.yiqiao.cpmanager.transformer.PageTransformer;
 import com.yiqiao.cpmanager.ui.adapter.MyChargeBackAdapter;
-import com.yiqiao.cpmanager.ui.fragment.MyOrderFragment;
-import com.yiqiao.cpmanager.util.DateUtil;
 import com.yiqiao.cpmanager.util.LogUtils;
-import com.yiqiao.cpmanager.util.NetworkUtil;
 import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.util.SystemUtil;
 
@@ -73,7 +66,18 @@ public class MyChargeBackActivity extends BaseActivity implements RecyclerArrayA
 //        DividerDecoration itemDecoration = new DividerDecoration(Color.GRAY,Util.dip2px(this,0.5f), Util.dip2px(this,72),0);
 //        itemDecoration.setDrawLastItem(false);
 //        recyclerView.addItemDecoration(itemDecoration);
-
+        View emptyView= recyclerView.getEmptyView();
+        TextView tvEmpty= (TextView) emptyView.findViewById(R.id.tvEmtpy);
+        tvEmpty.setText("暂无退款~");
+        ImageView ivEmpty= (ImageView) emptyView.findViewById(R.id.ivEmpty);
+        ivEmpty.setImageResource(R.drawable.img_default);
+        recyclerView.getErrorView().findViewById(R.id.retry_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recyclerView.showProgress();
+                loadData();
+            }
+        });
         adapter = new MyChargeBackAdapter(this, new ArrayList<ChargeBackVo>());
         recyclerView.setAdapterWithProgress(adapter);
         adapter.setMore(R.layout.view_more_footer, this);
@@ -129,7 +133,9 @@ public class MyChargeBackActivity extends BaseActivity implements RecyclerArrayA
         String param=new Gson().toJson(orderListRequestVo);
         String sign= SystemUtil.getSign(sysCode,timeStamp,param);
 
-        Subscription rxSubscription = RetrofitHelper.getXtApiService()
+        Subscription rxSubscription =
+                RetrofitHelper.getXtApiService()
+//                RetrofitHelper.getCpMgrApiService()
                 .getChargebackList(sysCode,timeStamp,param,sign)
                 .compose(new PageTransformer<HttpResult<List<ChargeBackVo>>>())
                 .subscribe(new RxSubscriber<HttpResult<List<ChargeBackVo>>>(mContext) {

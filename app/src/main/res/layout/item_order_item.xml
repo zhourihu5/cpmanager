@@ -6,15 +6,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp">
-        <TextView
+        <TextView android:id="@+id/tvName"
             android:layout_width="0dp" android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="法人变更"/>
-        <TextView
+        <TextView android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="xxx元/次"/>
-        <TextView
+        <TextView android:id="@+id/tvNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="19dp"

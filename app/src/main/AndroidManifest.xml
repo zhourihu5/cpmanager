@@ -11,13 +11,16 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-
+    <!-- ***************************小能SDK所需要的权限 ********************* -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- ***************************小能SDK所需要的权限 ********************* -->
     <meta-data
         android:name="com.baidu.lbsapi.API_KEY"
-        android:value="AK" />       //key:开发者申请的Key
+        android:value="ySqKCpnikEr4IumBeBXgeLLCDeXKtUul" />
 
     <application
-        android:name="com.yiqiao.cpmanager.app.App"
+        android:name=".app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,7 +29,7 @@
         android:theme="@style/AppTheme">
 
         //主类
-        <activity android:name="com.yiqiao.cpmanager.ui.activity.MainActivity"
+        <activity android:name=".ui.activity.SplashActivity"
             android:launchMode="singleTop"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
@@ -36,6 +39,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.GuidePageActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.PayByAccountActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.ProfileActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.MyOrderActivity"
@@ -99,10 +110,11 @@
         <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.SearchSpuActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.ConfirmOrderActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.yiqiao.cpmanager.ui.activity.UseCouponActivity"
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.CouponChooseActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.SystemNoticeActivity"
             android:screenOrientation="portrait"/>
@@ -125,7 +137,8 @@
         <activity android:name="com.yiqiao.cpmanager.ui.activity.HotInfoActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.HomeSearchActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.RegistCodeActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.RegistPhoneActivity"
@@ -140,10 +153,72 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.yiqiao.cpmanager.ui.activity.AgreementActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.yiqiao.cpmanager.ui.activity.StoreChooseActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <!-- ***************************小能SDK所需要Activity和Service ********************* -->
+        <activity
+            android:name="cn.xiaoneng.activity.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cn.xiaoneng.activity.LeaveMsgActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="cn.xiaoneng.activity.ShowCameraActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|navigation|layoutDirection|touchscreen|locale|mnc|mcc|fontScale"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogTopRight" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.activity.ShowAlbumActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.activity.ValuationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/valuationdialog" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.activity.ShowPictureActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.activity.XNExplorerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.video.VideoPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.video.RecordVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.xiaoneng.video.XNVideoPlayer"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- ***************************小能SDK所需要Activity和Service ********************* -->
+
 
 
         <activity
-            android:name=".wxapi.WXPayEntryActivity"
+            android:name="work.smoothly.com.smoothlyworking.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop"/>
         <!-- alipay sdk begin -->
@@ -185,8 +260,33 @@
             android:value="AK" />     <!--  //key:开发者申请的Key-->
 
 
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="work.smoothly.com.smoothlyworking.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <meta-data
-            android:value="YOUR_APP_KEY"
+            android:value="57c52f9167e58e6c3d000213"
             android:name="UMENG_APPKEY"/>
         <meta-data
             android:value="${UMENG_CHANNEL_VALUE} ID"

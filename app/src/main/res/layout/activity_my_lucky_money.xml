@@ -45,7 +45,7 @@
                 app:layout_collapseParallaxMultiplier="0.8"
                >
               <!--  app:layout_collapseParallaxMultiplier="0.8"-->
-                <TextView
+                <TextView android:id="@+id/tvNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5000"
@@ -86,19 +86,16 @@
             tl:tl_underline_height="1dp"
             android:visibility="visible"/>
     </android.support.design.widget.AppBarLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <include layout="@layout/empty_my_lucky"
-            android:visibility="gone"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <include layout="@layout/empty_my_lucky"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:visibility="gone"/>
 
 </android.support.design.widget.CoordinatorLayout>
 

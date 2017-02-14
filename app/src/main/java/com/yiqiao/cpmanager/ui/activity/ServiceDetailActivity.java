@@ -44,6 +44,24 @@ public class ServiceDetailActivity extends BaseActivity {
     AppBarLayout appBar;
     @BindView(R.id.recycleView)
     RecyclerView recycleView;
+    @BindView(R.id.tvName)
+    TextView tvName;
+    @BindView(R.id.tvCpType)
+    TextView tvCpType;
+    @BindView(R.id.tvRegistAddrType)
+    TextView tvRegistAddrType;
+    @BindView(R.id.tvRegistAddr)
+    TextView tvRegistAddr;
+    @BindView(R.id.tvServieName)
+    TextView tvServieName;
+    @BindView(R.id.tvSite)
+    TextView tvSite;
+    @BindView(R.id.tvServeStatus)
+    TextView tvServeStatus;
+    @BindView(R.id.tvDate)
+    TextView tvDate;
+    @BindView(R.id.tvConsulte)
+    TextView tvConsulte;
 
     @Override
     protected int getLayout() {
@@ -52,13 +70,15 @@ public class ServiceDetailActivity extends BaseActivity {
 
     @Override
     protected void initEventAndData() {
+        tvTitle.setText("服务明细");
+
 
         recycleView.setLayoutManager(new LinearLayoutManager(mContext));
-        ArrayList<OrderVo>arrayList=new ArrayList<>();
-        for(int i=0;i<10;i++){
+        ArrayList<OrderVo> arrayList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
             arrayList.add(new OrderVo());
         }
-        serviceDetailAdapter=new ServiceDetailAdapter(mContext,arrayList);
+        serviceDetailAdapter = new ServiceDetailAdapter(mContext, arrayList);
         recycleView.setAdapter(serviceDetailAdapter);
     }
 

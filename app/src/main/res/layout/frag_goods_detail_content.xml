@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.yiqiao.cpmanager.widget.SlideDetailsLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ezy.ui.layout.LoadingLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:llErrorResId="@layout/view_error"
+    app:llButtonBackground="@drawable/red_rec_bt_retry_bg"
+    app:llRetryText="@string/retry_text"
+    app:llButtonTextColor="@android:color/white"
+    >
+<com.yiqiao.cpmanager.widget.SlideDetailsLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:default_panel="front"
     app:duration="300"
     app:percent="0.4">
+
     <ScrollView
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:background="@color/gray_bg" >
         <LinearLayout
             android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/gray_bg">
+           >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -22,7 +33,7 @@
                 android:padding="16dp"
                 android:orientation="vertical"
                 android:visibility="visible">
-                <TextView
+                <TextView android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
@@ -35,17 +46,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="17dp">
 
-                    <TextView
+                    <TextView android:id="@+id/tvPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/red_my"
                         android:textSize="18sp"
                         android:text="1520"/>
-                    <TextView
+                    <TextView android:id="@+id/tvUnit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="元起/次"/>
-                    <TextView
+                        android:text="元起"/>
+                    <TextView android:id="@+id/tvLuckyDown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -55,13 +66,13 @@
                         android:textColor="@color/orange_order_detail"/>
                 </LinearLayout>
 
-                <TextView
+                <TextView android:id="@+id/tvDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="20dp"
-                    android:text="云数据库xxxxxxxxxx"
-                    android:id="@+id/textView3" />
+                    android:text="商品说明"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,14 +93,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <TextView
+                            <TextView android:id="@+id/tvLuckyMoney"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="千元红包"
                                 android:gravity="center_vertical"
                                 android:drawablePadding="8dp"
                                 android:drawableLeft="@drawable/hognbao"/>
-                            <TextView
+                            <TextView android:id="@+id/tvCoupon"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="19dp"
@@ -97,7 +108,7 @@
                                 android:gravity="center_vertical"
                                 android:drawablePadding="8dp"
                                 android:drawableLeft="@drawable/icon_coupon"/>
-                            <TextView
+                            <TextView android:id="@+id/tvCredit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="19dp"
@@ -113,35 +124,43 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-          <!--  <LinearLayout
+           <!-- 套餐内容开始-->
+            <LinearLayout android:id="@+id/llSetmeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:padding="16dp"
                 android:orientation="vertical"
-                android:layout_marginTop="8dp"
-                android:visibility="visible">
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:visibility="visible"
+                android:layout_marginTop="10dp">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingTop="16dp" android:paddingBottom="16dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:text="赠送服务"/>
+                    android:text="套餐内容"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="14dp"
-                    android:background="@color/gray_divider_line"/>
+                    android:background="@color/gray_bg"
+                    />
+                <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                    android:id="@+id/rvSetmeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
 
-            </LinearLayout>-->
-            <LinearLayout
+            </LinearLayout>
+            <!-- 套餐内容结束-->
+            <LinearLayout android:id="@+id/llCity"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:gravity="center_vertical"
                 android:background="@android:color/white"
                 android:paddingLeft="16dp" android:paddingRight="16dp"
                 android:layout_marginTop="11dp"
-                android:layout_marginBottom="11dp"
+
                 >
                 <TextView
                     android:layout_width="0dp" android:layout_weight="1"
@@ -149,7 +168,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:text="选择服务地区"/>
-                <TextView
+                <TextView android:id="@+id/tvCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
@@ -159,6 +178,12 @@
                     android:textColor="@color/blue_bt_repay_bg"
                     android:text="xxxxxxxxxxxx"/>
             </LinearLayout>
+            <!-- 商品详情的内容开始-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,37 +191,16 @@
                 android:orientation="vertical"
                 android:paddingRight="16dp"
                 android:visibility="visible"
-                >
-                <LinearLayout
+                android:layout_marginTop="11dp" >
+                <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                    android:id="@+id/rvAttr"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="3dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="5dp"
-                        android:background="@color/gray_line_indicator"
-                        android:layout_marginRight="15dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="14dp"
-                        android:layout_marginTop="14dp"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:text="服务类型"
-                         />
-                </LinearLayout>
+                    android:layout_height="wrap_content">
+                   <!-- <include layout="@layout/item_goods_detail_attribute" />-->
+                </com.yiqiao.cpmanager.widget.FullyHeightRecycleview>
 
 
-                <com.zhy.view.flowlayout.TagFlowLayout
-                    android:id="@+id/flServiceType"
-                    android:layout_marginLeft="16dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-                <LinearLayout
+               <!-- <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -247,10 +251,10 @@
                     android:id="@+id/flDate"
                     android:layout_marginLeft="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"/>-->
 
             </LinearLayout>
-            <LinearLayout
+            <LinearLayout android:id="@+id/llApend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
@@ -277,6 +281,9 @@
                     />
 
             </LinearLayout>
+            </LinearLayout>
+           <!-- 商品详情的内容结束-->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -295,12 +302,12 @@
                     android:layout_width="124dp"
                     android:layout_height="31dp"
                     android:background="@drawable/et_invoice_add_head_bg">
-                    <LinearLayout
+                    <LinearLayout  android:id="@+id/llMinus"
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         >
-                        <ImageView
+                        <ImageView android:id="@+id/ivMinus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/selector_minus_num"/>
@@ -309,7 +316,7 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/gray_bg"/>
-                    <TextView
+                    <TextView android:id="@+id/tvNum"
                         android:layout_width="0dp" android:layout_weight="2"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -318,7 +325,7 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/gray_bg"/>
-                    <LinearLayout
+                    <LinearLayout android:id="@+id/llAdd"
                         android:layout_width="0dp" android:layout_weight="1"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -340,52 +347,63 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/blue_stroke_white_solid_bg">
-                <ImageView
+                <LinearLayout android:id="@+id/llOnline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="11dp"
-                    android:src="@drawable/customer_online"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
+                    android:gravity="center">
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/blue_bt_repay_bg"
-                        android:textSize="18sp"
-                        android:text="在线咨询"/>
-                    <TextView
+                        android:layout_marginRight="11dp"
+                        android:src="@drawable/customer_online"/>
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/blue_bt_repay_bg"
-                        android:text="任何疑问 及时解答"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_bt_repay_bg"
+                            android:textSize="18sp"
+                            android:text="在线咨询"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_bt_repay_bg"
+                            android:text="任何疑问 及时解答"/>
+                    </LinearLayout>
                 </LinearLayout>
 
-                <ImageView
+                <LinearLayout android:id="@+id/llPhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="11dp"
-                    android:layout_marginLeft="20dp"
-                    android:src="@drawable/phone_call"
-                    />
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="11dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/phone_call"
+                        />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/blue_bt_repay_bg"
-                        android:textSize="18sp"
-                        android:text="拨打电话"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blue_bt_repay_bg"
-                        android:text="400-686-5658"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_bt_repay_bg"
+                            android:textSize="18sp"
+                            android:text="拨打电话"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_bt_repay_bg"
+                            android:text="400-686-5658"/>
+                    </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -441,3 +459,4 @@
 
 
 </com.yiqiao.cpmanager.widget.SlideDetailsLayout>
+</ezy.ui.layout.LoadingLayout>

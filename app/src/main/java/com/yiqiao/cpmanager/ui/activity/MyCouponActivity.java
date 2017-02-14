@@ -24,6 +24,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -58,7 +59,7 @@ public class MyCouponActivity extends BaseActivity {
 
     @Override
     protected void setStatusBar() {
-//        super.setStatusBar();
+        super.setStatusBar();
         BarUtils.setTranslucentForCoordinatorLayout(this, 0);
         BarUtils.setTransparentForImageView(this, toolbar);
         tvTitle.setText("我的优惠券");
@@ -75,14 +76,10 @@ public class MyCouponActivity extends BaseActivity {
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
-           Fragment fragment= MyCouponFragment.getInstance(i);
+            Fragment fragment = MyCouponFragment.getInstance(i);
             fragmentList.add(fragment);
         }
         tablayout.setTabData(mTabEntities);
-
-        tablayout.showMsg(0, 5);
-//        tablayout.setMsgMargin(0, -5, 5);
-        tablayout.setMsgMargin(0, 5, 5);
         tablayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelect(int position) {
@@ -120,6 +117,11 @@ public class MyCouponActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+    }
+
+    @OnClick(R.id.ivBack)
+    public void onClick() {
+        onBackPressedSupport();
     }
 
     class TabEntity implements CustomTabEntity {

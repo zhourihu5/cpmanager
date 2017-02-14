@@ -11,11 +11,11 @@ import android.widget.TextView;
 import com.blankj.utilcode.utils.AppUtils;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
-import com.yiqiao.cpmanager.component.RxBus;
-import com.yiqiao.cpmanager.subscribers.RxSubscriber;
 import com.yiqiao.cpmanager.transformer.SchedulerTransformer;
 import com.yiqiao.cpmanager.util.GlideCacheUtil;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +23,6 @@ import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
-import rx.functions.Action1;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -152,7 +151,9 @@ public class SettingActivity extends BaseActivity {
                 doClearCache();
                 break;
             case R.id.btLogout:
-
+//                spUtils .putInt(Constants.USER_ID,contentBeen.getCustomerId());
+                SharedPreferenceUtil.getAppSp().putInt(Constants.USER_ID,0);
+                finish();
                 break;
         }
     }

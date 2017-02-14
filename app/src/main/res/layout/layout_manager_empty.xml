@@ -53,11 +53,13 @@
         android:layout_marginLeft="16dp"
         android:textColor="@color/text_general"
         android:text="猜您需要" />
+
     <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"/>
+ <!--   <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
@@ -69,14 +71,14 @@
             android:layout_weight="1"
             android:layout_height="101dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/img_default"
             android:background="@android:color/white"/>
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="101dp"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/img_default"
             android:background="@android:color/white"/>
-    </LinearLayout>
+    </LinearLayout>-->
 </LinearLayout>

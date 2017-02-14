@@ -1,11 +1,11 @@
 package com.yiqiao.cpmanager.widget;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,8 +83,10 @@ public class ColorTextView extends AppCompatTextView {
     }
 
 
+
     public ColorTextView findAndSetStrColor(String str, String color) {
         try {
+            mCurrentText=getText().toString();
             if (!TextUtils.isEmpty(mCurrentText)) {
                 mCurrentText = mCurrentText.replaceAll(str, color(color, str));
             }

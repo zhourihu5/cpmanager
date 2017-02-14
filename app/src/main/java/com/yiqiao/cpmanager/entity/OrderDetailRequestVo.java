@@ -9,8 +9,22 @@ import java.io.Serializable;
 public class OrderDetailRequestVo implements Serializable{
 
     private String orderId;
+    private String orderCd;
 
-    public OrderDetailRequestVo(String id) {
-        this.orderId = id;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOrderCd() {
+        return orderCd;
+    }
+
+    public void setOrderCd(String orderCd) {
+        this.orderCd = orderCd;
     }
 }

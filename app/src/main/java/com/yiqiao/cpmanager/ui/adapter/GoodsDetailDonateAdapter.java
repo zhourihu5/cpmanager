@@ -4,15 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.entity.SkuDetailVo;
 import com.yiqiao.cpmanager.ui.activity.OrderDetailActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -21,11 +24,11 @@ import butterknife.ButterKnife;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class GoodsDetailDonateAdapter extends RecyclerArrayAdapter<OrderVo> {
+public class GoodsDetailDonateAdapter extends RecyclerArrayAdapter<SkuDetailVo.GiveawayBean> {
 
 
-    public GoodsDetailDonateAdapter(Context context, List<OrderVo> list) {
-        super(context, list);
+    public GoodsDetailDonateAdapter(Context context, List<SkuDetailVo.GiveawayBean> list) {
+        super(context, list==null?new ArrayList<SkuDetailVo.GiveawayBean>():list);
     }
 
     @Override
@@ -33,8 +36,11 @@ public class GoodsDetailDonateAdapter extends RecyclerArrayAdapter<OrderVo> {
         return new RecommendViewHolder(parent);
     }
 
-    class RecommendViewHolder extends BaseViewHolder<OrderVo> {
+    class RecommendViewHolder extends BaseViewHolder<SkuDetailVo.GiveawayBean> {
 
+
+        @BindView(R.id.tvName)
+        TextView tvName;
 
         public RecommendViewHolder(ViewGroup parent) {
             super(parent, R.layout.item_goods_detail_donate);
@@ -42,15 +48,8 @@ public class GoodsDetailDonateAdapter extends RecyclerArrayAdapter<OrderVo> {
         }
 
         @Override
-        public void setData(OrderVo data) {
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), OrderDetailActivity.class);
-                    getContext().startActivity(intent);
-                }
-            });
+        public void setData(SkuDetailVo.GiveawayBean data) {
+            tvName.setText(data.getName());
         }
 
     }

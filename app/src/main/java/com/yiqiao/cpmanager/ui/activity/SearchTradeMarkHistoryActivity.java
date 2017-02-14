@@ -21,7 +21,7 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.db.RealmHelper;
-import com.yiqiao.cpmanager.db.SearchTradeMarkVo;
+import com.yiqiao.cpmanager.db.SearchTradeMarkHistoryVo;
 import com.yiqiao.cpmanager.ui.adapter.SearchTrademarkHistoryAdapter;
 
 import java.util.List;
@@ -77,7 +77,7 @@ public class SearchTradeMarkHistoryActivity extends BaseActivity {
     @Override
     protected void initEventAndData() {
         recycleView.setLayoutManager(new LinearLayoutManager(mContext));
-        List<SearchTradeMarkVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
+        List<SearchTradeMarkHistoryVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
         adapter = new SearchTrademarkHistoryAdapter(mContext, list);
         recycleView.setAdapter(adapter);
 
@@ -115,7 +115,7 @@ public class SearchTradeMarkHistoryActivity extends BaseActivity {
     protected void onRestart() {
         super.onRestart();
         adapter.clear();
-        List<SearchTradeMarkVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
+        List<SearchTradeMarkHistoryVo>list=RealmHelper.getInstance().getSearchTradeMarkVoList();
         adapter.addAll(list);
     }
 

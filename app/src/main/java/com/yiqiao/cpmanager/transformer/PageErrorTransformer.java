@@ -6,9 +6,7 @@ import com.yiqiao.cpmanager.http.exception.ErrorType;
 import com.yiqiao.cpmanager.http.exception.ServerException;
 
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by York on 2016/7/23.

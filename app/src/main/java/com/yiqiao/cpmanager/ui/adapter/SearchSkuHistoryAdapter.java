@@ -9,10 +9,8 @@ import android.widget.TextView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.db.SearchSkuVo;
-import com.yiqiao.cpmanager.db.SearchSkuVo;
+import com.yiqiao.cpmanager.db.SearchSkuHistoryVo;
 import com.yiqiao.cpmanager.ui.activity.SearchSpuActivity;
-import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity;
 
 import java.util.List;
 
@@ -25,9 +23,9 @@ import butterknife.ButterKnife;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class SearchSkuHistoryAdapter extends RecyclerArrayAdapter<SearchSkuVo> {
+public class SearchSkuHistoryAdapter extends RecyclerArrayAdapter<SearchSkuHistoryVo> {
 
-    public SearchSkuHistoryAdapter(Context context, List<SearchSkuVo> SearchSkuVos) {
+    public SearchSkuHistoryAdapter(Context context, List<SearchSkuHistoryVo> SearchSkuVos) {
         super(context, SearchSkuVos);
     }
 
@@ -36,7 +34,7 @@ public class SearchSkuHistoryAdapter extends RecyclerArrayAdapter<SearchSkuVo> {
         return new RecommendViewHolder(parent);
     }
 
-    class RecommendViewHolder extends BaseViewHolder<SearchSkuVo> {
+    class RecommendViewHolder extends BaseViewHolder<SearchSkuHistoryVo> {
 
         @BindView(R.id.tvName)
         TextView tvName;
@@ -47,7 +45,7 @@ public class SearchSkuHistoryAdapter extends RecyclerArrayAdapter<SearchSkuVo> {
         }
 
         @Override
-        public void setData(final SearchSkuVo data) {
+        public void setData(final SearchSkuHistoryVo data) {
             tvName.setText(data.getName());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

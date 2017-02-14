@@ -20,9 +20,7 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.adapter.SearchCpAdapter;
 import com.yiqiao.cpmanager.ui.adapter.SearchCpHistoryAdapter;
-import com.yiqiao.cpmanager.ui.adapter.SearchTrademarkHistoryAdapter;
 import com.yiqiao.cpmanager.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -108,7 +106,7 @@ public class SearchCpHistoryActivity extends BaseActivity {
             public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
                 if(actionId== EditorInfo.IME_ACTION_SEARCH){
                     toActivity(SearchCpActivity.class);
-//                    SearchTradeMarkVo searchTradeMarkVo=new SearchTradeMarkVo();
+//                    SearchTradeMarkHistoryVo searchTradeMarkVo=new SearchTradeMarkHistoryVo();
 //                    searchTradeMarkVo.set
 //                    RealmHelper.getInstance().save();
 

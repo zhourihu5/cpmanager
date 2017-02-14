@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -10,19 +11,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.utils.BarUtils;
+import com.blankj.utilcode.utils.SPUtils;
 import com.bumptech.glide.Glide;
 import com.jude.rollviewpager.OnItemClickListener;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 import com.jude.rollviewpager.hintview.ColorPointHintView;
 import com.yiqiao.cpmanager.R;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseFragment;
+import com.yiqiao.cpmanager.component.ImageLoader;
 import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.ui.activity.CityActivity;
 import com.yiqiao.cpmanager.ui.activity.CpServiceActivity;
@@ -30,12 +33,12 @@ import com.yiqiao.cpmanager.ui.activity.GoodsDetailActivity;
 import com.yiqiao.cpmanager.ui.activity.HomeSearchActivity;
 import com.yiqiao.cpmanager.ui.activity.HotInfoActivity;
 import com.yiqiao.cpmanager.ui.activity.NoticeCenterActivity;
-import com.yiqiao.cpmanager.ui.activity.SearchCpHistoryActivity;
 import com.yiqiao.cpmanager.ui.activity.ToplineActivity;
 import com.yiqiao.cpmanager.ui.adapter.HomeBossTipsAdapter;
 import com.yiqiao.cpmanager.ui.adapter.HomeHotInfoAdapter;
 import com.yiqiao.cpmanager.ui.adapter.HomeServiceAdapter;
 import com.yiqiao.cpmanager.ui.adapter.HomeToplineAdapter;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.util.ToastUtil;
 import com.yiqiao.cpmanager.widget.FullyHeightRecycleview;
 
@@ -51,6 +54,7 @@ import butterknife.OnClick;
 public class HomeFragment extends BaseFragment {
 
 
+    private static final int REQUEST_CITY_CODE = 1;
     @BindView(R.id.tvCity)
     TextView tvCity;
     @BindView(R.id.etSearch)
@@ -112,7 +116,7 @@ public class HomeFragment extends BaseFragment {
     protected void initEventAndData() {
         BarUtils.setTransparentForImageView(mActivity, toolbar);
 
-
+        setCityText();
         rvBossTips.setLayoutManager(new GridLayoutManager(mContext, 2));
         rvService.setLayoutManager(new GridLayoutManager(mContext, 4));
         rvTopline.setLayoutManager(new LinearLayoutManager(mContext));
@@ -180,7 +184,8 @@ public class HomeFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tvCity:
-                toActivity(CityActivity.class);
+                Intent intent=new Intent(mActivity,CityActivity.class);
+               startActivityForResult(intent, REQUEST_CITY_CODE);
                 break;
             case R.id.etSearch:
                 toActivity(HomeSearchActivity.class);
@@ -217,6 +222,22 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case REQUEST_CITY_CODE:
+                if(resultCode==RESULT_OK){
+                    setCityText();
+                }
+                break;
+        }
+    }
+    void   setCityText(){
+        SPUtils spUtils= SharedPreferenceUtil.getAppSp();
+        String currentCityName= spUtils .getString(Constants.CURRENT_CITY_NAME,"北京");
+        tvCity.setText(currentCityName);
+    }
 
     private class BannerLoopAdapter extends LoopPagerAdapter {
         String[] imgs = new String[0];
@@ -243,11 +264,8 @@ public class HomeFragment extends BaseFragment {
             });
             view.setScaleType(ImageView.ScaleType.CENTER_CROP);
             view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            Glide.with(mActivity)
-                    .load(imgs[position])
-                    .placeholder(R.mipmap.ic_launcher)
-                    .error(R.mipmap.ic_launcher)
-                    .into(view);
+            ImageLoader.load(mActivity,imgs[position],view,R.drawable.img_banner_default);
+
             return view;
         }
 

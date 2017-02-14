@@ -104,7 +104,8 @@ public class SystemUtil {
     }
 
     public static final String getSign(String sysCode, String timeStamp, String param){
-        String key="n3m662ypvrcocu2m";
+//        String key="n3m662ypvrcocu2m";
+        String key="odop3of3kjdhj1";
         String sign= EncryptUtils.encryptMD5ToString(key+timeStamp+param).toLowerCase();
         return sign;
     }

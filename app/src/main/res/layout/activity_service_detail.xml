@@ -26,7 +26,7 @@
                 android:layout_marginTop="44dp"
                 app:layout_collapseMode="parallax">
 
-                <TextView
+                <TextView android:id="@+id/tvName"
                     android:text="内资公司注册"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -40,7 +40,7 @@
                         android:text="公司类型:"
                         style="@style/activity_service_detail_tv_title" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvCpType"
                         android:text="xxxx"
                         style="@style/activity_service_detail_tv_title" />
 
@@ -52,7 +52,7 @@
                         android:text="注册地址:"
                         style="@style/activity_service_detail_tv_title" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvRegistAddrType"
                         android:text="xxxx"
                         style="@style/activity_service_detail_tv_title" />
 
@@ -61,10 +61,10 @@
                 <LinearLayout style="@style/activity_do_invoice_ll_item">
 
                     <TextView
-                        android:text="注册地:"
+                        android:text="注 册 地:"
                         style="@style/activity_service_detail_tv_title" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvRegistAddr"
                         android:text="xxxx"
                         style="@style/activity_service_detail_tv_title" />
 
@@ -76,7 +76,7 @@
                         android:text="服务商品:"
                         style="@style/activity_service_detail_tv_title" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvServieName"
                         android:text="xxxx"
                         style="@style/activity_service_detail_tv_title" />
 
@@ -89,7 +89,7 @@
                         android:text="服务网点:"
                         style="@style/activity_service_detail_tv_title" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvSite"
                         android:text="xxxx"
                         style="@style/activity_service_detail_tv_title" />
 
@@ -113,7 +113,7 @@
                                 android:text="服务状态:"
                                 style="@style/activity_service_detail_tv_title" />
 
-                            <TextView
+                            <TextView android:id="@+id/tvServeStatus"
                                 android:text="xxxx"
                                 style="@style/activity_service_detail_tv_title" />
 
@@ -124,13 +124,13 @@
                                 android:text="签约时间:"
                                 style="@style/activity_service_detail_tv_title" />
 
-                            <TextView
+                            <TextView android:id="@+id/tvDate"
                                 android:text="xxxx"
                                 style="@style/activity_service_detail_tv_title" />
 
                         </LinearLayout>
                     </LinearLayout>
-                    <TextView
+                    <TextView android:id="@+id/tvConsulte"
                         android:text="呼叫顾问"
                         style="@style/activity_service_detail_tv_title"
                         android:paddingLeft="8dp" android:paddingRight="8dp"

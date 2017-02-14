@@ -1,24 +1,26 @@
 package com.yiqiao.cpmanager.ui.activity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.blankj.utilcode.utils.BarUtils;
+import com.blankj.utilcode.utils.SPUtils;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.ui.adapter.ContentPagerAdapter;
 import com.yiqiao.cpmanager.ui.fragment.HomeFragment;
 import com.yiqiao.cpmanager.ui.fragment.ManagerFragment;
 import com.yiqiao.cpmanager.ui.fragment.MineFragment;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.widget.UnScrollViewPager;
 
 import java.util.ArrayList;
@@ -55,6 +57,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     protected void initEventAndData() {
+        Menu menu= navigationBottom.getMenu();
+        menuItemHome =  menu.findItem(R.id.menu_home);
+        menuItemMine =  menu.findItem(R.id.menu_mine);
+
+        SharedPreferenceUtil.getAppSp().putBoolean(Constants.FIRST_OPEN,false);
         navigationBottom.setOnNavigationItemSelectedListener(this);//3-5个tab
         fragmentList.clear();
         HomeFragment homeFragment=new HomeFragment();
@@ -68,6 +75,22 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         contentPagerAdapter=new ContentPagerAdapter(getSupportFragmentManager(),fragmentList);
         vpContent.setOffscreenPageLimit(3);
         vpContent.setAdapter(contentPagerAdapter);
+
+    }
+    MenuItem menuItemHome;
+    MenuItem menuItemMine;
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(!isLoginLogic()&&currentMenu==R.id.menu_mine){
+            menuItemHome.setChecked(true);
+            menuItemMine.setChecked(false);
+
+            //        navigationBottom.
+            onNavigationItemSelected(menuItemHome);
+        }
+
+
     }
 
     @Override
@@ -84,6 +107,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
                         App.getInstance().exitApp();
                     }
                 })
@@ -101,25 +125,33 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         showExitDialog();
     }
 
+    int currentMenu;
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.menu_home:
                 vpContent.setCurrentItem(0);
                 BarUtils.StatusBarDarkMode(mContext);
+                currentMenu=item.getItemId();
                 break;
             case R.id.menu_manager:
                 vpContent.setCurrentItem(1);
                 BarUtils.StatusBarLightMode(mContext);
+                currentMenu=item.getItemId();
+                menuItemHome.setChecked(false);
                 break;
             case R.id.menu_mine:
-//                if(isLogin()){
+                if(isLogin()){
                     vpContent.setCurrentItem(2);
                     BarUtils.StatusBarDarkMode(mContext);
+                    currentMenu=item.getItemId();
+                    menuItemHome.setChecked(false);
+                    menuItemMine.setChecked(true);
                     return true;
-//                }else {
-//                    return false;
-//                }
+                }else {
+                    return false;
+                }
             default:
                 return false;
         }

@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.animation.ValueAnimator;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,14 +15,30 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.blankj.utilcode.utils.SPUtils;
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.jph.takephoto.app.TakePhoto;
 import com.jph.takephoto.compress.CompressConfig;
 import com.jph.takephoto.model.CropOptions;
 import com.jph.takephoto.model.TImage;
 import com.jph.takephoto.model.TResult;
 import com.yiqiao.cpmanager.R;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.MyTakePhotoActivity;
+import com.yiqiao.cpmanager.component.ImageLoader;
+import com.yiqiao.cpmanager.entity.CreateOrderRequestVo;
+import com.yiqiao.cpmanager.entity.CreateOrderVo;
+import com.yiqiao.cpmanager.entity.HttpResult;
+import com.yiqiao.cpmanager.entity.SkuDetailVo;
+import com.yiqiao.cpmanager.http.RetrofitHelper;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.subscribers.RxSubscriber;
+import com.yiqiao.cpmanager.transformer.PageTransformer;
+import com.yiqiao.cpmanager.ui.fragment.GoodsDetailFragment;
+import com.yiqiao.cpmanager.util.LogUtils;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
+import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -30,7 +47,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import pub.devrel.easypermissions.EasyPermissions;
+import rx.Subscription;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -63,6 +84,7 @@ public class ProfileActivity extends MyTakePhotoActivity implements
     LinearLayout viewMain;
 
     TakePhotoHelper takePhotoHelper;
+    String phone;
     @Override
     protected int getLayout() {
         return R.layout.activity_profile;
@@ -78,6 +100,14 @@ public class ProfileActivity extends MyTakePhotoActivity implements
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
+       SPUtils spUtils= SharedPreferenceUtil.getAppSp();
+        String uname=spUtils.getString(Constants.USER_NAME);
+        phone=spUtils.getString(Constants.USER_PHONE);
+        String img=spUtils.getString(Constants.USER_IMG);
+
+        tvName.setText(uname);
+        tvPhone.setText(phone);
+        ImageLoader.load(mContext,img,ivLogo,R.drawable.img_head);
     }
 
     @OnClick({R.id.ivBack, R.id.llHead, R.id.llModifyPwd})
@@ -91,7 +121,7 @@ public class ProfileActivity extends MyTakePhotoActivity implements
                     popMenu = new PopMenu();
                 }
                 popMenu.showAtLocation(viewMain, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
-                backgroundAlpha(0.5f);
+                setBackgroundAlpha(1,alpha,200);
                 break;
             case R.id.llModifyPwd:
                 toActivity(ModifyPwdActivity.class);
@@ -130,15 +160,69 @@ public class ProfileActivity extends MyTakePhotoActivity implements
     public void onPermissionsDenied(int requestCode, List<String> perms) {
 
     }
+    //todo 上传头像
+    private void uploadPic(final File file) {//商品详情接口 套餐详情单独
+        LogUtils.e("uploadPic");
+//        id="75";
+        // 创建 RequestBody，用于封装构建RequestBody
+        RequestBody requestFile =
+                RequestBody.create(MediaType.parse("multipart/form-data"), file);
+
+// MultipartBody.Part  和后端约定好Key，这里的partName是用image
+        MultipartBody.Part body =
+                MultipartBody.Part.createFormData("pic", file.getName(), requestFile);
+
+// 添加描述
+        String descriptionString = phone;
+        RequestBody description =
+                RequestBody.create(
+                        MediaType.parse("multipart/form-data"), descriptionString);
+
+
+
+        Subscription rxSubscription = RetrofitHelper.getCpMgrApiService()
+                .photoAdd(description,body)
+                .compose(new PageTransformer<HttpResult<String>>())
+                .subscribe(new RxSubscriber<HttpResult<String>>(ProfileActivity.this) {
+                    // 必须重写
+                    @Override
+                    public void onNext(HttpResult<String> contentBeen) {
+
+                        Glide.with(mContext).load(file).into(ivLogo);
+                    }
+
+
+                    // 无需设置可以不用重写
+                    // !!!!注意参数为ApiException 类型，要不要写在Throwable那个了
+                    @Override
+                    protected void onError(ApiException ex) {
+                        super.onError(ex);
+                    }
+
+                    // 无需设置可以不用重写
+                    @Override
+                    public void onCompleted() {
+                        super.onCompleted();
+                    }
+                });
+        addSubscrebe(rxSubscription);
+    }
+
+    @Override
+    public void onRequestStart() {
+        super.onRequestStart();
+        initProgressDialog();
+        progressDialog.show();
+    }
 
     @Override
     public void takeSuccess(TResult result) {
        ArrayList<TImage> imgs=result.getImages();
         for (int i=0;i<imgs.size();i++){
             TImage image=imgs.get(i);
-            Glide.with(this).load(new File(image.getPath())).into(ivLogo);
+            uploadPic(new File(image.getPath()));
+
         }
-        //todo 上传头像
 
     }
     @Override
@@ -183,7 +267,6 @@ public class ProfileActivity extends MyTakePhotoActivity implements
             //添加弹出、弹入的动画
             setAnimationStyle(R.style.Popupwindow);
             setOnDismissListener(new PopOnDismissListener());
-            backgroundAlpha(1f);
 
         }
 
@@ -218,20 +301,12 @@ public class ProfileActivity extends MyTakePhotoActivity implements
         public void onDismiss() {
             // TODO Auto-generated method stub
             //Log.v("List_noteTypeActivity:", "我是关闭事件");
-            backgroundAlpha(1f);
+//            backgroundAlpha(1f);
+            setBackgroundAlpha(alpha,1,300);
         }
     }
 
-    /**
-     * 设置添加屏幕的背景透明度
-     *
-     * @param bgAlpha
-     */
-    public void backgroundAlpha(float bgAlpha) {
-        WindowManager.LayoutParams lp = mContext.getWindow().getAttributes();
-        lp.alpha = bgAlpha; //0.0-1.0
-        mContext.getWindow().setAttributes(lp);
-    }
+
 
     class TakePhotoHelper{
         public void onClick(View view,TakePhoto takePhoto) {
@@ -271,5 +346,30 @@ public class ProfileActivity extends MyTakePhotoActivity implements
             builder.setWithOwnCrop(withWonCrop);
             return builder.create();
         }
+    }
+
+    /**
+     * 设置添加屏幕的背景透明度
+     *
+     * @param bgAlpha
+     */
+//    public void backgroundAlpha(float bgAlpha) {
+//        WindowManager.LayoutParams lp = mContext.getWindow().getAttributes();
+//        lp.alpha = bgAlpha; //0.0-1.0
+//        mContext.getWindow().setAttributes(lp);
+//    }
+    float alpha=0.75f;
+    private void setBackgroundAlpha(float from, float to, int duration) {
+        final WindowManager.LayoutParams lp = mContext.getWindow().getAttributes();
+        ValueAnimator animator = ValueAnimator.ofFloat(from, to);
+        animator.setDuration(duration);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                lp.alpha = (float) animation.getAnimatedValue();
+                mContext.getWindow().setAttributes(lp);
+            }
+        });
+        animator.start();
     }
 }

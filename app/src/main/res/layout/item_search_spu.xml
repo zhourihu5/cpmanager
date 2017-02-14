@@ -5,50 +5,62 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="@color/gray_bg"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:background="@android:color/white"
-        android:padding="20dp">
+        android:gravity="center_vertical"
+        android:padding="15dp">
+        <ImageView android:id="@+id/ivLogo"
+            android:layout_width="105dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/img_default"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             >
-            <com.yiqiao.cpmanager.widget.ColorTextView
+
+            <TextView
                 android:id="@+id/tvName"
-                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_black_title"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 android:text="xxxxxxxx"/>
-
-            <TextView android:id="@+id/tvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="xxxxxxxx"
-                android:textColor="@color/text_black_title"
-                android:textSize="16sp"
-               />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
             <TextView android:id="@+id/tvDesc"
-                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:textSize="12sp"
                 android:text="xxxxxxxx"/>
 
-            <TextView android:id="@+id/tvPriceOld"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="xxxxxxxx"
-                android:textSize="12sp"
-                />
-        </LinearLayout>
+                android:layout_marginTop="15dp">
+                <TextView android:id="@+id/tvPrice"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="xxxxxxxx"
+                    android:textSize="15sp"
+                    android:textColor="@color/red_my"
+                    />
 
+                <TextView android:id="@+id/tvPriceOld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="xxxxxxxx"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

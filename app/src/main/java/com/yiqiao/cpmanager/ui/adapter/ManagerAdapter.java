@@ -62,7 +62,7 @@ public class ManagerAdapter extends RecyclerArrayAdapter<ServiceVo> {
 
         @Override
         public void setData(ServiceVo data) {
-            tvName.setText(data.getServiceName());
+            tvName.setText(data.getProductName());
             tvSite.setText(data.getOrgName());
             tvLinkman.setText(data.getContactName());
             tvPhone.setText(String.format("%s",data.getContactPhone()));

@@ -10,12 +10,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
-        <LinearLayout
+        <LinearLayout android:id="@+id/llBg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="26dp" android:paddingBottom="26dp"
             android:paddingLeft="19dp" android:paddingRight="19dp"
-            android:background="@color/red_my"
+            android:background="@drawable/coupon_red_bg"
             android:gravity="bottom">
             <TextView android:id="@+id/tvNum"
                 android:layout_width="wrap_content"
@@ -35,7 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="19dp" android:paddingRight="19dp"
-            android:paddingTop="13dp" android:paddingBottom="13dp">
+            android:paddingTop="13dp" android:paddingBottom="13dp"
+            android:background="@android:color/white">
             <TextView android:id="@+id/tvDate"
                 android:layout_width="0dp" android:layout_weight="1"
                 android:layout_height="wrap_content"

@@ -4,63 +4,6 @@
     android:layout_height="match_parent"
    >
     <include layout="@layout/toolbar_layout_public"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:orientation="vertical">
-        <LinearLayout style="@style/modify_pwd_ll_old_pwd"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="原密码："/>
-            <EditText
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-        <LinearLayout style="@style/modify_pwd_ll_old_pwd">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="新密码："/>
-            <EditText
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-        <LinearLayout style="@style/modify_pwd_ll_old_pwd">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="确认密码："/>
-            <EditText
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"/>
-        </LinearLayout>
-        <Button android:id="@+id/btConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/blue_bt_charge_back_status"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="32dp"
-            android:text="确定"/>
-    </LinearLayout>
+    <include layout="@layout/frag_modify_pwd"/>
 
 </LinearLayout>

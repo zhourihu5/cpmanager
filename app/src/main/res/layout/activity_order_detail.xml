@@ -11,8 +11,12 @@
         <include layout="@layout/toolbar_layout_public"/>
 
     </LinearLayout>
-    <ezy.ui.layout.LoadingLayout
-        android:id="@+id/loading"
+  <ezy.ui.layout.LoadingLayout
+         android:id="@+id/loading"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+      android:layout_weight="1">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -42,8 +46,40 @@
                         android:layout_height="wrap_content"
                         android:text="xxx"/>
                 </LinearLayout>
+                <LinearLayout android:id="@+id/llSetmeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="15dp"
+                    android:background="@android:color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="4dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@color/gray_line_indicator"/>
+                        <TextView android:id="@+id/tvSetMealName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/text_black_title"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:text="创业无忧套餐"/>
+                    </LinearLayout>
 
-                <LinearLayout
+                    <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                        android:id="@+id/rvSetmeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/llGoodsInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -53,66 +89,60 @@
                     <!-- <include layout="@layout/order_head" />-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView android:id="@+id/tvName"
-                            android:layout_width="0dp" android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/text_black_title"
-                            android:textSize="16sp"
-                            android:text="内资公司注册"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView android:id="@+id/tvName"
+                                android:layout_width="0dp" android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_black_title"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="内资公司注册"/>
 
-                        <TextView android:id="@+id/tvPrice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/text_black_title"
-                            android:textSize="16sp"
-                            android:text="520"/>
-                        <TextView android:id="@+id/tvUnit"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="元/件"/>
-                        <TextView android:id="@+id/tvNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:text="x1"/>
+                            <TextView android:id="@+id/tvPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_black_title"
+                                android:textSize="16sp"
+                                android:text="520"/>
+                            <TextView android:id="@+id/tvUnit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="元/件"/>
+                            <TextView android:id="@+id/tvNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="x1"/>
 
+                        </LinearLayout>
+
+                        <include layout="@layout/item_order_detail_setmeal" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/gray_bg"/>
                     </LinearLayout>
-                    <TextView android:id="@+id/tvCpType"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="公司类型：xxxxxxxx" />
-
-                    <TextView android:id="@+id/tvAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="地址：xxxxxxxx" />
-
-                    <TextView  android:id="@+id/tvRegistAddr"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="注册地：xxxxxxxx"
-                        />
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@color/gray_bg"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:paddingTop="15dp" android:paddingBottom="15dp">
 
-                        <TextView
+                        <TextView android:id="@+id/tvProductType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="8dp"
+                            android:textColor="@color/blue_bt_repay_bg"
                             android:text="服务产品" />
 
                         <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                            android:id="@+id/recycleView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -146,7 +176,7 @@
                     android:orientation="vertical"
                     android:background="@android:color/white">
 
-                    <TextView
+                    <TextView android:id="@+id/tvStore"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="服务网点:"
@@ -155,19 +185,19 @@
                         />
 
 
-                    <TextView
+                    <TextView android:id="@+id/tvDepAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="地址：xxxxxxxx" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvLinkman"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="联系人：xxxxxxxx" />
 
-                    <TextView
+                    <TextView android:id="@+id/tvPhone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:layout_marginTop="8dp"
                         android:text="电话：xxxxxxxx" />
@@ -186,92 +216,115 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/pink_order_detail"
-                android:paddingLeft="36dp"
-                android:paddingRight="36dp"
-                android:gravity="center" >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/orange_order_detail"
-                    android:text="满减" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textColor="@color/orange_order_detail"
-                    android:text="优惠券" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/orange_order_detail"
-                    android:text="红包" />
 
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/llBottom"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="0dp" android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:background="@android:color/white"
-                    android:paddingLeft="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="合计："/>
-                    <TextView android:id="@+id/tvTotalNum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/red_my"
-                        android:text="340"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="元"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <TextView android:id="@+id/tvCancel"
-                        android:layout_width="0dp" android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="取消订单"/>
-                    <TextView android:id="@+id/tvPay"
-                        android:layout_width="0dp" android:layout_weight="2"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/red_my"
-                        android:textColor="@android:color/white"
-                        android:text="立即支付"/>
-                    <TextView android:id="@+id/tvChargeBack"
-                        android:layout_width="0dp" android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="申请退款"/>
-                    <TextView android:id="@+id/tvRepay"
-                        android:layout_width="0dp" android:layout_weight="2"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:background="@color/blue_bt_repay_bg"
-                        android:textColor="@android:color/white"
-                        android:text="重新购买"/>
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
-    </ezy.ui.layout.LoadingLayout>
 
+    </ScrollView>
+   </ezy.ui.layout.LoadingLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/pink_order_detail"
+        android:gravity="center" >
+        <TextView android:id="@+id/tvLuckyDown"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/orange_order_detail"
+            android:text="满减" />
+        <TextView android:id="@+id/tvCoupon"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/orange_order_detail"
+            android:text="优惠券" />
+        <TextView android:id="@+id/tvLuckyMoney"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/orange_order_detail"
+            android:text="红包" />
+        <TextView android:id="@+id/tvPriceOld"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/orange_order_detail"
+            android:text="原价" />
+        <TextView android:id="@+id/tvPreferentialAmount"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/orange_order_detail"
+            android:text="节省" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:background="@android:color/white"
+            android:paddingLeft="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计："/>
+            <TextView android:id="@+id/tvTotalNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/red_my"
+                android:text="340"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView android:id="@+id/tvCancel"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:gravity="center"
+                android:text="取消订单"
+                android:visibility="gone"/>
+            <TextView android:id="@+id/tvPay"
+                android:layout_width="wrap_content"
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/red_my"
+                android:textColor="@android:color/white"
+                android:text="立即支付"/>
+            <TextView android:id="@+id/tvChargeBack"
+                android:layout_width="wrap_content"
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="申请退款"/>
+            <TextView android:id="@+id/tvRepay"
+                android:layout_width="wrap_content"
+                android:paddingLeft="40dp" android:paddingRight="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@color/blue_bt_repay_bg"
+                android:textColor="@android:color/white"
+                android:text="重新购买"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

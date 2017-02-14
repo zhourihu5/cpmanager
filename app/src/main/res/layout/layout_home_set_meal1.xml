@@ -23,7 +23,7 @@
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/img_default"
                 android:id="@+id/imageView3" />
 
         </LinearLayout>
@@ -50,7 +50,7 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/img_default" />
 
             </LinearLayout>
 
@@ -70,7 +70,7 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/img_default" />
 
             </LinearLayout>
         </LinearLayout>
@@ -98,7 +98,7 @@
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/img_default" />
 
         </LinearLayout>
 
@@ -118,7 +118,7 @@
             <ImageView
                 android:layout_width="65dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/img_default" />
 
         </LinearLayout>
     </LinearLayout>

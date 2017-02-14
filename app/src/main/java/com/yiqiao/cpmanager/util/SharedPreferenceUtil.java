@@ -1,8 +1,5 @@
 package com.yiqiao.cpmanager.util;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
 import com.blankj.utilcode.utils.SPUtils;
 import com.yiqiao.cpmanager.app.App;
 import com.yiqiao.cpmanager.app.Constants;
@@ -21,13 +18,13 @@ public class SharedPreferenceUtil {
         return new SPUtils(App.getInstance(), SHAREDPREFERENCES_NAME);
     }
 
-    public static boolean getLoginState() {
-        return getAppSp().getBoolean(Constants.LOGIN, false);
-    }
-
-    public static void setLoginState(boolean state) {
-        getAppSp().putBoolean(Constants.LOGIN, state);
-    }
+//    public static boolean getLoginState() {
+//        return getAppSp().getBoolean(Constants.LOGIN, false);
+//    }
+//
+//    public static void setLoginState(boolean state) {
+//        getAppSp().putBoolean(Constants.LOGIN, state);
+//    }
 
     public static boolean getNoImageState() {
         return false;

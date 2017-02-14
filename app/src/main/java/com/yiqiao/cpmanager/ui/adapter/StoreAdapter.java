@@ -1,21 +1,14 @@
 package com.yiqiao.cpmanager.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.entity.OrderVo;
-import com.yiqiao.cpmanager.ui.activity.OrderDetailActivity;
-import com.yiqiao.cpmanager.widget.FullyHeightRecycleview;
+import com.yiqiao.cpmanager.entity.StoreVo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -27,10 +20,10 @@ import butterknife.ButterKnife;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class StoreAdapter extends RecyclerArrayAdapter<OrderVo> {
+public class StoreAdapter extends RecyclerArrayAdapter<StoreVo.PageBean.RecordListBean> {
 
 
-    public StoreAdapter(Context context, List<OrderVo> list) {
+    public StoreAdapter(Context context, List<StoreVo.PageBean.RecordListBean> list) {
         super(context, list);
     }
 
@@ -39,8 +32,17 @@ public class StoreAdapter extends RecyclerArrayAdapter<OrderVo> {
         return new RecommendViewHolder(parent);
     }
 
-    class RecommendViewHolder extends BaseViewHolder<OrderVo> {
+    class RecommendViewHolder extends BaseViewHolder<StoreVo.PageBean.RecordListBean> {
 
+
+        @BindView(R.id.tvName)
+        TextView tvName;
+        @BindView(R.id.tvLinkman)
+        TextView tvLinkman;
+        @BindView(R.id.tvPhone)
+        TextView tvPhone;
+        @BindView(R.id.tvAddress)
+        TextView tvAddress;
 
         public RecommendViewHolder(ViewGroup parent) {
             super(parent, R.layout.item_store);
@@ -48,15 +50,11 @@ public class StoreAdapter extends RecyclerArrayAdapter<OrderVo> {
         }
 
         @Override
-        public void setData(OrderVo data) {
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), OrderDetailActivity.class);
-                    getContext().startActivity(intent);
-                }
-            });
+        public void setData(StoreVo.PageBean.RecordListBean data) {
+            tvName.setText(data.getDeptName());
+            tvLinkman.setText(String.format("联系人：%s",data.getContacts()));
+            tvPhone.setText(String.format("电 话：%s",data.getPhone()));
+            tvAddress.setText(String.format("地 址：%s",data.getDeptAddress()));
         }
 
     }

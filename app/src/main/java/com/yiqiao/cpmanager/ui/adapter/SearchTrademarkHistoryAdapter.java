@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
-import com.yiqiao.cpmanager.db.SearchTradeMarkVo;
+import com.yiqiao.cpmanager.db.SearchTradeMarkHistoryVo;
 import com.yiqiao.cpmanager.ui.activity.SearchTradeMarkActivity;
 
 import java.util.List;
@@ -23,9 +23,9 @@ import butterknife.ButterKnife;
  * Creator: yxc
  * date: 2016/9/30 11:10
  */
-public class SearchTrademarkHistoryAdapter extends RecyclerArrayAdapter<SearchTradeMarkVo> {
+public class SearchTrademarkHistoryAdapter extends RecyclerArrayAdapter<SearchTradeMarkHistoryVo> {
 
-    public SearchTrademarkHistoryAdapter(Context context, List<SearchTradeMarkVo> SearchTradeMarkVos) {
+    public SearchTrademarkHistoryAdapter(Context context, List<SearchTradeMarkHistoryVo> SearchTradeMarkVos) {
         super(context, SearchTradeMarkVos);
     }
 
@@ -34,7 +34,7 @@ public class SearchTrademarkHistoryAdapter extends RecyclerArrayAdapter<SearchTr
         return new RecommendViewHolder(parent);
     }
 
-    class RecommendViewHolder extends BaseViewHolder<SearchTradeMarkVo> {
+    class RecommendViewHolder extends BaseViewHolder<SearchTradeMarkHistoryVo> {
 
         @BindView(R.id.tvName)
         TextView tvName;
@@ -45,7 +45,7 @@ public class SearchTrademarkHistoryAdapter extends RecyclerArrayAdapter<SearchTr
         }
 
         @Override
-        public void setData(final SearchTradeMarkVo data) {
+        public void setData(final SearchTradeMarkHistoryVo data) {
             tvName.setText(data.getName());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

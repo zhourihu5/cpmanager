@@ -9,6 +9,7 @@
         android:layout_height="32dp"
         android:singleLine="true"
         android:maxLength="20"
+        android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         android:inputType="textPassword"
         android:background="@null"
         android:drawablePadding="32dp"

@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -14,20 +15,35 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.Poi;
 import com.baidu.location.service.LocationService;
+import com.blankj.utilcode.utils.SPUtils;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.orhanobut.logger.Logger;
+import com.umeng.socialize.utils.Log;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
 import com.yiqiao.cpmanager.entity.CityVo;
-import com.yiqiao.cpmanager.entity.OrderVo;
+import com.yiqiao.cpmanager.entity.HttpResult;
+import com.yiqiao.cpmanager.entity.SkuListVo;
+import com.yiqiao.cpmanager.http.RetrofitHelper;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.subscribers.RxSubscriber;
+import com.yiqiao.cpmanager.transformer.PageTransformer;
 import com.yiqiao.cpmanager.ui.adapter.CityAdapter;
 import com.yiqiao.cpmanager.util.LogUtils;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
+import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Subscription;
+
+import static com.yiqiao.cpmanager.R.id.recyclerView;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -71,24 +87,89 @@ public class CityActivity extends BaseActivity {
 
         recycleView.setLayoutManager(new GridLayoutManager(mContext,4));
         ArrayList<CityVo>arrayList=new ArrayList<>();
-        for(int i=0;i<20;i++){
-            CityVo cityVo=  new CityVo();
-            cityVo.setName("城市"+i);
-            arrayList.add(cityVo);
-        }
+//        for(int i=0;i<20;i++){
+//            CityVo cityVo=  new CityVo();
+//            cityVo.setName("城市"+i);
+//            arrayList.add(cityVo);
+//        }
+
         cityAdapter=new CityAdapter(mContext,arrayList);
         recycleView.setAdapter(cityAdapter);
+        SPUtils spUtils= SharedPreferenceUtil.getAppSp();
+        String currentCityId= spUtils .getString(Constants.CURRENT_CITY_ID);
+        String currentCityName= spUtils .getString(Constants.CURRENT_CITY_NAME,"北京");
+        cityAdapter.setCurrentCityId(currentCityId);
+        setSelectedCityText(currentCityName);
         cityAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+                int previous=cityAdapter.getSelected();
+                if(previous>=0&&previous<cityAdapter.getCount()){
+                    CityVo previousCityVo=cityAdapter.getItem(previous);
+                    previousCityVo.setCurrentCity(String.valueOf(false));
+                }
                 CityVo cityVo= cityAdapter.getItem(position);
-                tvSelected.setText(cityVo.getName());
+                cityVo.setCurrentCity(String.valueOf(true));
+                String name=cityVo.getAreaDesc();
+                setSelectedCityText(name);
                 cityAdapter.setSelected(position);
-                tvDesc.setText(String.format("当前正为您推荐%s的服务，您可以切换城市站查看其它城市的服务",cityVo.getName()));
+                Intent data=new Intent();
+                data.putExtra(CityVo.class.getCanonicalName(),cityVo);
+                setResult(RESULT_OK, data);
+                SPUtils spUtils= SharedPreferenceUtil.getAppSp();
+                spUtils .putString(Constants.CURRENT_CITY_ID,cityVo.getId());
+                spUtils .putString(Constants.CURRENT_CITY_NAME,cityVo.getAreaDesc());
+                finish();
             }
         });
+        loadData();
     }
 
+    private void setSelectedCityText(String name) {
+        tvSelected.setText(name);
+        tvDesc.setText(String.format("当前正为您推荐%s的服务，您可以切换城市站查看其它城市的服务",name));
+    }
+
+    private void loadData() {
+        String sysCode = "111";
+        String timeStamp = String.valueOf(System.currentTimeMillis());
+        String param ="";
+        String sign = SystemUtil.getSign(sysCode, timeStamp, param);
+
+        Subscription rxSubscription = RetrofitHelper.getCpMgrApiService()
+                .getOpenCity(sysCode, timeStamp, param, sign)
+                .compose(new PageTransformer<HttpResult<List<CityVo>>>())
+                .subscribe(new RxSubscriber<HttpResult<List<CityVo>>>(mContext) {
+                    // 必须重写
+                    @Override
+                    public void onNext(HttpResult<List<CityVo>> contentBeen) {
+                        LogUtils.e("searchspu onNext");
+                        cityAdapter.addAll(contentBeen.getData());
+                        int previous=cityAdapter.getSelected();
+                        if(previous>=0&&previous<cityAdapter.getCount()){
+                            CityVo cityVo=cityAdapter.getItem(previous);
+                            setSelectedCityText(cityVo.getAreaDesc());
+                        }
+                    }
+
+
+                    // 无需设置可以不用重写
+                    // !!!!注意参数为ApiException 类型，要不要写在Throwable那个了
+                    @Override
+                    protected void onError(ApiException ex) {
+                        LogUtils.e("searchspu onError");
+                        ex.printStackTrace();
+                        super.onError(ex);
+                    }
+
+                    // 无需设置可以不用重写
+                    @Override
+                    public void onCompleted() {
+                        super.onCompleted();
+                    }
+                });
+        addSubscrebe(rxSubscription);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,7 +212,6 @@ public class CityActivity extends BaseActivity {
 
 
     /*****
-     * @see copy funtion to you project
      * 定位结果回调，重写onReceiveLocation方法，可以直接拷贝如下代码到自己工程中修改
      *
      */
@@ -139,6 +219,7 @@ public class CityActivity extends BaseActivity {
 
         @Override
         public void onReceiveLocation(BDLocation location) {
+            Logger.e("onReceiveLocation");
             // TODO Auto-generated method stub
             if (null != location && location.getLocType() != BDLocation.TypeServerError) {
                 StringBuffer sb = new StringBuffer(256);
@@ -219,7 +300,7 @@ public class CityActivity extends BaseActivity {
                     sb.append("\ndescribe : ");
                     sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
                 }
-                LogUtils.e(sb.toString());
+                Logger.d(sb.toString());
             }
         }
 

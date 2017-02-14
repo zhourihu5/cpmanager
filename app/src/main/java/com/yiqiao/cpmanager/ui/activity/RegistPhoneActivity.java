@@ -10,14 +10,30 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.utils.RegexUtils;
+import com.blankj.utilcode.utils.SPUtils;
 import com.blankj.utilcode.utils.StringUtils;
+import com.google.gson.Gson;
 import com.yiqiao.cpmanager.R;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
+import com.yiqiao.cpmanager.entity.HttpResult;
+import com.yiqiao.cpmanager.entity.LoginRequestVo;
+import com.yiqiao.cpmanager.entity.LoginVo;
+import com.yiqiao.cpmanager.entity.PhoneVerifyRequestVo;
+import com.yiqiao.cpmanager.http.RetrofitHelper;
+import com.yiqiao.cpmanager.http.exception.ApiException;
+import com.yiqiao.cpmanager.http.exception.ErrorType;
+import com.yiqiao.cpmanager.subscribers.RxSubscriber;
+import com.yiqiao.cpmanager.transformer.DefaultTransformer;
+import com.yiqiao.cpmanager.transformer.SchedulerTransformer;
+import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
+import com.yiqiao.cpmanager.util.SystemUtil;
 import com.yiqiao.cpmanager.util.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Subscription;
 
 /**
  * Created by Xu on 2016/11/23.
@@ -86,29 +102,83 @@ public class RegistPhoneActivity extends BaseActivity {
                     ToastUtil.shortShow("手机号不能为空");
                     return;
                 }
-                if(RegexUtils.isMobileExact(phone)){
+                if(!RegexUtils.isMobileSimple(phone)){
                     ToastUtil.shortShow("请输入正确的手机号");
                     return;
                 }
-
-                Intent intent=getIntent();
-                intent.setClass(mContext,RegistCodeActivity.class);
-                intent.putExtra(RegistCodeActivity.PHONE,phone);
-                switch (type) {
-                    case TYPE_REGIST_PHONE:
-                        //todo 服务器校验是否已注册了
-//                        intent.putExtra(RegistPhoneActivity.TYPE_STR,RegistPhoneActivity.TYPE_REGIST_PHONE);
-
-                        break;
-                    case TYPE_QUICK_LOGIN_PHONE:
-                        //todo
-//                        intent.putExtra(RegistPhoneActivity.TYPE_STR,RegistPhoneActivity.TYPE_QUICK_LOGIN_PHONE);
-                        break;
-
-                }
-                startActivity(intent);
-                finish();
+                //todo regist is different from quicklongin
+                remoteVerifyPhone(phone);
                 break;
         }
+    }
+    void  remoteVerifyPhone(final String phone){
+        PhoneVerifyRequestVo loginRequestVo=new PhoneVerifyRequestVo();
+        loginRequestVo.setPhone(phone);
+        String sysCode="111";
+        String timeStamp=String.valueOf(System.currentTimeMillis()/1000);
+        String param=new Gson().toJson(loginRequestVo);
+        String sign= SystemUtil.getSign(sysCode,timeStamp,param);
+
+
+        Subscription rxSubscription = RetrofitHelper.getCpMgrApiService()
+                .verifyPhone(sysCode,timeStamp,param,sign)
+//                .compose(new DefaultTransformer<LoginVo>())
+                .compose(SchedulerTransformer.<HttpResult<LoginVo>>getInstance())
+                .subscribe(new RxSubscriber<HttpResult<LoginVo>>(mContext) {
+                    // 必须重写
+                    @Override
+                    public void onNext(HttpResult<LoginVo> contentBeen) {
+                        switch (type) {
+                            case TYPE_FIND_PWD:
+                            case TYPE_REGIST_PHONE:
+                                //todo 服务器校验是否已注册了
+                                if(contentBeen.getCode()== ErrorType.SUCCESS){
+                                    ToastUtil.shortShow("用户已注册");
+                                    return;
+                                }
+                                if(contentBeen.getCode()!=101001){//用户不存在 才能注册
+                                    ToastUtil.shortShow(contentBeen.getMessage());
+                                    return;
+                                }
+                                break;
+                            case TYPE_QUICK_LOGIN_PHONE:
+                                if(contentBeen.getCode()!= ErrorType.SUCCESS){
+                                    ToastUtil.shortShow(contentBeen.getMessage());
+                                    return;
+                                }
+                                break;
+
+                        }
+
+                            //todo save img,name etc user's information
+                            Intent intent=getIntent();
+                        intent.setClass(mContext,RegistCodeActivity.class);
+                        intent.putExtra(RegistCodeActivity.PHONE,phone);
+                        startActivity(intent);
+                        finish();
+                    }
+
+
+                    // 无需设置可以不用重写
+                    // !!!!注意参数为ApiException 类型，要不要写在Throwable那个了
+                    @Override
+                    protected void onError(ApiException ex) {
+                        super.onError(ex);
+                    }
+
+                    // 无需设置可以不用重写
+                    @Override
+                    public void onCompleted() {
+                        super.onCompleted();
+                    }
+                });
+        addSubscrebe(rxSubscription);
+    }
+
+    @Override
+    public void onRequestStart() {
+        super.onRequestStart();
+        initProgressDialog();
+        progressDialog.show();
     }
 }

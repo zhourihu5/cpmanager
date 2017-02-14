@@ -16,10 +16,42 @@
 #   public *;
 #}
 
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewInjector { *; }
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
 
 
+# Platform calls Class.forName on types which do not exist on Android to determine platform.
+-dontnote retrofit2.Platform
+# Platform used when running on RoboVM on iOS. Will not be used at runtime.
+-dontnote retrofit2.Platform$IOS$MainThreadExecutor
+# Platform used when running on Java 8 VMs. Will not be used at runtime.
+-dontwarn retrofit2.Platform$Java8
+# Retain generic type information for use by reflection by converters and adapters.
+-keepattributes Signature
+# Retain declared checked exceptions for use by a Proxy instance.
+-keepattributes Exceptions
 
 
+-dontwarn sun.misc.Unsafe
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+
+
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keep class com.google.gson.examples.android.model.** { *; }
+
+
+-keep class org.apache.http.** { *; }
+-dontwarn org.apache.http.**
+-dontwarn android.net.**
 
 
 
@@ -31,3 +63,21 @@
 -keep class com.alipay.sdk.app.PayTask{ public *;}
 -keep class com.alipay.sdk.app.AuthTask{ public *;}
 #alipay end
+
+
+
+#cpmanager start
+#-keep class com.yiqiao.cpmanager.entity.** {*;}
+#-keep class com.yiqiao.cpmanager.entity.* {*;}
+#-keep class com.yiqiao.cpmanager.entity.**
+-keepclasseswithmembers class  com.yiqiao.cpmanager.entity.** {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.yiqiao.cpmanager.entity.**{
+  <fields>;
+  <methods>;
+}
+#-keep class com.yiqiao.cpmanager.db.*
+#cpmanager end

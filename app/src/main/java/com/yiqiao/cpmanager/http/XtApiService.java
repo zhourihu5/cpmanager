@@ -19,11 +19,16 @@ import rx.Observable;
  */
 public interface XtApiService {
 //    public static final String BASE_URL = "http://xtapi.12366.com/";
-    public static final String BASE_URL = "http://apixt.cs.12366.com/";
+//    public static final String BASE_URL = "http://apixt.cs.12366.com/";
+    public static final String BASE_URL = "http://xtapi.cs.12366.com/";
 
 
     @GET("api/findOrderListByCustomerPage.do")
     Observable<HttpResult<List<OrderVo>>> findOrderListByCustomer(@Query("system_code") String systemcode
+            , @Query("ts") String ts, @Query("param") String param, @Query("sign") String sign);
+
+    @GET("api/order/orderCancle.do")
+    Observable<HttpResult<List<OrderVo>>> orderCancle(@Query("system_code") String systemcode
             , @Query("ts") String ts, @Query("param") String param, @Query("sign") String sign);
 
     @GET("api/order/findSlbOrderInfo.do")
@@ -39,7 +44,7 @@ public interface XtApiService {
             , @Query("ts") String ts, @Query("param") String param, @Query("sign") String sign);
 
 
-    @GET("api/serviceProgress/getProgressPageByCustId.do")
+    @GET("api/serviceProgress/findProgressPageByCustId.do")
     Observable<HttpResult<List<ServiceVo>>> getServiceList(@Query("system_code") String systemcode
             , @Query("ts") String ts, @Query("param") String param, @Query("sign") String sign);
 

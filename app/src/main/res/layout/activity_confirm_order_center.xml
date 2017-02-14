@@ -1,269 +1,363 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ezy.ui.layout.LoadingLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <LinearLayout
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray_bg">
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
         <LinearLayout
-            android:layout_width="match_parent"
+            android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="20dp" android:paddingTop="16dp"
-            android:paddingRight="20dp" android:paddingBottom="16dp"
-            android:background="@android:color/white">
+            android:background="@color/gray_bg">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="一般纳税人袋里登记"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="48dp"
-                    android:textColor="@color/red_my"
-                    android:textSize="16sp"
-                    android:text="1520"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="元起/次"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="21dp"
-                    android:text="x1"/>
-            </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
-                android:background="@drawable/pink_tv_use_red_lucky_bg"
-                android:paddingLeft="4dp" android:paddingRight="4dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="17dp"
-                android:textColor="@color/orange_order_detail"
-                android:text="使用红包可省xx元"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/stroke_orage_dash_bg"
-                android:paddingLeft="11dp"  android:paddingRight="11dp"
-                android:paddingTop="15dp" android:paddingBottom="15dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:textColor="@color/orange_order_detail"
-                    android:text="赠:"/>
+                android:orientation="vertical"
+                android:paddingLeft="20dp" android:paddingTop="16dp"
+                android:paddingRight="20dp" android:paddingBottom="16dp"
+                android:background="@android:color/white">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    >
+                    <TextView android:id="@+id/tvName"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_black_title"
+                        android:text="一般纳税人袋里登记"/>
+
+                    <TextView android:id="@+id/tvNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
+                        android:text="x1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="17dp">
+                    <TextView android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red_my"
+                        android:textSize="18sp"
+                        android:text="1520"/>
+                    <TextView android:id="@+id/tvUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元起/次"/>
+                    <TextView android:id="@+id/tvLuckyDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="21dp"
+                        android:background="@drawable/pink_tv_use_red_lucky_bg"
+                        android:paddingLeft="4dp" android:paddingRight="4dp"
+                        android:textColor="@color/orange_order_detail"
+                        android:text="使用红包可省xx元"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/stroke_orage_dash_bg"
+                    android:paddingLeft="11dp"  android:paddingRight="11dp"
+                    android:paddingTop="15dp" android:paddingBottom="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/orange_order_detail"
+                        android:text="赠:"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/icon_coupon"
-                            android:gravity="center"
-                            android:text="200元优惠券"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/icon_credit"
-                            android:gravity="center"
-                            android:layout_marginLeft="31dp"
-                            android:text="10分积分"/>
+                            android:orientation="horizontal">
+                            <TextView android:id="@+id/tvLuckyMoney"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="千元红包"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:drawableLeft="@drawable/hognbao"/>
+                            <TextView android:id="@+id/tvCoupon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="200元"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:drawableLeft="@drawable/icon_coupon"/>
+                            <TextView android:id="@+id/tvCredit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="10积分"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="8dp"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                android:drawableLeft="@drawable/icon_credit"/>
+
+                        </LinearLayout>
+                        <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                            android:id="@+id/rvDonate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
                     </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="xxxxxx"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="xxxxxx"/>
                 </LinearLayout>
+                <com.zhy.view.flowlayout.FlowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                </com.zhy.view.flowlayout.FlowLayout>
             </LinearLayout>
-            <com.zhy.view.flowlayout.FlowLayout
+            <!-- 套餐内容开始-->
+            <LinearLayout android:id="@+id/llSetmeal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:visibility="visible"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp" android:paddingBottom="16dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="套餐内容"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_bg"
+                    />
+                <com.yiqiao.cpmanager.widget.FullyHeightRecycleview
+                    android:id="@+id/rvSetmeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
 
-            </com.zhy.view.flowlayout.FlowLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="16dp" android:paddingRight="16dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical">
-            <TextView
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="服务地区"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/blue_bt_repay_bg"
-                android:text="xxxxxx"
-                android:drawableRight="@drawable/go"
-                android:drawablePadding="19dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/white"
-            android:orientation="vertical"
-            android:visibility="visible">
-            <LinearLayout
+            </LinearLayout>
+            <!-- 套餐内容结束-->
+            <LinearLayout android:id="@+id/llCity"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:background="@android:color/white"
                 android:gravity="center_vertical">
                 <TextView
                     android:layout_width="0dp" android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="优惠券"/>
-                <TextView
+
+                    android:text="服务地区"/>
+                <TextView android:id="@+id/tvCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/red_my"
+                    android:textColor="@color/blue_bt_repay_bg"
                     android:text="xxxxxx"
-                    android:drawableRight="@drawable/go"
                     android:drawablePadding="19dp"/>
 
             </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/gray_bg"/>
-            <LinearLayout
+            <LinearLayout android:id="@+id/llStore"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:text="服务门店"/>
+                <TextView android:id="@+id/tvStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue_bt_repay_bg"
+                    android:text="xxxxxx"
+                    android:drawablePadding="19dp"
+                    android:drawableRight="@drawable/go"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <LinearLayout android:id="@+id/llCoupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="优惠券"/>
+                    <TextView android:id="@+id/tvCouponUsed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red_my"
+                        android:text="xxxxxx"
+                        android:drawableRight="@drawable/go"
+                        android:drawablePadding="19dp"/>
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/gray_bg"/>
+                <LinearLayout android:id="@+id/llRedLucky"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="1dp"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="红包"/>
+                    <TextView
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/text_hint"
+                        android:textSize="12sp"
+                        android:text="可用红包金额：xxx"/>
+                    <TextView android:id="@+id/tvLuckyMoneyUsed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red_my"
+                        android:text="xxxxxx"
+                        android:drawablePadding="19dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp" android:paddingRight="16dp"
+                android:paddingTop="18dp" android:paddingBottom="10dp"
                 android:gravity="center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="红包"/>
+                    android:text="支付方式"/>
                 <TextView
                     android:layout_width="0dp" android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
-                    android:textColor="@color/text_hint"
-                    android:textSize="12sp"
-                    android:text="可用红包金额：xxx"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/red_my"
-                    android:text="xxxxxx"
-                    android:drawableRight="@drawable/go"
-                    android:drawablePadding="19dp"/>
+                    android:text="（开发票需服务完成后在个人中心申请）"/>
 
             </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp" android:paddingRight="16dp"
-            android:paddingTop="18dp" android:paddingBottom="10dp"
-            android:gravity="center_vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="支付方式"/>
-            <TextView
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:text="（开发票需服务完成后在个人中心申请）"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/white"
-            android:orientation="vertical"
-           >
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:paddingLeft="16dp" android:paddingRight="16dp"
-                android:gravity="center_vertical">
-                <TextView
-                    android:layout_width="0dp" android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/wechat"
-                    android:gravity="center_vertical"
-                    android:drawablePadding="18dp"
-                    android:text="微信支付"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/choose_down"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                >
+                <LinearLayout android:id="@+id/llWechatPay"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/wechat"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="18dp"
+                        android:text="微信支付"/>
+                    <ImageView android:id="@+id/ivSelectedWechatPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/choose_down"/>
 
-            </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/gray_bg"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="1dp"
-                android:paddingLeft="16dp" android:paddingRight="16dp"
-                android:gravity="center_vertical">
-                <TextView
-                    android:layout_width="0dp" android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/alipay"
-                    android:gravity="center_vertical"
-                    android:drawablePadding="18dp"
-                    android:text="支付宝支付"/>
+                </LinearLayout>
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/choose_down"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/gray_bg"/>
+                <LinearLayout android:id="@+id/llAlipay"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="1dp"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/alipay"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="18dp"
+                        android:text="支付宝支付"/>
+                    <ImageView android:id="@+id/ivSelectedAliPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/choose_down"/>
 
+                </LinearLayout>
+                <LinearLayout android:id="@+id/llPayByAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="1dp"
+                    android:paddingLeft="16dp" android:paddingRight="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/pay_by_account"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="18dp"
+                        android:text="对公转账"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/go"/>
+
+                </LinearLayout>
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="10dp"/>
+            <EditText android:id="@+id/etRemark"
+                android:layout_width="match_parent"
+                android:minHeight="106dp"
+                android:layout_height="wrap_content"
+                android:maxLength="200"
+                android:background="@android:color/white"
+                android:padding="16dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="14sp"
+                android:hint="详细描述您的需求，方便工作人员更好的为您服务"
+                android:gravity="start"/>
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="备注"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="10dp"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="106dp"
-            android:background="@android:color/white"
-            android:padding="16dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="14sp"
-            android:hint="详细描述您的需求，方便工作人员更好的为您服务"/>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</ezy.ui.layout.LoadingLayout>

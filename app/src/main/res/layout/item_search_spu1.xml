@@ -2,50 +2,66 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_bg"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@android:color/white"
         android:gravity="center_vertical"
-        android:layout_marginTop="10dp"
-        android:padding="10dp">
-        <ImageView
+        android:padding="20dp">
+        <ImageView android:id="@+id/ivLogo"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginRight="16dp"
-            android:src="@drawable/ic_launcher"/>
+            android:src="@drawable/img_default"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 >
-            <TextView
-                android:layout_width="0dp" android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_black_title"
-                android:textSize="16sp"
-                android:text="xxxxxxxx"/>
+                <com.yiqiao.cpmanager.widget.ColorTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black_title"
+                    android:textSize="16sp"
+                    android:text="xxxxxxxx"/>
 
-                <TextView
+                <TextView android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="xxxxxxxx"
                     android:textColor="@color/text_black_title"
                     android:textSize="16sp"
-                    android:id="@+id/textView7" />
+                    />
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
-                android:textSize="12sp"
-                android:text="xxxxxxxx"/>
+                android:layout_marginTop="15dp">
+                <TextView android:id="@+id/tvDesc"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="xxxxxxxx"/>
+
+                <TextView android:id="@+id/tvPriceOld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="xxxxxxxx"
+                    android:textSize="12sp"
+                    />
             </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

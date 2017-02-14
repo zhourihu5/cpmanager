@@ -12,7 +12,7 @@ public class GoodsSafeguardFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.frag_goods_detail;
+        return R.layout.frag_goods_safeguard;
     }
 
     @Override

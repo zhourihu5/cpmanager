@@ -14,8 +14,6 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.base.BaseActivity;
-import com.yiqiao.cpmanager.entity.ChargeBackVo;
-import com.yiqiao.cpmanager.entity.ChargebackListRequestVo;
 import com.yiqiao.cpmanager.entity.HttpResult;
 import com.yiqiao.cpmanager.entity.InvoiceListRequestVo;
 import com.yiqiao.cpmanager.entity.InvoiceVo;
@@ -26,12 +24,10 @@ import com.yiqiao.cpmanager.subscribers.RxSubscriber;
 import com.yiqiao.cpmanager.transformer.PageTransformer;
 import com.yiqiao.cpmanager.ui.adapter.MyInvoiceAdapter;
 import com.yiqiao.cpmanager.util.LogUtils;
-import com.yiqiao.cpmanager.util.NetworkUtil;
 import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.util.SystemUtil;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

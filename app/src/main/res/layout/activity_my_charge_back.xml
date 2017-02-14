@@ -12,8 +12,8 @@
         android:layout_height="match_parent"
         app:scrollbarStyle="insideOverlay"
         app:layout_progress="@layout/view_progress"
-        app:layout_empty="@layout/view_empty"
-        app:layout_error="@layout/view_error_footer"
+        app:layout_empty="@layout/empty_my_lucky"
+        app:layout_error="@layout/view_error"
         />
 
 </LinearLayout>

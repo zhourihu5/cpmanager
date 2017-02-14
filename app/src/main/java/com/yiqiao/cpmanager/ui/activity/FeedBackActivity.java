@@ -12,7 +12,6 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
-import com.yiqiao.cpmanager.entity.OrderVo;
 import com.yiqiao.cpmanager.widget.FullyHeightRecycleview;
 
 import java.util.List;

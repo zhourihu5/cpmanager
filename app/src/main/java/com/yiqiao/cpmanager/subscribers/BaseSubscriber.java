@@ -1,5 +1,6 @@
 package com.yiqiao.cpmanager.subscribers;
 
+import com.yiqiao.cpmanager.BuildConfig;
 import com.yiqiao.cpmanager.http.exception.ApiException;
 
 import rx.Subscriber;
@@ -18,7 +19,14 @@ public abstract class BaseSubscriber<T> extends Subscriber<T> {
         if(e instanceof ApiException){
             onError((ApiException)e);
         }else{
-            onError(new ApiException(e,1000));
+            ApiException apiException=  new ApiException(e,1000);
+            if(BuildConfig.DEBUG){
+                e.printStackTrace();
+                apiException.message=e.getMessage();
+            }else{
+                apiException.message="未知错误";
+            }
+            onError(apiException);
         }
     }
 

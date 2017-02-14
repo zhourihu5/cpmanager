@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.yiqiao.cpmanager.R;
 import com.yiqiao.cpmanager.base.BaseActivity;
-import com.yiqiao.cpmanager.http.RetrofitHelper;
 import com.yiqiao.cpmanager.ui.adapter.SearchCpAdapter;
 
 import butterknife.BindView;

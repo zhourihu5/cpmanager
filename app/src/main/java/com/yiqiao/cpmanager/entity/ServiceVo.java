@@ -24,7 +24,7 @@ public class ServiceVo implements Serializable{
      * isOverdue : 0
      * now_step : 1
      * orgName : 无锡市梁溪区崇安寺店
-     * serviceName : 工商服务-变更登记
+     * productName : 工商服务-变更登记
      * serviceSetId : 3593
      * step_count : 4
      * triggerType : 1
@@ -45,7 +45,7 @@ public class ServiceVo implements Serializable{
     private int isOverdue;
     private int now_step;
     private String orgName;
-    private String serviceName;
+    private String productName;
     private int serviceSetId;
     private int step_count;
     private String triggerType;
@@ -170,12 +170,12 @@ public class ServiceVo implements Serializable{
         this.orgName = orgName;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getServiceSetId() {

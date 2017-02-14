@@ -1,7 +1,5 @@
 package com.yiqiao.cpmanager.util;
 
-import android.util.Log;
-
 import com.orhanobut.logger.Logger;
 import com.yiqiao.cpmanager.BuildConfig;
 

@@ -1,6 +1,6 @@
 package com.yiqiao.cpmanager.base;
 
-import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -10,10 +10,10 @@ import android.support.annotation.Nullable;
 import com.blankj.utilcode.utils.BarUtils;
 import com.umeng.analytics.MobclickAgent;
 import com.yiqiao.cpmanager.app.App;
+import com.yiqiao.cpmanager.app.Constants;
 import com.yiqiao.cpmanager.http.exception.ApiException;
 import com.yiqiao.cpmanager.subscribers.RxSubscriber;
 import com.yiqiao.cpmanager.ui.activity.LoginActivity;
-import com.yiqiao.cpmanager.util.DialogHelper;
 import com.yiqiao.cpmanager.util.NetworkUtil;
 import com.yiqiao.cpmanager.util.SharedPreferenceUtil;
 import com.yiqiao.cpmanager.util.ToastUtil;
@@ -108,8 +108,12 @@ public abstract class BaseActivity extends SupportActivity implements RxSubscrib
         Intent intent=new Intent(this,clazz);
         startActivity(intent);
     }
-    protected boolean isLogin(){
-        boolean isLogin= SharedPreferenceUtil.getLoginState();
+    protected boolean  isLoginLogic(){
+        boolean isLogin= SharedPreferenceUtil.getAppSp().getInt(Constants.USER_ID,0)!=0;
+        return isLogin;
+    }
+    public boolean isLogin(){
+        boolean isLogin= SharedPreferenceUtil.getAppSp().getInt(Constants.USER_ID,0)!=0;
         if(!isLogin){
             toActivity(LoginActivity.class);
         }
@@ -127,19 +131,29 @@ public abstract class BaseActivity extends SupportActivity implements RxSubscrib
         ToastUtil.shortShow("当前无网络，请检查网络情况");
     }
 
+    protected   ProgressDialog progressDialog;
+    protected void initProgressDialog(){
+        if(progressDialog==null){
+            progressDialog=new ProgressDialog(mContext);
+            progressDialog.setMessage("加载中...");
+        }
+    }
     @Override
     public void onRequestStart() {
-        DialogHelper.showProgressDlg(mContext, "正在加载数据");
     }
 
     @Override
     public void onRequestCompleted() {
-        DialogHelper.stopProgressDlg();
+        if(progressDialog!=null){
+            progressDialog.dismiss();
+        }
     }
 
     @Override
     public void onRequestError(ApiException ex) {
-        DialogHelper.stopProgressDlg();
+        if(progressDialog!=null){
+            progressDialog.dismiss();
+        }
         ToastUtil.shortShow(ex.message);
     }
 }
