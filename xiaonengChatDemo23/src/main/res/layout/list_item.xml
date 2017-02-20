@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="3dp"
+    android:background="@color/xn_white"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="3dp" >
+
+    <ImageButton
+        android:id="@+id/ib_icon"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/ib_icon"
+        android:text="titile" />
+
+    <RadioButton
+        android:id="@+id/radio_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ib_icon"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21dp"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ib_icon"
+        android:layout_alignLeft="@+id/tv_title"
+        android:text="ddddddddddd" />
+
+</RelativeLayout>

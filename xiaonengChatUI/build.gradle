@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 17
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.+'
+    compile files('libs/xiaoneng-mqtt.jar')
+    compile files('libs/xiaonengchatcore.jar')
+    compile files('libs/xiaonengchatui.jar')
+    compile files('libs/xiaonengnetwork.jar')
+    compile files('libs/xiaonengutil.jar')
+    compile files('libs/xiaonengv4.jar')
+}

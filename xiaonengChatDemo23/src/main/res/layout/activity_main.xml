@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/f_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/f_remove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/f_open"
+        android:text="关闭"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/f_openchat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/f_remove"
+        android:text="打开聊窗" 
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/f_listchat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/f_openchat"
+        android:text="打开聊天列表" 
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/f_chatrouted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/f_listchat"
+        android:text="用户轨迹" 
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/f_chattotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/f_chatrouted"
+        android:layout_centerHorizontal="true"
+        android:background="#077CE3"
+        android:text="消息总数" 
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:id="@+id/demo_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/top_background"   >
+        <Button android:id="@+id/demo_exit"  
+            android:layout_width="46dp"  
+            android:layout_height="34dp"  
+            android:gravity="center"  
+            android:layout_centerVertical="true"  
+            android:layout_alignParentLeft="true" 
+            android:layout_marginLeft="6dp"       
+            android:background="@drawable/btnselector"  
+            android:text="返回"
+            android:visibility="gone"
+            android:textColor="@android:color/black"/> 
+	    <TextView
+	        android:id="@+id/welcometext"
+	        android:layout_width="wrap_content"
+	        android:layout_height="fill_parent"
+	        android:layout_centerInParent="true"        
+	        android:gravity="center"
+	        android:text="欢迎来到移动商城"
+	        android:textSize="20sp" 
+	        android:textColor="@android:color/black"
+	        
+	        />
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/demo_web_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:clickable="true"
+        android:focusable="true"        
+        android:scrollbars="none"
+        android:layout_below="@id/demo_rl"
+        android:layout_above="@+id/bottom" />
+
+    <LinearLayout
+        android:id="@+id/bottom"  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"  
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_background"  
+        >
+
+        <Button
+            android:id="@+id/btn_h5"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btnselector"
+            android:text="h5_sdk入口" />
+
+        <Button
+            android:id="@+id/xiaonengkefu"
+            android:layout_width="0dp"
+            android:layout_marginLeft="4dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btnbg"
+            android:text="sdk源生入口" />
+
+    </LinearLayout>  
+
+</RelativeLayout>

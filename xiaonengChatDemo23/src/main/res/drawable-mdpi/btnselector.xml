@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>     
+<selector xmlns:android="http://schemas.android.com/apk/res/android">   
+ 
+	
+	<!-- 触摸模式下单击时的背景图片-->    
+	<item android:drawable="@drawable/btnbg" android:state_pressed="true" >   
+	    <shape>            
+            <stroke android:width="5dp" android:color="#FF00FF" />
+            <corners android:radius="5dp" />
+            <padding android:left="1dp" android:top="1dp"
+                android:bottom="1dp" android:right="1dp" />
+        </shape>
+    </item> 
+    <item android:drawable="@drawable/btnbg" />  
+</selector>  

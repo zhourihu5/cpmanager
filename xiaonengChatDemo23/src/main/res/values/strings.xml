@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SDK2.3-Demo3</string>
+    <string name="desc">this is a widget for picture</string>
+    <string name="tips_text">提示：上面的部分模块内容并不展示给访客（而是将数据提供给服务器或客服端），放在这里是为了方便集成开发者对小能客服SDK功能模块快速地了解和集成应用。</string>
+    <string name="tips_edition">SDK版本：1.1.06015102</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_demo">DemoActivity</string>
+    <string name="title_activity_demo2">Demo2Activity</string>
+    <string name="title_activity_web">WebContentActivity</string>
+
+</resources>

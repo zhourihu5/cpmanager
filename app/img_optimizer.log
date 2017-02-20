@@ -1,0 +1,52 @@
+2017-01-12 10:48:56  info:  Task optimizeAppRelease begin:
+----------------------------------------
+2017-01-12 10:48:56  info:  22 images need to be optimized.
+----------------------------------------
+2017-01-12 10:48:56  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\article_package.png
+----------------------------------------
+2017-01-12 10:48:57  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\cp_detail_bg.png
+----------------------------------------
+2017-01-12 10:48:58  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\cp_name_check_bg.png
+----------------------------------------
+2017-01-12 10:48:58  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\dialog_order_cancel_head.png
+----------------------------------------
+2017-01-12 10:48:58  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\film_package.png
+----------------------------------------
+2017-01-12 10:48:58  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\guide_page1.png
+----------------------------------------
+2017-01-12 10:48:59  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\guide_page2.png
+----------------------------------------
+2017-01-12 10:48:59  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\guide_page3.png
+----------------------------------------
+2017-01-12 10:48:59  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\ic_notification.png
+----------------------------------------
+2017-01-12 10:48:59  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\knowledge_power_package.png
+----------------------------------------
+2017-01-12 10:49:00  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\manager_task_bg.png
+----------------------------------------
+2017-01-12 10:49:00  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\manager_task_text.png
+----------------------------------------
+2017-01-12 10:49:01  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\my_bg.png
+----------------------------------------
+2017-01-12 10:49:01  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\procedure.png
+----------------------------------------
+2017-01-12 10:49:01  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\search_cp_history_bg.png
+----------------------------------------
+2017-01-12 10:49:02  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\search_trademark_history_bg.png
+----------------------------------------
+2017-01-12 10:49:02  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\splash_logo.png
+----------------------------------------
+2017-01-12 10:49:02  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\splash_text.png
+----------------------------------------
+2017-01-12 10:49:02  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\startup_package.png
+----------------------------------------
+2017-01-12 10:49:03  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\task_center_bg.png
+----------------------------------------
+2017-01-12 10:49:03  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\task_center_text.png
+----------------------------------------
+2017-01-12 10:49:03  warn:  Skipped! F:\project\cpmanager\app\src\main\res\drawable-xxhdpi\trademark_package.png
+----------------------------------------
+2017-01-12 10:49:03  info:  Total: 22, Succeed: 0, Skipped: 22, Failed: 0, Saved: 0KB
+----------------------------------------
+2017-01-12 10:49:03  info:  Task optimizeAppRelease executed successfully.
+----------------------------------------

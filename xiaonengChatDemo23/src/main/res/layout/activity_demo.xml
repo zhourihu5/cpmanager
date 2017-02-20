@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/xn_white"
+    tools:context=".DemoActivity" >
+
+    <Button
+        android:id="@+id/demo_tolib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到SDK" />
+    
+    <TextView
+        android:id="@+id/order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/demo_tolib"
+        android:text = "订单号：123456" />
+    
+    <TextView
+        android:id="@+id/order_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_id"
+        android:text = "订单名称：飘零大叔" />
+    
+    <TextView
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_name"
+        android:text = "订单价格：299元" />
+    
+    <TextView
+        android:id="@+id/order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_price"
+        android:text = "订单时间：2016.09.01" />
+	<TextView
+        android:id="@+id/order_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_time"
+        android:text = "商品链接：www.baidu.com" />
+
+</RelativeLayout>
