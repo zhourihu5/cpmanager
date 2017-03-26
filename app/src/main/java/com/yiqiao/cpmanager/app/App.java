@@ -28,7 +28,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cn.jpush.android.api.JPushInterface;
-import cn.xiaoneng.uiapi.Ntalker;
+//import cn.xiaoneng.uiapi.Ntalker;
 
 /**
  * Created by codeest on 2016/8/2.
@@ -109,8 +109,8 @@ public class App extends Application{
         com.umeng.socialize.Config.DEBUG = BuildConfig.DEBUG;
         UMShareAPI.get(this);
         String siteid="kf_9328";
-        Ntalker.getInstance().initSDK(this,siteid, "46F2265D-96CF-4DAC-87CF-6B49A3DB6B5D");
-        Ntalker.getInstance().enableDebug(BuildConfig.DEBUG);
+//        Ntalker.getInstance().initSDK(this,siteid, "46F2265D-96CF-4DAC-87CF-6B49A3DB6B5D");
+//        Ntalker.getInstance().enableDebug(BuildConfig.DEBUG);
     }
     //各个平台的配置，建议放在全局Application或者程序入口
     {

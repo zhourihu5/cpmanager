@@ -183,5 +183,5 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     compile project(':utilcode')
     compile 'com.infstory:proguard-snippets:1.0.0'
-    compile project(':xiaonengChatUI')
+//    compile project(':xiaonengChatUI')
 }

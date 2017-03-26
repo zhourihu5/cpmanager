@@ -36,7 +36,7 @@ import com.yiqiao.cpmanager.util.ToastUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.xiaoneng.uiapi.Ntalker;
+//import cn.xiaoneng.uiapi.Ntalker;
 import rx.Subscription;
 
 /**
@@ -176,7 +176,7 @@ public class LoginActivity extends BaseActivity {
                         spUtils.putString(Constants.USER_NAME,contentBeen.getUsername());
                         spUtils.putString(Constants.USER_PHONE,uname);
                         //todo save img,name etc user's information
-                        Ntalker.getInstance().login(contentBeen.getCustomerId()+"",contentBeen.getPhone(),0);//小能登录
+//                        Ntalker.getInstance().login(contentBeen.getCustomerId()+"",contentBeen.getPhone(),0);//小能登录
                         finish();
                     }
 

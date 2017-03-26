@@ -158,62 +158,62 @@
 
 
         <!-- ***************************小能SDK所需要Activity和Service ********************* -->
-        <activity
-            android:name="cn.xiaoneng.activity.ChatActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="cn.xiaoneng.activity.LeaveMsgActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="cn.xiaoneng.activity.ShowCameraActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|navigation|layoutDirection|touchscreen|locale|mnc|mcc|fontScale"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/MyDialogTopRight" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.activity.ShowAlbumActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.activity.ValuationActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/valuationdialog" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.activity.ShowPictureActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.activity.XNExplorerActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.video.VideoPreviewActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.video.RecordVideoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
-        <activity
-            android:name="cn.xiaoneng.video.XNVideoPlayer"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+        <!--  <activity
+             android:name="cn.xiaoneng.activity.ChatActivity"
+             android:launchMode="singleTask"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" />
+         <activity
+             android:name="cn.xiaoneng.activity.LeaveMsgActivity"
+             android:launchMode="singleTask"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" />
+         <activity
+             android:name="cn.xiaoneng.activity.ShowCameraActivity"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|navigation|layoutDirection|touchscreen|locale|mnc|mcc|fontScale"
+             android:launchMode="singleTask"
+             android:screenOrientation="portrait"
+             android:theme="@style/MyDialogTopRight" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.activity.ShowAlbumActivity"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Translucent" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.activity.ValuationActivity"
+             android:screenOrientation="portrait"
+             android:theme="@style/valuationdialog" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.activity.ShowPictureActivity"
+             android:launchMode="singleTask"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.activity.XNExplorerActivity"
+             android:launchMode="singleTask"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.video.VideoPreviewActivity"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.video.RecordVideoActivity"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" >
+         </activity>
+         <activity
+             android:name="cn.xiaoneng.video.XNVideoPlayer"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar" >
+         </activity>-->
 
-        <!-- ***************************小能SDK所需要Activity和Service ********************* -->
+         <!-- ***************************小能SDK所需要Activity和Service ********************* -->
 
 
 

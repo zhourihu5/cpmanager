@@ -57,10 +57,10 @@ import chihane.jdaddressselector.AddressProvider;
 import chihane.jdaddressselector.BottomDialog;
 import chihane.jdaddressselector.OnAddressSelectedListener;
 import chihane.jdaddressselector.model.Province;
-import cn.xiaoneng.coreapi.ChatParamsBody;
-import cn.xiaoneng.uiapi.Ntalker;
-import cn.xiaoneng.uiapi.XNSDKListener;
-import cn.xiaoneng.utils.CoreData;
+//import cn.xiaoneng.coreapi.ChatParamsBody;
+//import cn.xiaoneng.uiapi.Ntalker;
+//import cn.xiaoneng.uiapi.XNSDKListener;
+//import cn.xiaoneng.utils.CoreData;
 import ezy.ui.layout.LoadingLayout;
 import rx.Subscription;
 
@@ -68,7 +68,8 @@ import rx.Subscription;
  * Created by codeest on 2016/8/11.
  * 商品详情页
  */
-public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
+public class GoodsDetailFragment extends BaseFragment //implements XNSDKListener
+{
 
     GoodsDetailApendAdapter apendAdapter;
     GoodsDetailDonateAdapter donateAdapter;
@@ -1214,7 +1215,7 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Ntalker.getInstance().setSDKListener(null);// 小能监听接口
+//        Ntalker.getInstance().setSDKListener(null);// 小能监听接口
     }
 
     public void setType(String type) {
@@ -1270,7 +1271,7 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
                 }
                 break;
             case R.id.llOnline://todo 小能
-                startChat();
+//                startChat();
                 break;
             case R.id.llPhone://
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:4006865658"));
@@ -1293,7 +1294,7 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
     String startPageUrl;//todo 怎么取值
     String matchstr = CpMgrApiService.BASE_URL;
 
-    void startChat() {
+    /*void startChat() {
         String settingid = "kf_9328_1468918893409";
         boolean isRoot = false;
         if (isRoot) {
@@ -1303,7 +1304,7 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
         }
         String groupName = "在线咨询";
 
-      /*  <ul class="w_zx_list">
+      *//*  <ul class="w_zx_list">
         <li><a href="###" id="dtwf0" onclick="NTKF.im_openInPageChat('kf_9328_1468313441356')">工商服务</a></li>
         <li><a href="###" id="dtwf1" onclick="NTKF.im_openInPageChat('kf_9328_1468918543552')">财税服务</a></li>
         <li><a href="###" id="dtwf2" onclick="NTKF.im_openInPageChat('kf_9328_1468918637558')">知识产权</a></li>
@@ -1311,26 +1312,26 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
         <li><a href="###" id="dtwf4" onclick="NTKF.im_openInPageChat('kf_9328_1468918586614')">人事社保</a></li>
         <li><a href="###" id="dtwf5" onclick="NTKF.im_openInPageChat('kf_9328_1468918698960')">加盟合作</a></li>
         <li><a href="###" id="dtwf6" onclick="NTKF.im_openInPageChat('kf_9328_1468918916508')">其他服务 </a></li>
-        </ul>*/
+        </ul>*//*
         String kefuid = null;
         String kefuname = null;
 
         ChatParamsBody chatparams = new ChatParamsBody();
 
-//**** 咨询发起页，用于PC客服端显示用户发起咨询的位置***********
+/*//**** 咨询发起页，用于PC客服端显示用户发起咨询的位置***********
 
         chatparams.startPageTitle = startPageTitle;  // 咨询发起页标题(必填)
         chatparams.startPageUrl = startPageUrl;//咨询发起页URL，必须以"http://"开头 （必填）
 
-//**** 域名匹配,企业特殊需求********
+/*//**** 域名匹配,企业特殊需求********
         chatparams.matchstr = matchstr;//默认传空
 
-//****erp参数, 被用参数,小能只负责经由SDK传到客服端,不做任何修改,处理*******
+/*//****erp参数, 被用参数,小能只负责经由SDK传到客服端,不做任何修改,处理*******
         chatparams.erpParam = "";
 
-//***** 商品详情,如果页面含有商品,建议传入,用于sdk访客端和PC客服显示当前商品******
+/*//***** 商品详情,如果页面含有商品,建议传入,用于sdk访客端和PC客服显示当前商品******
 
-      /*  **以下三种模式只能选择其一,切记勿同时传入三种模式, 例如,选择id模式,其他模式参数不用写入,也不用传空***/
+      *//*  **以下三种模式只能选择其一,切记勿同时传入三种模式, 例如,选择id模式,其他模式参数不用写入,也不用传空***//*
 
         chatparams.itemparams.appgoodsinfo_type = CoreData.SHOW_GOODS_BY_ID; //sdk显示商品信息模式. 建议使用id模式
         //  值0: 设置在SDK端不显示商品(默认)
@@ -1367,7 +1368,7 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
         Ntalker.getInstance().setSDKListener(this);// 小能监听接口
 
 
-        /********************************* 动态申请小能SDK所需权限（与图片显示有关的存储权限；与语音消息有关的录音权限和电话权限） *************************************/
+        *//********************************* 动态申请小能SDK所需权限（与图片显示有关的存储权限；与语音消息有关的录音权限和电话权限） *************************************//*
         String[] permissions = {
                 Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.RECORD_AUDIO,
@@ -1376,36 +1377,30 @@ public class GoodsDetailFragment extends BaseFragment implements XNSDKListener {
                 Manifest.permission.CAMERA
         };
         Ntalker.getInstance().getPermissions(mActivity, 200, permissions);
-        /*******************************************************************************************************/
-    }
+        *//*******************************************************************************************************//*
+    }*/
 
 
-    @Override
     public void onChatMsg(boolean b, String s, String s1, String s2, long l, boolean b1) {
 
     }
 
-    @Override
     public void onUnReadMsg(String s, String s1, String s2, int i) {
 
     }
 
-    @Override
     public void onClickMatchedStr(String s, String s1) {
 
     }
 
-    @Override
     public void onClickUrlorEmailorNumber(int i, String s) {
 
     }
 
-    @Override
     public void onClickShowGoods(int i, int i1, String s, String s1, String s2, String s3, String s4, String s5) {
 
     }
 
-    @Override
     public void onError(int i) {
 
     }
